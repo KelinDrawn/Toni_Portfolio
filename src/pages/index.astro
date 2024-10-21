@@ -1,16 +1,104 @@
 ---
+import BaseLayout from "../layouts/BaseLayout.astro";
 
+import Navigation from "../layouts/navigation.astro";
+import Intro from "../layouts/intro.astro";
+import Casestudies from "../layouts/casestudies.astro";
+import Infobox from "../layouts/infobox.astro";
+import List from "../layouts/list.astro";
+import Masonry from "../layouts/masonry.astro";
+import BigCta from "../layouts/big-cta.astro";
+import Footer from "../layouts/footer.astro";
+
+import Image from "astro/components/Image.astro";
+import CaseStudiesImageSVA from "/src/images/casestudies/sva_mockup.png";
+import CaseStudiesImageSNV from "/src/images/casestudies/snv_mockup.png";
+import CaseStudiesImageSGA from "/src/images/casestudies/sga_mockup.png";
+
+const pageTitle = "Toni Schläppi – Design Engineer";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+
+  <Intro />
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageSVA}
+      alt="sample of the final UI design for Swiss Association of Medical Practice Professionals (SVA)"
+    />
+    <slot slot="CaseStudiesTitle">
+      Association website for students and healthcare professionals
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      Increasing website signups by medical students for professional training
+      by 25%, reducing inquiries for the client by 40%.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Research, visual design, style guide, prototyping, usability testing,
+      benchmarking
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Association of Medical Practice Professionals – SVA
+    </slot>
+  </Casestudies>
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageSNV}
+      alt="sample of the final UI design for Swiss Notaries Association (SNV)"
+    />
+    <slot slot="CaseStudiesTitle">
+      Association website for notaries and lawyers
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      Notaries can record their activities centrally so that their services can
+      be found and the public can be made aware of the association’s services.
+      Several new memberships after the relaunch and fewer support requests for
+      customers.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Research, visual design, style guide, prototyping, benchmarking
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Notaries Association (SNV)
+    </slot>
+  </Casestudies>
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageSGA}
+      alt="sample of the final UI design for Swiss Gold Plan"
+    />
+    <slot slot="CaseStudiesTitle">
+      Private online customer portal for investing in physical gold
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      Enables private individuals to purchase shares in physical gold online. 25
+      new registrations in the first month. Significant reduction in manual
+      order acceptance.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Visual design, style guide, prototyping, usability testing
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Notaries Association (SNV)
+    </slot>
+  </Casestudies>
+  <Infobox />
+  <List />
+  <Masonry />
+  <BigCta />
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  [slot="CSImage"] {
+    object-fit: contain;
+    object-position: top right;
+    width: 100%;
+    max-width: 40rem;
+  }
+</style>

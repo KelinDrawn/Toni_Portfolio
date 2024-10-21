@@ -1,0 +1,96 @@
+---
+import ContactLinks from "../components/contact-links.astro";
+import WhatsappButton from "../components/whatsapp-button.astro";
+---
+
+<section class="site-wrapper stack-2xl">
+  <div>
+    <h2 class="deco-title-diagonal">
+      Visual Design, Prototyping,<br /> Usability Tests, Research,<br /> Interviews,
+      HTML&CSS,
+    </h2>
+    <div class="decoration-blob-1"></div>
+    <div class="decoration-blob-2"></div>
+  </div>
+  <div class="subtitles-group stack-m">
+    <h3 class="title-6">
+      Are you seeking a designer with technical expertise to bring your
+      innovative project to life and ensure its success?
+    </h3>
+    <h4 class="title-4">I look forward to connecting with you!</h4>
+    <h4 class="title-1">
+      <a href="#contact-me">Contact Toni &#128172;</a>
+    </h4>
+  </div>
+</section>
+
+<style>
+  .subtitles-group {
+    width: fit-content;
+    max-width: 35rem;
+    margin-inline: auto;
+  }
+
+  section {
+    padding: var(--space-l);
+    background: linear-gradient(
+      150deg,
+      rgba(252, 252, 252, 0.1) 0%,
+      rgba(255, 255, 255, 0.7) 70%
+    );
+
+    border-width: 0px 1px 1px 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+    border-radius: 0rem 0rem clamp(1vw, 12vw, 17vw) clamp(1vw, 12vw, 17vw);
+    z-index: 0;
+  }
+
+  .button {
+    width: fit-content;
+  }
+
+  .decoration-blob-1 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+      50.77% 43.96% at 50% 46.31%,
+      #cefadf 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.5;
+  }
+
+  .decoration-blob-2 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 40%;
+    left: 30%;
+    top: 0;
+
+    background: radial-gradient(
+      50.77% 43.96% at 50% 46.31%,
+      #f4face 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(1.5deg);
+    opacity: 0.5;
+  }
+
+  @media (max-width: 45rem) {
+    .deco-title-diagonal {
+      font-size: var(--step-5);
+    }
+
+    .subtitles-group h3 {
+      font-size: var(--step-5);
+    }
+  }
+</style>

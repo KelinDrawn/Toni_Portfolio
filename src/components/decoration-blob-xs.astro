@@ -1,0 +1,22 @@
+<div class="decoration-blob"></div>
+
+<style>
+  .decoration-blob {
+    /* outline: 2px solid red; */
+    position: absolute;
+    width: max(25vw, 80%);
+    aspect-ratio: 3/2;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+      50% 50% at 50% 50%,
+      #cefadf 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    filter: blur(20px);
+    border-radius: 100%;
+    z-index: -1;
+  }
+</style>

@@ -1,0 +1,475 @@
+@font-face {
+  font-family: 'LaLuxesSerif';
+  font-display: swap;
+  src: url('/public/fonts/LaLuxes/LaLuxesSerif.eot');
+  /* IE9 Compat Modes */
+  src: url('/public/fonts/LaLuxes/LaLuxesSerif.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/public/fonts/LaLuxes/LaLuxesSerif.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/public/fonts/LaLuxes/LaLuxesSerif.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/public/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName') format('svg');
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'LaLuxesScript';
+  font-display: swap;
+  src: url('/public/fonts/LaLuxes/LaLuxesScript.eot');
+  /* IE9 Compat Modes */
+  src: url('/public/fonts/LaLuxes/LaLuxesScript.eot?#iefix') format('embedded-opentype'),
+    /* IE6-IE8 */
+    url('/public/fonts/LaLuxes/LaLuxesScript.woff') format('woff'),
+    /* Pretty Modern Browsers */
+    url('/public/fonts/LaLuxes/LaLuxesScript.ttf') format('truetype'),
+    /* Safari, Android, iOS */
+    url('/public/fonts/LaLuxes/LaLuxesScript.svg#svgFontName') format('svg');
+  /* Legacy iOS */
+}
+
+/* instrument-serif-latin-400-normal */
+@font-face {
+  font-family: 'Instrument Serif';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url(https://cdn.jsdelivr.net/fontsource/fonts/instrument-serif@latest/latin-400-normal.woff2) format('woff2'), url(https://cdn.jsdelivr.net/fontsource/fonts/instrument-serif@latest/latin-400-normal.woff) format('woff');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+  font-family: 'Parafina-RegularS';
+  font-display: swap;
+  src: url('/public/fonts/Parafina/Parafina-RegularS.woff2');
+}
+
+@font-face {
+  font-family: 'Parafina-RegularM';
+  font-display: swap;
+  src: url('/public/fonts/Parafina/Parafina-RegularM.woff2');
+}
+
+@font-face {
+  font-family: 'Parafina-RegularL';
+  font-display: swap;
+  src: url('/public/fonts/Parafina/Parafina-RegularL.woff2');
+}
+
+:root {
+  /* ––––––––––––––––––––––––––––––––– font sizes ––––––––––––––––––––––––––––––––– */
+
+  /* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1280,17,1.2,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step--1: clamp(0.7813rem, 0.7465rem + 0.1736vi, 0.8854rem);
+  --step-0: clamp(0.9375rem, 0.8958rem + 0.2083vi, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.075rem + 0.25vi, 1.275rem);
+  --step-2: clamp(1.35rem, 1.29rem + 0.3vi, 1.53rem);
+  --step-3: clamp(1.62rem, 1.548rem + 0.36vi, 1.836rem);
+  --step-4: clamp(1.944rem, 1.8576rem + 0.432vi, 2.2032rem);
+  --step-5: clamp(2.3328rem, 2.2291rem + 0.5184vi, 2.6438rem);
+  --step-6: clamp(2.7994rem, 2.6749rem + 0.6221vi, 3.1726rem);
+
+  /* ––––––––––––––––––––––––––––––––– spaces ––––––––––––––––––––––––––––––––– */
+
+  --space-xs: clamp(0.6875rem, 0.5353rem + 0.7609vi, 1.125rem);
+  --space-s: clamp(0.875rem, 0.6576rem + 1.087vi, 1.5rem);
+  --space-m: clamp(1.3125rem, 0.9864rem + 1.6304vi, 2.25rem);
+  --space-l: clamp(1.75rem, 1.3152rem + 2.1739vi, 3rem);
+  --space-xl: clamp(2.625rem, 1.9728rem + 3.2609vi, 4.5rem);
+  --space-2xl: clamp(3.5rem, 2.6304rem + 4.3478vi, 6rem);
+
+  /* ––––––––––––––––––––––––––––––––– container ––––––––––––––––––––––––––––––––– */
+
+  --site-wrapper-size: 85rem;
+  --text-wrapper-size: 60ch;
+
+  /* ––––––––––––––––––––––––––––––––– colors ––––––––––––––––––––––––––––––––– */
+
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(8% 0 0);
+
+  --color-brand-sva: oklch(94.7% 0.058 158.15);
+  --color-brand-snv: oklch(54.7% 0.058 58.15);
+
+
+  --color-brand-sva-a10: color-mix(in srgb, var(--color-brand-sva), transparent 90%);
+  --color-brand-sva-a20: color-mix(in srgb, var(--color-brand-sva), transparent 80%);
+  --color-brand-sva-a30: color-mix(in srgb, var(--color-brand-sva), transparent 70%);
+  --color-brand-sva-a40: color-mix(in srgb, var(--color-brand-sva), transparent 60%);
+  --color-brand-sva-a50: color-mix(in srgb, var(--color-brand-sva), transparent 50%);
+  --color-brand-sva-a60: color-mix(in srgb, var(--color-brand-sva), transparent 40%);
+  --color-brand-sva-a70: color-mix(in srgb, var(--color-brand-sva), transparent 30%);
+  --color-brand-sva-a80: color-mix(in srgb, var(--color-brand-sva), transparent 20%);
+  --color-brand-sva-a90: color-mix(in srgb, var(--color-brand-sva), transparent 10%);
+
+
+  --contrast: color-mix(in lab, currentColor 15%, var(--color-black));
+
+  /* ––––––––––––––––––––––––––––––––– corner radius ––––––––––––––––––––––––––––––––– */
+
+  --border-radius: 0.5rem;
+  --border-radius-big: 3rem;
+
+  /* ––––––––––––––––––––––––––––––––– borders ––––––––––––––––––––––––––––––––– */
+
+  --border-thickness: 0.05rem;
+
+  /* ––––––––––––––––––––––––––––––––– rotation ––––––––––––––––––––––––––––––––– */
+
+  --rotation: -2.75deg;
+
+  /* ––––––––––––––––––––––––––––––––– shadows ––––––––––––––––––––––––––––––––– */
+
+  --shadow-color: 286deg 36% 60%;
+  --shadow-elevation-low: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
+    1.6px 1.7px 3.2px -0.7px hsl(var(--shadow-color) / 0.45);
+  --shadow-elevation-medium: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
+    2.5px 2.8px 5.2px -0.4px hsl(var(--shadow-color) / 0.32),
+    7.8px 8.6px 16.1px -0.7px hsl(var(--shadow-color) / 0.51);
+  --shadow-elevation-high: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.14),
+    5.2px 5.8px 10.8px -0.2px hsl(var(--shadow-color) / 0.27),
+    10.6px 11.7px 21.9px -0.4px hsl(var(--shadow-color) / 0.4),
+    19.7px 21.8px 40.8px -0.6px hsl(var(--shadow-color) / 0.53),
+    36.1px 39.8px 74.6px -0.7px hsl(var(--shadow-color) / 0.66);
+
+  /* ––––––––––––––––––––––––––––––––– transitions ––––––––––––––––––––––––––––––––– */
+
+  --transition-initial: 140ms;
+  --transition-hover: 350ms;
+
+  /* ––––––––––––––––––––––––––––––––– root defaults ––––––––––––––––––––––––––––––––– */
+
+  transition: background-color 300ms linear,
+    color 300ms linear;
+
+  background: var(--color-white);
+  color: var(--color-black);
+  /* padding: 1rem; */
+  font-family: var(--text-typeface),
+    sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.7;
+
+  & a {
+    color: currentColor;
+    text-decoration-thickness: 0.15ex;
+    text-underline-offset: 0.5ex;
+    text-decoration-skip-ink: none;
+  }
+
+  & ul {
+    list-style-type: "";
+    margin: 0;
+    padding: 0;
+  }
+
+  scroll-behavior: smooth;
+
+  /* ––––––––––––––––––––––––––––––––– typography ––––––––––––––––––––––––––––––––– */
+
+  --text-typeface: "Parafina-RegularS";
+  --display-typeface: "Instrument Serif",
+  "Queens Trial",
+  serif;
+  --decoration-typeface: LaLuxesSerif,
+  serif;
+  --decoration-typeface-handwritten: LaLuxesScript,
+  serif;
+
+  /* ––––––––– letter spacing ––––––––– */
+
+  --letter-spacing-p: 0.05rem;
+  --letter-spacing-h: 0.03rem;
+
+
+  :where(p) {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-style: normal;
+    font-weight: 410;
+    line-height: 1.8;
+    letter-spacing: var(--letter-spacing-p)
+  }
+
+
+
+  .deco-title-diagonal {
+    font-family: var(--decoration-typeface);
+    font-size: var(--step-6);
+    font-weight: 300;
+    line-height: 1.15;
+    text-align: center;
+    rotate: var(--rotation);
+  }
+
+  .deco-title-diagonal-bold {
+    font-family: var(--decoration-typeface);
+    font-size: var(--step-6);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+    rotate: var(--rotation);
+    margin-inline: auto;
+  }
+
+  .title-7 {
+    font-family: var(--display-typeface);
+    line-height: 1;
+    margin-inline: auto;
+    font-size: calc(var(--step-6) * 1.4);
+    font-optical-sizing: auto;
+    font-weight: 300;
+    letter-spacing: var(--letter-spacing-h);
+  }
+
+
+  .title-6 {
+    font-family: var(--display-typeface);
+    font-size: var(--step-6);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: var(--letter-spacing-h);
+  }
+
+  .title-5 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-4);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-4 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-3);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-3 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-2);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-2 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-1);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-1 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-0 {
+    font-family: var(--text-typeface);
+    font-size: var(--step--1);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-1-lines {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    text-align: center;
+    margin-block-end: var(--space-l);
+
+    &:before,
+    &:after {
+
+      background-color: var(--color-black);
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 6%;
+    }
+
+    &:before {
+      right: 1em;
+    }
+
+    &:after {
+      left: 1em;
+    }
+
+    & * {
+      color: inherit;
+    }
+  }
+
+  .bold {
+    font-weight: 500;
+  }
+
+
+
+  ::selection {
+    color: color-mix(in oklch, var(--color-white) 100%, black);
+    background: color-mix(in oklch, var(--color-white) 0%, black);
+  }
+}
+
+/* ––––––––––––––––––––––––––––––––– buttons ––––––––––––––––––––––––––––––––– */
+
+button {
+  /* all: unset; */
+  /* outline: revert; */
+  background-color: transparent;
+  padding: 4px 16px;
+  /* TODO: values */
+  border: 0.1rem solid var(--color-black);
+  border-radius: var(--border-radius);
+  color: inherit;
+  transition: var(--transition-initial);
+
+  &:hover {
+    transition: var(--transition-hover);
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+/* ––––––––––––––––––––––––––––––––– light dark ––––––––––––––––––––––––––––––––– */
+
+/* @media (prefers-color-scheme: dark) {
+  :root {
+    --color-black: oklch(97% 0 0);
+    --color-white: oklch(38% 0 0);
+  }
+} */
+
+/* ––––––––––––––––––––––––––––––––– wrappers ––––––––––––––––––––––––––––––––– */
+
+.site-wrapper {
+  max-width: min(100% - var(--space-xl), var(--site-wrapper-size));
+  margin-inline: auto;
+}
+
+.second-wrapper {
+  max-width: min(100% - var(--space-xl), var(--site-wrapper-size) - 3 * var(--space-2xl));
+  margin-inline: auto;
+}
+
+.text-wrapper {
+  max-width: var(--text-wrapper-size);
+  margin-inline: auto;
+}
+
+.text-wrapper-80percent {
+  box-sizing: content-box;
+  max-width: var(--text-wrapper-size);
+  max-inline-size: 80%;
+  margin-inline: auto;
+}
+
+/* ––––––––––––––––––––––––––––––––– stacks ––––––––––––––––––––––––––––––––– */
+
+
+.stack-2xl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &>* {
+    margin-block: 0;
+  }
+
+  &>*+* {
+    margin-block: calc(var(--space-xl, 3rem));
+  }
+}
+
+.stack-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &>* {
+    margin-block: 0;
+  }
+
+  &>*+* {
+    margin-block-start: var(--space-l, 2rem);
+  }
+}
+
+.stack-m {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &>* {
+    margin-block: 0;
+  }
+
+  &>*+* {
+    margin-block-start: var(--space-m, 1.5rem);
+  }
+}
+
+.stack-xs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &>* {
+    margin-block: 0;
+  }
+
+  &>*+* {
+    margin-block-start: var(--space-xs, 0.5rem);
+  }
+}
+
+.stack-s-re {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack * {
+  margin-block: 0;
+}
+
+.stack *+* {
+  margin-block-start: var(--space-s, 0.5rem);
+}
+
+.stack-xxs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &>* {
+    margin-block: 0;
+  }
+
+  &>*+* {
+    margin-block-start: calc(var(--space-xs, 0.3rem) / 1);
+  }
+}
+
+
+/* ––––––––––––––––––––––––––––––––– sections ––––––––––––––––––––––––––––––––– */
+
+section {
+  position: relative;
+  width: 100%;
+}

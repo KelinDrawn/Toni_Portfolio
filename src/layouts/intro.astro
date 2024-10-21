@@ -1,0 +1,81 @@
+---
+import WhatsappButton from "../components/whatsapp-button.astro";
+import Picture from "astro/components/Picture.astro";
+import Toni from "/src/images/toni.jpg";
+import TextOnACircle from "../components/text-on-a-circle.astro";
+import Availability from "../components/availability.astro";
+import HandwritingAndArrow from "../components/handwriting-and-arrow.astro";
+import ContactLinks from "../components/contact-links.astro";
+---
+
+<section class="site-wrapper stack-m">
+  <Availability />
+
+  <h2 class="title-5">Hello, I'm Toni</h2>
+  <h3 class="title-2">
+    As a UX Design Engineer with over 7 years of experience, I consistently
+    drive revenue growth, optimize costs, and enhance user experiences for both
+    customers and employees.
+  </h3>
+  <div class="title-picture-group">
+    <h1 class="title-7">
+      Crafting, Coding,<br /> and Validating<br /> User-Centric Digital<br /> Experiences
+    </h1>
+    <Picture class="toni" src={Toni} alt="Toni Schläppi" />
+    <TextOnACircle />
+  </div>
+
+  <HandwritingAndArrow><h2 class="handwritten">work</h2></HandwritingAndArrow>
+  <nav>
+    <WhatsappButton />
+    <ContactLinks />
+  </nav>
+</section>
+
+<style>
+  section {
+    text-align: center;
+
+    padding: var(--space-l);
+    background: linear-gradient(
+      150deg,
+      rgba(252, 252, 252, 0.7) 0%,
+      rgba(255, 255, 255, 0.7) 70%
+    );
+
+    border-width: 1px 1px 0px 1px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.15);
+    border-radius: clamp(1vw, 12vw, 17vw) clamp(1vw, 12vw, 17vw) 0rem 0rem;
+    z-index: 0;
+  }
+
+  nav {
+    max-width: fit-content;
+    margin-inline: auto;
+  }
+
+  .title-picture-group h1 {
+    position: relative;
+    /* keep picture on top of title */
+  }
+
+  .title-picture-group .toni {
+    margin-top: -1.5rem;
+    border-radius: 100%;
+    max-width: 12rem;
+    /* filter: grayscale(); */
+    /* creates a new stacking context omg  */
+  }
+
+  section h3 {
+    max-width: 60ch;
+    margin-inline: auto;
+  }
+
+  @media (max-width: 45rem) {
+    .title-picture-group h1 {
+      font-size: var(--step-6);
+    }
+  }
+</style>

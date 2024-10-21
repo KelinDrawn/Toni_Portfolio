@@ -1,0 +1,94 @@
+<div class="contact-links-group" id="contact-me">
+  <p>
+    <a class="copy-to-clipboard" href="#">Send me an email</a>
+  </p>
+  <p>
+    My profile on
+    <a href="https://www.linkedin.com/in/toni-schläppi" target="_blank"
+      >LinkedIn</a
+    >
+  </p>
+</div>
+
+<style>
+  .contact-links-group {
+    margin-block-start: var(--space-xs);
+    scroll-margin-top: 15 rem;
+  }
+</style>
+
+<script>
+  // Store the email as a global constant
+  const EMAIL_ADDRESS = "toni.schlaeppi@icloud.com";
+
+  // Function to copy email to clipboard
+  async function copyEmailToClipboard(event) {
+    // Prevent the default behavior
+    event.preventDefault();
+
+    try {
+      // Try to use the Clipboard API
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        await navigator.clipboard.writeText(EMAIL_ADDRESS);
+        showFeedback("Email copied!");
+      } else {
+        // Fallback for browsers that don't support the Clipboard API
+        const textArea = document.createElement("textarea");
+        textArea.value = EMAIL_ADDRESS;
+        textArea.style.position = "fixed"; // Avoid scrolling to bottom
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+
+        try {
+          const successful = document.execCommand("copy");
+          const msg = successful ? "Email copied!" : "Unable to copy email";
+          showFeedback(msg);
+        } catch (err) {
+          showFeedback("Unable to copy email");
+        }
+
+        document.body.removeChild(textArea);
+      }
+    } catch (err) {
+      console.error("Failed to copy email: ", err);
+      showFeedback("Failed to copy email");
+    }
+  }
+
+  // Function to show feedback to the user
+  function showFeedback(message) {
+    const feedbackElement = document.createElement("div");
+    feedbackElement.textContent = message;
+    feedbackElement.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  `;
+    document.body.appendChild(feedbackElement);
+
+    // Fade in
+    setTimeout(() => (feedbackElement.style.opacity = "1"), 10);
+
+    // Fade out and remove
+    setTimeout(() => {
+      feedbackElement.style.opacity = "0";
+      setTimeout(() => document.body.removeChild(feedbackElement), 300);
+    }, 2000);
+  }
+
+  // Add event listener to the link
+  document.addEventListener("DOMContentLoaded", () => {
+    const copyLink = document.querySelector(".copy-to-clipboard");
+    if (copyLink) {
+      copyLink.addEventListener("click", copyEmailToClipboard);
+    }
+  });
+</script>
