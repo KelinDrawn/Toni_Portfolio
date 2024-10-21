@@ -5,7 +5,7 @@ import Ring from "/src/images/fragments/ring.svg";
 
 <aside>
   <span class="text-ring">
-    <Picture src={Ring} alt=""/>
+    <Picture src={Ring} alt="" />
   </span>
 </aside>
 
@@ -17,24 +17,20 @@ import Ring from "/src/images/fragments/ring.svg";
   }
 
   @media (max-width: 67rem) {
-  .text-ring {
+    .text-ring {
       display: none;
     }
   }
 
   .text-ring {
-  	animation: spin 80s infinite linear;  
+    animation: spin 80s infinite linear;
   }
   @keyframes spin {
     to {
       rotate: -360deg;
     }
   }
-}
 
-
-
-/* Text on a Circle: 
+  /* Text on a Circle: 
 https://dev.to/jh3y/circular-text-with-css-57jf */
-
 </style>
