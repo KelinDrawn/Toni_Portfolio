@@ -44,6 +44,12 @@ html {
   text-size-adjust: none;
 }
 
+/* Allow tranformation for auto keyword */
+html {
+  interpolate-size: allow-keywords;
+}
+
+
 /*
     Improve media defaults
   */
