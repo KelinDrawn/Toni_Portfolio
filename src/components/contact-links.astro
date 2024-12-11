@@ -15,6 +15,16 @@
     margin-block-start: var(--space-xs);
     scroll-margin: 50vh;
   }
+
+  :target {
+    animation: target 200ms;
+  }
+
+  @keyframes target {
+    to {
+      outline: 1px solid red;
+    }
+  }
 </style>
 
 <script>
