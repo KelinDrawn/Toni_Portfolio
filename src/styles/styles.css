@@ -1,57 +1,58 @@
 @font-face {
-  font-family: 'LaLuxesSerif';
+  font-family: "LaLuxesSerif";
   font-display: swap;
-  src: url('/public/fonts/LaLuxes/LaLuxesSerif.eot');
+  src: url("/public/fonts/LaLuxes/LaLuxesSerif.eot");
   /* IE9 Compat Modes */
-  src: url('/public/fonts/LaLuxes/LaLuxesSerif.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */
-    url('/public/fonts/LaLuxes/LaLuxesSerif.woff') format('woff'),
-    /* Pretty Modern Browsers */
-    url('/public/fonts/LaLuxes/LaLuxesSerif.ttf') format('truetype'),
+  src:
+    url("/public/fonts/LaLuxes/LaLuxesSerif.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/public/fonts/LaLuxes/LaLuxesSerif.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/public/fonts/LaLuxes/LaLuxesSerif.ttf")
+      format("truetype"),
     /* Safari, Android, iOS */
-    url('/public/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName') format('svg');
+      url("/public/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'LaLuxesScript';
+  font-family: "LaLuxesScript";
   font-display: swap;
-  src: url('/public/fonts/LaLuxes/LaLuxesScript.eot');
+  src: url("/public/fonts/LaLuxes/LaLuxesScript.eot");
   /* IE9 Compat Modes */
-  src: url('/public/fonts/LaLuxes/LaLuxesScript.eot?#iefix') format('embedded-opentype'),
-    /* IE6-IE8 */
-    url('/public/fonts/LaLuxes/LaLuxesScript.woff') format('woff'),
-    /* Pretty Modern Browsers */
-    url('/public/fonts/LaLuxes/LaLuxesScript.ttf') format('truetype'),
+  src:
+    url("/public/fonts/LaLuxes/LaLuxesScript.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("/public/fonts/LaLuxes/LaLuxesScript.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/public/fonts/LaLuxes/LaLuxesScript.ttf")
+      format("truetype"),
     /* Safari, Android, iOS */
-    url('/public/fonts/LaLuxes/LaLuxesScript.svg#svgFontName') format('svg');
+      url("/public/fonts/LaLuxes/LaLuxesScript.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 
 @font-face {
-  font-family: 'Parafina-RegularS';
+  font-family: "Parafina-RegularS";
   font-display: swap;
-  src: url('/public/fonts/Parafina/Parafina-RegularS.woff2');
+  src: url("/public/fonts/Parafina/Parafina-RegularS.woff2");
 }
 
 @font-face {
-  font-family: 'Parafina-RegularM';
+  font-family: "Parafina-RegularM";
   font-display: swap;
-  src: url('/public/fonts/Parafina/Parafina-RegularM.woff2');
+  src: url("/public/fonts/Parafina/Parafina-RegularM.woff2");
 }
 
 @font-face {
-  font-family: 'Parafina-RegularL';
+  font-family: "Parafina-RegularL";
   font-display: swap;
-  src: url('/public/fonts/Parafina/Parafina-RegularL.woff2');
+  src: url("/public/fonts/Parafina/Parafina-RegularL.woff2");
 }
 
 @font-face {
-  font-family: 'QueensThin';
+  font-family: "QueensThin";
   font-display: swap;
-  src: url('/public/fonts/Queens/Queens_W-Thin.woff2');
+  src: url("/public/fonts/Queens/Queens_W-Thin.woff2");
 }
-
 
 :root {
   /* ––––––––––––––––––––––––––––––––– font sizes ––––––––––––––––––––––––––––––––– */
@@ -86,20 +87,56 @@
   --color-white: oklch(100% 0 0);
   --color-black: oklch(8% 0 0);
 
+  --color-grey: color-mix(in oklch, transparent, var(--color-black) 55%);
+
   --color-brand-sva: oklch(94.7% 0.058 158.15);
   --color-brand-snv: oklch(54.7% 0.058 58.15);
 
-
-  --color-brand-sva-a10: color-mix(in srgb, var(--color-brand-sva), transparent 90%);
-  --color-brand-sva-a20: color-mix(in srgb, var(--color-brand-sva), transparent 80%);
-  --color-brand-sva-a30: color-mix(in srgb, var(--color-brand-sva), transparent 70%);
-  --color-brand-sva-a40: color-mix(in srgb, var(--color-brand-sva), transparent 60%);
-  --color-brand-sva-a50: color-mix(in srgb, var(--color-brand-sva), transparent 50%);
-  --color-brand-sva-a60: color-mix(in srgb, var(--color-brand-sva), transparent 40%);
-  --color-brand-sva-a70: color-mix(in srgb, var(--color-brand-sva), transparent 30%);
-  --color-brand-sva-a80: color-mix(in srgb, var(--color-brand-sva), transparent 20%);
-  --color-brand-sva-a90: color-mix(in srgb, var(--color-brand-sva), transparent 10%);
-
+  --color-brand-sva-a10: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 90%
+  );
+  --color-brand-sva-a20: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 80%
+  );
+  --color-brand-sva-a30: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 70%
+  );
+  --color-brand-sva-a40: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 60%
+  );
+  --color-brand-sva-a50: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 50%
+  );
+  --color-brand-sva-a60: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 40%
+  );
+  --color-brand-sva-a70: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 30%
+  );
+  --color-brand-sva-a80: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 20%
+  );
+  --color-brand-sva-a90: color-mix(
+    in srgb,
+    var(--color-brand-sva),
+    transparent 10%
+  );
 
   --contrast: color-mix(in lab, currentColor 15%, var(--color-black));
 
@@ -119,12 +156,15 @@
   /* ––––––––––––––––––––––––––––––––– shadows ––––––––––––––––––––––––––––––––– */
 
   --shadow-color: 286deg 36% 60%;
-  --shadow-elevation-low: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
+  --shadow-elevation-low:
+    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
     1.6px 1.7px 3.2px -0.7px hsl(var(--shadow-color) / 0.45);
-  --shadow-elevation-medium: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
+  --shadow-elevation-medium:
+    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
     2.5px 2.8px 5.2px -0.4px hsl(var(--shadow-color) / 0.32),
     7.8px 8.6px 16.1px -0.7px hsl(var(--shadow-color) / 0.51);
-  --shadow-elevation-high: 0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.14),
+  --shadow-elevation-high:
+    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.14),
     5.2px 5.8px 10.8px -0.2px hsl(var(--shadow-color) / 0.27),
     10.6px 11.7px 21.9px -0.4px hsl(var(--shadow-color) / 0.4),
     19.7px 21.8px 40.8px -0.6px hsl(var(--shadow-color) / 0.53),
@@ -137,14 +177,14 @@
 
   /* ––––––––––––––––––––––––––––––––– root defaults ––––––––––––––––––––––––––––––––– */
 
-  transition: background-color 300ms linear,
+  transition:
+    background-color 300ms linear,
     color 300ms linear;
 
   background: var(--color-white);
   color: var(--color-black);
   /* padding: 1rem; */
-  font-family: var(--text-typeface),
-    sans-serif;
+  font-family: var(--text-typeface), sans-serif;
   font-size: var(--step-0);
   line-height: 1.7;
 
@@ -165,20 +205,15 @@
 
   /* ––––––––––––––––––––––––––––––––– typography ––––––––––––––––––––––––––––––––– */
 
-  --text-typeface: "Parafina-RegularS",
-  sans-serif;
-  --display-typeface: "QueensThin",
-  serif;
-  --decoration-typeface: LaLuxesSerif,
-  serif;
-  --decoration-typeface-handwritten: LaLuxesScript,
-  serif;
+  --text-typeface: "Parafina-RegularS", sans-serif;
+  --display-typeface: "QueensThin", serif;
+  --decoration-typeface: LaLuxesSerif, serif;
+  --decoration-typeface-handwritten: LaLuxesScript, serif;
 
   /* ––––––––– letter spacing ––––––––– */
 
   --letter-spacing-p: 0.05rem;
   --letter-spacing-h: 0.03rem;
-
 
   :where(p) {
     font-family: var(--text-typeface);
@@ -186,10 +221,8 @@
     font-style: normal;
     font-weight: 410;
     line-height: 1.8;
-    letter-spacing: var(--letter-spacing-p)
+    letter-spacing: var(--letter-spacing-p);
   }
-
-
 
   .deco-title-diagonal {
     font-family: var(--decoration-typeface);
@@ -219,7 +252,6 @@
     font-weight: 300;
     letter-spacing: var(--letter-spacing-h);
   }
-
 
   .title-6 {
     font-family: var(--display-typeface);
@@ -288,7 +320,6 @@
 
     &:before,
     &:after {
-
       background-color: var(--color-black);
       content: "";
       display: inline-block;
@@ -314,8 +345,6 @@
   .bold {
     font-weight: 500;
   }
-
-
 
   ::selection {
     color: color-mix(in oklch, var(--color-white) 100%, black);
@@ -360,7 +389,10 @@ button {
 }
 
 .second-wrapper {
-  max-width: min(100% - var(--space-xl), var(--site-wrapper-size) - 3 * var(--space-2xl));
+  max-width: min(
+    100% - var(--space-xl),
+    var(--site-wrapper-size) - 3 * var(--space-2xl)
+  );
   margin-inline: auto;
 }
 
@@ -378,17 +410,16 @@ button {
 
 /* ––––––––––––––––––––––––––––––––– stacks ––––––––––––––––––––––––––––––––– */
 
-
 .stack-2xl {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 
-  &>* {
+  & > * {
     margin-block: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block: calc(var(--space-xl, 3rem));
   }
 }
@@ -398,11 +429,11 @@ button {
   flex-direction: column;
   justify-content: flex-start;
 
-  &>* {
+  & > * {
     margin-block: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: var(--space-l, 2rem);
   }
 }
@@ -412,11 +443,11 @@ button {
   flex-direction: column;
   justify-content: flex-start;
 
-  &>* {
+  & > * {
     margin-block: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: var(--space-m, 1.5rem);
   }
 }
@@ -426,11 +457,11 @@ button {
   flex-direction: column;
   justify-content: flex-start;
 
-  &>* {
+  & > * {
     margin-block: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: var(--space-xs, 0.5rem);
   }
 }
@@ -445,7 +476,7 @@ button {
   margin-block: 0;
 }
 
-.stack *+* {
+.stack * + * {
   margin-block-start: var(--space-s, 0.5rem);
 }
 
@@ -454,15 +485,14 @@ button {
   flex-direction: column;
   justify-content: flex-start;
 
-  &>* {
+  & > * {
     margin-block: 0;
   }
 
-  &>*+* {
+  & > * + * {
     margin-block-start: calc(var(--space-xs, 0.3rem) / 1);
   }
 }
-
 
 /* ––––––––––––––––––––––––––––––––– sections ––––––––––––––––––––––––––––––––– */
 

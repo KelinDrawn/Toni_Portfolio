@@ -14,6 +14,9 @@ import Image from "astro/components/Image.astro";
 import CaseStudiesImageSVA from "/src/images/casestudies/sva_mockup.png";
 import CaseStudiesImageSNV from "/src/images/casestudies/snv_mockup.png";
 import CaseStudiesImageSGA from "/src/images/casestudies/sga_mockup.png";
+import CaseStudiesImageSGGP from "/src/images/casestudies/sggp_mockup.png";
+import CaseStudiesImageJoker from "/src/images/casestudies/joker_mockup.png";
+import CaseStudiesImageGarax from "/src/images/casestudies/garax_mockup.png";
 
 const pageTitle = "Toni Schläppi – Design Engineer";
 ---
@@ -22,27 +25,46 @@ const pageTitle = "Toni Schläppi – Design Engineer";
   <Navigation />
 
   <Intro />
+
   <Casestudies>
     <Image
       slot="CSImage"
-      src={CaseStudiesImageSVA}
-      alt="sample of the final UI design for Swiss Association of Medical Practice Professionals (SVA)"
+      src={CaseStudiesImageSGGP}
+      alt="sample of the final UI design for Association Website of the Swiss Society for Health Policy"
     />
     <slot slot="CaseStudiesTitle">
-      Association website for students and healthcare professionals
+    Association Website for Swiss Health Policy
     </slot>
     <slot slot="CaseStudiesOutcomeContent">
-      Increasing website signups by medical students for professional training
-      by 25%, reducing inquiries for the client by 40%.
+    The association can publicize its services and activities, attract new members, and publish and sell the publication series.
     </slot>
     <slot slot="CaseStudiesMyRoleContent">
-      Research, visual design, style guide, prototyping, usability testing,
-      benchmarking
+    Visual design, style guide, prototyping
     </slot>
     <slot slot="CaseStudiesClientContent">
-      Swiss Association of Medical Practice Professionals – SVA
+    Swiss Society for Health Policy (SGGP)
     </slot>
   </Casestudies>
+
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageJoker}
+      alt="sample of the final UI design for the Website of Joker Personal AG"
+    />
+    <slot slot="CaseStudiesTitle">
+    Website for Personnel Service Provider
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+    A contemporary website with comprehensive support for job seekers, such as industry information and a medical emergency pool.    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+    Visual design, style guide, prototyping, usability tests
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+    Joker Personal AG
+    </slot>
+  </Casestudies>
+
   <Casestudies>
     <Image
       slot="CSImage"
@@ -65,6 +87,29 @@ const pageTitle = "Toni Schläppi – Design Engineer";
       Swiss Notaries Association (SNV)
     </slot>
   </Casestudies>
+
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageSVA}
+      alt="sample of the final UI design for Swiss Association of Medical Practice Professionals (SVA)"
+    />
+    <slot slot="CaseStudiesTitle">
+      Association website for students and healthcare professionals
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      Increasing website signups by medical students for professional training
+      by 25%, reducing inquiries for the client by 40%.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Research, visual design, style guide, prototyping, usability testing,
+      benchmarking
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Association of Medical Practice Professionals – SVA
+    </slot>
+  </Casestudies>
+
   <Casestudies>
     <Image
       slot="CSImage"
@@ -84,6 +129,25 @@ const pageTitle = "Toni Schläppi – Design Engineer";
     </slot>
     <slot slot="CaseStudiesClientContent"> swissgoldplan SA </slot>
   </Casestudies>
+
+  <Casestudies>
+    <Image
+      slot="CSImage"
+      src={CaseStudiesImageGarax}
+      alt="sample of the final UI design for Garax"
+    />
+    <slot slot="CaseStudiesTitle">
+    Customer Relationship Management System for Car Dealerships
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+    A CRM system with which car dealership employees can manage customer data and appointments as well as send and track invoices.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+    Service Safari, UI design and a clickable prototype
+    </slot>
+    <slot slot="CaseStudiesClientContent"> Garax AG </slot>
+  </Casestudies>
+
   <Infobox />
   <List />
   <Masonry />
