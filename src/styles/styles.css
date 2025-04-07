@@ -1,57 +1,55 @@
 @font-face {
   font-family: "LaLuxesSerif";
   font-display: swap;
-  src: url("/public/fonts/LaLuxes/LaLuxesSerif.eot");
+  src: url("/fonts/LaLuxes/LaLuxesSerif.eot");
   /* IE9 Compat Modes */
   src:
-    url("/public/fonts/LaLuxes/LaLuxesSerif.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/public/fonts/LaLuxes/LaLuxesSerif.woff") format("woff"),
-    /* Pretty Modern Browsers */ url("/public/fonts/LaLuxes/LaLuxesSerif.ttf")
+    url("/fonts/LaLuxes/LaLuxesSerif.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/LaLuxes/LaLuxesSerif.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/fonts/LaLuxes/LaLuxesSerif.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/public/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName") format("svg");
+      url("/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 
 @font-face {
   font-family: "LaLuxesScript";
   font-display: swap;
-  src: url("/public/fonts/LaLuxes/LaLuxesScript.eot");
+  src: url("/fonts/LaLuxes/LaLuxesScript.eot");
   /* IE9 Compat Modes */
   src:
-    url("/public/fonts/LaLuxes/LaLuxesScript.eot?#iefix")
-      format("embedded-opentype"),
-    /* IE6-IE8 */ url("/public/fonts/LaLuxes/LaLuxesScript.woff") format("woff"),
-    /* Pretty Modern Browsers */ url("/public/fonts/LaLuxes/LaLuxesScript.ttf")
+    url("/fonts/LaLuxes/LaLuxesScript.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/LaLuxes/LaLuxesScript.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/fonts/LaLuxes/LaLuxesScript.ttf")
       format("truetype"),
     /* Safari, Android, iOS */
-      url("/public/fonts/LaLuxes/LaLuxesScript.svg#svgFontName") format("svg");
+      url("/fonts/LaLuxes/LaLuxesScript.svg#svgFontName") format("svg");
   /* Legacy iOS */
 }
 
 @font-face {
   font-family: "Parafina-RegularS";
   font-display: swap;
-  src: url("/public/fonts/Parafina/Parafina-RegularS.woff2");
+  src: url("/fonts/Parafina/Parafina-RegularS.woff2");
 }
 
 @font-face {
   font-family: "Parafina-RegularM";
   font-display: swap;
-  src: url("/public/fonts/Parafina/Parafina-RegularM.woff2");
+  src: url("/fonts/Parafina/Parafina-RegularM.woff2");
 }
 
 @font-face {
   font-family: "Parafina-RegularL";
   font-display: swap;
-  src: url("/public/fonts/Parafina/Parafina-RegularL.woff2");
+  src: url("/fonts/Parafina/Parafina-RegularL.woff2");
 }
 
 @font-face {
   font-family: "QueensThin";
   font-display: swap;
-  src: url("/public/fonts/Queens/Queens_W-Thin.woff2");
+  src: url("/fonts/Queens/Queens_W-Thin.woff2");
 }
 
 :root {
@@ -88,6 +86,7 @@
   --color-black: oklch(8% 0 0);
 
   --color-grey: color-mix(in oklch, transparent, var(--color-black) 55%);
+  --color-grey-40: color-mix(in oklch, transparent, var(--color-black) 40%);
 
   --color-brand-sva: oklch(94.7% 0.058 158.15);
   --color-brand-snv: oklch(54.7% 0.058 58.15);
@@ -250,7 +249,7 @@
     font-size: calc(var(--step-6) * 1.4);
     font-optical-sizing: auto;
     font-weight: 300;
-    letter-spacing: var(--letter-spacing-h);
+    /* letter-spacing: var(--letter-spacing-h); */
   }
 
   .title-6 {

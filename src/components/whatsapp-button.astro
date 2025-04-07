@@ -6,7 +6,7 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
 
 <div class="button-with-blob">
   <DecorationBlobXs />
-  <div>
+  <div class="whatsapp-link">
     <a
       aria-label="Chat with Toni on WhatsApp"
       href="https://wa.me/41789452424"
@@ -23,4 +23,31 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
   div {
     position: relative;
   }
+
+  .whatsapp-link {
+    position: relative;
+    isolation: isolate;
+  }
+
+  .whatsapp-link::after {
+    background-color: #25D366;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: transform 250ms;
+    border-radius: 0.3em;
+  }
+
+  .whatsapp-link:hover::after {
+    transform: scale(1.1);
+  }
+
+  .whatsapp-link a {
+      --outline-offset: 1.1em;
+  }
+
 </style>

@@ -1,36 +1,137 @@
----
-import Picture from "astro/components/Picture.astro";
-import Ring from "/src/images/fragments/ring.svg";
----
+<section class="spinning-ring">
+  <h6 class="ring"></h6>
+</section>
 
-<aside>
-  <span class="text-ring">
-    <Picture src={Ring} alt="" />
-  </span>
-</aside>
+<style is:global>
+.sr-only  {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border-width: 0;
+}
 
-<style>
-  .text-ring {
-    position: absolute;
-    right: 20%;
-    bottom: 30%;
+/*
+ * To get the radius or the hypoteneuse.
+ * If you know the inner angle and the length of the side
+ * The end / Math.sin(innerAngle) should provide the radius
+*/
+
+.spinning-ring {
+	min-height: 250px;
+	height: calc(2 * var(--buffer));
+	aspect-ratio: 1;
+	display: grid;
+	place-items: center;
+	position: absolute;
+	left: 25%;
+    bottom: 25%;
+    user-select: none;
+    pointer-events: none;
+}
+
+@media (max-width: 67rem) {
+  .spinning-ring {
+    display: none;
   }
+}
 
-  @media (max-width: 67rem) {
-    .text-ring {
-      display: none;
-    }
-  }
 
-  .text-ring {
-    animation: spin 80s infinite linear;
+.ring {
+	--inner-angle: calc((360 / var(--char-count)) * 1deg);
+	--character-width: 1ch;
+	font-family: monospace;
+	text-transform: uppercase;
+	font-weight: 100;
+	color: var(--color-grey-40);
+	font-size: calc(var(--font-size, 1) * 1rem);
+	position: relative;
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ring {
+  	animation: spin 80s infinite linear;
   }
   @keyframes spin {
     to {
       rotate: -360deg;
     }
   }
+}
 
-  /* Text on a Circle: 
-https://dev.to/jh3y/circular-text-with-css-57jf */
+.char {
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	line-height: 1;
+	transform:
+		translate(-50%, -50%)
+		rotate(calc(var(--inner-angle) * var(--char-index)))
+		translateY(var(--radius));
+}
 </style>
+
+<script>
+
+
+// Configuration options
+const options = {
+  spacing: 1.2,
+  size: 0.8,
+  text: "Prototyping | Engineering | UX Design | "
+};
+
+const heading = document.querySelector("h6.ring");
+const canTrig = CSS.supports("(top: calc(sin(1) * 1px))");
+
+const createCircularText = () => {
+  // Make the ring text
+  const text = options.text;
+  // Split text into characters
+  const chars = text.split("");
+  heading.innerHTML = "";
+  heading.style.setProperty("--char-count", chars.length);
+
+  // Create spans for each character
+  for (let c = 0; c < chars.length; c++) {
+    heading.innerHTML += `<span aria-hidden="true" class="char" style="--char-index: ${c};">${chars[c]}</span>`;
+  }
+  heading.innerHTML += `<span class="sr-only">${options.text}</span>`;
+
+  // Set the styles
+  heading.style.setProperty("--font-size", options.size);
+  heading.style.setProperty("--character-width", options.spacing);
+
+  // Set the radius based on browser support for CSS trig functions
+  heading.style.setProperty(
+    "--radius",
+    canTrig
+      ? "calc((var(--character-width) / sin(var(--inner-angle))) * -1ch)"
+      : `calc((${options.spacing} / ${Math.sin(
+          360 / chars.length / (180 / Math.PI)
+        )}) * -1ch)`
+  );
+
+  // Set buffer for container
+  if (chars.length > 3) {
+    document.documentElement.style.setProperty(
+      "--buffer",
+      canTrig
+        ? `calc((${options.spacing} / sin(${360 / chars.length}deg)) * ${
+            options.size
+          }rem)`
+        : `calc((${options.spacing} / ${Math.sin(
+            360 / chars.length / (180 / Math.PI)
+          )}) * ${options.size}rem)`
+    );
+  }
+};
+
+// Initialize the circular text
+createCircularText();
+
+</script>
