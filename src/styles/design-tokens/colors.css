@@ -1,0 +1,12 @@
+:root {
+  /* ––––––––––––––––––––––––––––––––– colors ––––––––––––––––––––––––––––––––– */
+
+  --color-white: oklch(100% 0 0);
+  --color-black: oklch(8% 0 0);
+
+  --color-grey: color-mix(in oklch, transparent, var(--color-black) 55%);
+  --color-grey-30: color-mix(in oklch, transparent, var(--color-black) 30%);
+
+  --color-brand-sva: oklch(94.7% 0.058 158.15);
+  --color-brand-snv: oklch(54.7% 0.058 58.15);
+}

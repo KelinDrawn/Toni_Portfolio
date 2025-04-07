@@ -1,0 +1,36 @@
+---
+import Picture from "astro/components/Picture.astro";
+import Ring from "/src/images/fragments/ring.svg";
+---
+
+<aside>
+  <span class="text-ring">
+    <Picture src={Ring} alt="" />
+  </span>
+</aside>
+
+<style>
+  .text-ring {
+    position: absolute;
+    right: 20%;
+    bottom: 30%;
+  }
+
+  @media (max-width: 67rem) {
+    .text-ring {
+      display: none;
+    }
+  }
+
+  .text-ring {
+    animation: spin 80s infinite linear;
+  }
+  @keyframes spin {
+    to {
+      rotate: -360deg;
+    }
+  }
+
+  /* Text on a Circle: 
+https://dev.to/jh3y/circular-text-with-css-57jf */
+</style>
