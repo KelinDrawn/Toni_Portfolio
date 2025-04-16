@@ -1,0 +1,265 @@
+@import "design-tokens/colors.css";
+@import "design-tokens/text-leading.css";
+@import "design-tokens/text-sizes.css";
+@import "design-tokens/text-weights.css";
+@import "design-tokens/viewports.css";
+@import "design-tokens/shadows.css";
+@import "design-tokens/spacing.css";
+
+:root {
+  /* ––––––––––––––––––––––––––––––––– corner radius ––––––––––––––––––––––––––––––––– */
+
+  --border-radius: 0.5rem;
+  --border-radius-big: 3rem;
+
+  /* ––––––––––––––––––––––––––––––––– borders ––––––––––––––––––––––––––––––––– */
+
+  --border-thickness: 0.05rem;
+
+  /* ––––––––––––––––––––––––––––––––– rotation ––––––––––––––––––––––––––––––––– */
+
+  --rotation: -2.75deg;
+
+  /* ––––––––––––––––––––––––––––––––– transitions ––––––––––––––––––––––––––––––––– */
+
+  --transition-initial: 140ms;
+  --transition-hover: 250ms;
+
+  /* ––––––––––––––––––––––––––––––––– root defaults ––––––––––––––––––––––––––––––––– */
+
+  transition:
+    background-color 300ms linear,
+    color 300ms linear;
+
+  background: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--text-typeface), sans-serif;
+  font-size: var(--step-0);
+  line-height: 1.7;
+
+  & a {
+    color: currentColor;
+    text-decoration-thickness: 0.15ex;
+    text-underline-offset: 0.5ex;
+    text-decoration-skip-ink: none;
+  }
+
+  & ul {
+    list-style-type: "";
+    margin: 0;
+    padding: 0;
+  }
+
+  scroll-behavior: smooth;
+
+  /* ––––––––––––––––––––––––––––––––– typography ––––––––––––––––––––––––––––––––– */
+
+  --text-typeface: "Parafina-RegularS", sans-serif;
+  --display-typeface: "QueensThin", serif;
+  --decoration-typeface: LaLuxesSerif, serif;
+  --decoration-typeface-handwritten: LaLuxesScript, serif;
+}
+
+/* ––––––––––––––––––––––––––––––––– buttons ––––––––––––––––––––––––––––––––– */
+
+button {
+  /* all: unset; */
+  /* outline: revert; */
+  background-color: transparent;
+  padding: 4px 16px;
+  /* TODO: values */
+  border: 0.1rem solid var(--color-black);
+  border-radius: var(--border-radius);
+  color: inherit;
+  transition: var(--transition-initial);
+
+  &:hover {
+    transition: var(--transition-hover);
+    background-color: var(--color-black);
+    color: var(--color-white);
+  }
+}
+
+/* ––––––––––––––––––––––––––––––––– light dark ––––––––––––––––––––––––––––––––– */
+
+/* :root {
+  color-scheme: light dark;
+  --color-black: light-dark(black, oklch(1 0 0));
+  --color-white: light-dark(white, oklch(0.24 0.023 51.53));
+} */
+
+/* ––––––––––––––––––––––––––––––––– wrappers ––––––––––––––––––––––––––––––––– */
+
+.site-wrapper {
+  max-width: min(100% - var(--space-xl), var(--site-wrapper-size));
+  margin-inline: auto;
+}
+
+.second-wrapper {
+  max-width: min(
+    100% - var(--space-xl),
+    var(--site-wrapper-size) - 3 * var(--space-2xl)
+  );
+  margin-inline: auto;
+}
+
+.text-wrapper {
+  max-width: var(--text-wrapper-size);
+  margin-inline: auto;
+}
+
+.text-wrapper-80percent {
+  box-sizing: content-box;
+  max-width: var(--text-wrapper-size);
+  max-inline-size: 80%;
+  margin-inline: auto;
+}
+
+/* ––––––––––––––––––––––––––––––––– stacks ––––––––––––––––––––––––––––––––– */
+
+.stack-2xl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block: calc(var(--space-xl, 3rem));
+  }
+}
+
+.stack-l {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block-start: var(--space-l, 2rem);
+  }
+}
+
+.stack-m {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block-start: var(--space-m, 1.5rem);
+  }
+}
+
+.stack-xs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block-start: var(--space-xs, 0.5rem);
+  }
+}
+
+.stack-s-re {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.stack * {
+  margin-block: 0;
+}
+
+.stack * + * {
+  margin-block-start: var(--space-s, 0.5rem);
+}
+
+.stack-xxs {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block-start: calc(var(--space-xs, 0.3rem) / 1);
+  }
+}
+
+/* ––––––––––––––––––––––––––––––––– sections ––––––––––––––––––––––––––––––––– */
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+/* ––––––––––––––––––––––––––––––––– @font-face ––––––––––––––––––––––––––––––––– */
+
+@font-face {
+  font-family: "LaLuxesSerif";
+  font-display: swap;
+  src: url("/fonts/LaLuxes/LaLuxesSerif.eot");
+  /* IE9 Compat Modes */
+  src:
+    url("/fonts/LaLuxes/LaLuxesSerif.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/LaLuxes/LaLuxesSerif.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/fonts/LaLuxes/LaLuxesSerif.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/LaLuxes/LaLuxesSerif.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "LaLuxesScript";
+  font-display: swap;
+  src: url("/fonts/LaLuxes/LaLuxesScript.eot");
+  /* IE9 Compat Modes */
+  src:
+    url("/fonts/LaLuxes/LaLuxesScript.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("/fonts/LaLuxes/LaLuxesScript.woff") format("woff"),
+    /* Pretty Modern Browsers */ url("/fonts/LaLuxes/LaLuxesScript.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("/fonts/LaLuxes/LaLuxesScript.svg#svgFontName") format("svg");
+  /* Legacy iOS */
+}
+
+@font-face {
+  font-family: "Parafina-RegularS";
+  font-display: swap;
+  src: url("/fonts/Parafina/Parafina-RegularS.woff2");
+}
+
+@font-face {
+  font-family: "Parafina-RegularM";
+  font-display: swap;
+  src: url("/fonts/Parafina/Parafina-RegularM.woff2");
+}
+
+@font-face {
+  font-family: "Parafina-RegularL";
+  font-display: swap;
+  src: url("/fonts/Parafina/Parafina-RegularL.woff2");
+}
+
+@font-face {
+  font-family: "QueensThin";
+  font-display: swap;
+  src: url("/fonts/Queens/Queens_W-Thin.woff2");
+}
