@@ -1,6 +1,4 @@
-root: {
-  /* ––––––––––––––––––––––––––––––––– spaces ––––––––––––––––––––––––––––––––– */
-
+:root {
   --space-xs: clamp(0.6875rem, 0.5353rem + 0.7609vi, 1.125rem);
   --space-s: clamp(0.875rem, 0.6576rem + 1.087vi, 1.5rem);
   --space-m: clamp(1.3125rem, 0.9864rem + 1.6304vi, 2.25rem);

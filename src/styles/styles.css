@@ -172,7 +172,7 @@
   /* ––––––––––––––––––––––––––––––––– transitions ––––––––––––––––––––––––––––––––– */
 
   --transition-initial: 140ms;
-  --transition-hover: 350ms;
+  --transition-hover: 250ms;
 
   /* ––––––––––––––––––––––––––––––––– root defaults ––––––––––––––––––––––––––––––––– */
 
@@ -373,11 +373,10 @@ button {
 
 /* ––––––––––––––––––––––––––––––––– light dark ––––––––––––––––––––––––––––––––– */
 
-/* @media (prefers-color-scheme: dark) {
-  :root {
-    --color-black: oklch(97% 0 0);
-    --color-white: oklch(38% 0 0);
-  }
+/* :root {
+  color-scheme: light dark;
+  --color-black: light-dark(black, oklch(1 0 0));
+  --color-white: light-dark(white, oklch(0.24 0.023 51.53));
 } */
 
 /* ––––––––––––––––––––––––––––––––– wrappers ––––––––––––––––––––––––––––––––– */

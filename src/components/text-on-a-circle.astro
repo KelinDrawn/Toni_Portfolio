@@ -2,8 +2,8 @@
   <h6 class="ring"></h6>
 </section>
 
-<style is:global>
-.sr-only  {
+<style>
+:global(.sr-only)  {
 	position: absolute;
 	width: 1px;
 	height: 1px;
@@ -62,7 +62,7 @@
   }
 }
 
-.char {
+:global(.char) {
 	display: inline-block;
 	position: absolute;
 	top: 50%;

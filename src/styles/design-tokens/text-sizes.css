@@ -1,0 +1,158 @@
+:root {
+  /* ––––––––––––––––––––––––––––––––– font sizes ––––––––––––––––––––––––––––––––– */
+
+  /* @link https://utopia.fyi/type/calculator?c=320,15,1.2,1280,17,1.2,6,1,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+  --step--1: clamp(0.7813rem, 0.7465rem + 0.1736vi, 0.8854rem);
+  --step-0: clamp(0.9375rem, 0.8958rem + 0.2083vi, 1.0625rem);
+  --step-1: clamp(1.125rem, 1.075rem + 0.25vi, 1.275rem);
+  --step-2: clamp(1.35rem, 1.29rem + 0.3vi, 1.53rem);
+  --step-3: clamp(1.62rem, 1.548rem + 0.36vi, 1.836rem);
+  --step-4: clamp(1.944rem, 1.8576rem + 0.432vi, 2.2032rem);
+  --step-5: clamp(2.3328rem, 2.2291rem + 0.5184vi, 2.6438rem);
+  --step-6: clamp(2.7994rem, 2.6749rem + 0.6221vi, 3.1726rem);
+
+  --text-typeface: "Parafina-RegularS", sans-serif;
+  --display-typeface: "QueensThin", serif;
+  --decoration-typeface: LaLuxesSerif, serif;
+  --decoration-typeface-handwritten: LaLuxesScript, serif;
+
+  --letter-spacing-p: 0.05rem;
+  --letter-spacing-h: 0.03rem;
+
+  :where(p) {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-style: normal;
+    font-weight: 410;
+    line-height: 1.8;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .deco-title-diagonal {
+    font-family: var(--decoration-typeface);
+    font-size: var(--step-6);
+    font-weight: 300;
+    line-height: 1.15;
+    text-align: center;
+    rotate: var(--rotation);
+  }
+
+  .deco-title-diagonal-bold {
+    font-family: var(--decoration-typeface);
+    font-size: var(--step-6);
+    font-weight: 400;
+    line-height: 1.15;
+    text-align: center;
+    rotate: var(--rotation);
+    margin-inline: auto;
+  }
+
+  .title-7 {
+    font-family: var(--display-typeface);
+    line-height: 1;
+    margin-inline: auto;
+    font-size: calc(var(--step-6) * 1.4);
+    font-optical-sizing: auto;
+    font-weight: 300;
+    /* letter-spacing: var(--letter-spacing-h); */
+  }
+
+  .title-6 {
+    font-family: var(--display-typeface);
+    font-size: var(--step-6);
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: var(--letter-spacing-h);
+  }
+
+  .title-5 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-4);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-4 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-3);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-3 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-2);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-2 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-1);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-1 {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-0 {
+    font-family: var(--text-typeface);
+    font-size: var(--step--1);
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: var(--letter-spacing-p);
+  }
+
+  .title-1-lines {
+    font-family: var(--text-typeface);
+    font-size: var(--step-0);
+    font-weight: 400;
+    line-height: 1.5;
+    overflow: hidden;
+    text-align: center;
+    margin-block-end: var(--space-l);
+
+    &:before,
+    &:after {
+      background-color: var(--color-black);
+      content: "";
+      display: inline-block;
+      height: 1px;
+      position: relative;
+      vertical-align: middle;
+      width: 6%;
+    }
+
+    &:before {
+      right: 1em;
+    }
+
+    &:after {
+      left: 1em;
+    }
+
+    & * {
+      color: inherit;
+    }
+  }
+
+  .bold {
+    font-weight: 500;
+  }
+
+  ::selection {
+    color: color-mix(in oklch, var(--color-white) 100%, black);
+    background: color-mix(in oklch, var(--color-white) 0%, black);
+  }
+}

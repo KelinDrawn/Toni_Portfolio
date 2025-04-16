@@ -14,9 +14,7 @@ import Stars from "../components/stars.astro";
   <Stars />
   <h2 class="title-5">Hello, I'm Toni</h2>
   <h3 class="title-2">
-    As a UX Design Engineer with over 8 years of experience, I consistently
-    drive revenue growth, optimize costs, and enhance user experiences for both
-    customers and employees.
+      UX Designer with 8+ years of expertise creating, developing, and optimizing websites and web applications.
   </h3>
   <div class="title-picture-group">
     <h1 class="title-7">
@@ -26,7 +24,7 @@ import Stars from "../components/stars.astro";
     <TextOnACircle />
   </div>
 
-  <HandwritingAndArrow><h2 class="handwritten">Work</h2></HandwritingAndArrow>
+  <HandwritingAndArrow><h2 class="handwritten">Projects</h2></HandwritingAndArrow>
   <nav>
     <WhatsappButton />
     <ContactLinks />
@@ -65,6 +63,9 @@ import Stars from "../components/stars.astro";
     margin-top: -1.5rem;
     border-radius: 100%;
     max-width: 12rem;
+    user-select: none;
+    pointer-events: none;
+
     /* filter: grayscale(); */
     /* creates a new stacking context omg  */
   }
@@ -73,6 +74,15 @@ import Stars from "../components/stars.astro";
     max-width: 60ch;
     margin-inline: auto;
   }
+
+
+  /* idea to make a nav element bolder on hover when a same width typeface is not available. paint-order needed so fill is on top
+  h1:hover  {
+            paint-order: stroke fill;
+            -webkit-text-stroke: 5px oklch(0.95 0.0579 158.15);
+
+      }
+*/
 
   @media (max-width: 45rem) {
     .title-picture-group h1 {

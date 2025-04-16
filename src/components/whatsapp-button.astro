@@ -27,6 +27,7 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
   .whatsapp-link {
     position: relative;
     isolation: isolate;
+    transition: var(--transition-initial);
   }
 
   .whatsapp-link::after {
@@ -38,8 +39,8 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
     right: 0;
     bottom: 0;
     z-index: -1;
-    transition: transform 250ms;
-    border-radius: 0.3em;
+    transition: var(--transition-hover);
+    border-radius: 0.5em;
   }
 
   .whatsapp-link:hover::after {

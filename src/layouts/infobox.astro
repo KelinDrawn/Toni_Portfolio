@@ -11,8 +11,8 @@ import UIDesign from "/src/images/icons/UI Design icon.svg";
 ---
 
 <section class="second-wrapper stack-m">
-  <h2 class="title-1-lines">areas where I excel</h2>
-  <h3 class="title-6">How I can assist you</h3>
+  <h2 class="title-1-lines">User Experience Design</h2>
+  <h3 class="title-6">Core Expertise & Services</h3>
 
   <div class="card-grid">
     <section class="card-grid-cell stack-xs">
@@ -97,8 +97,11 @@ import UIDesign from "/src/images/icons/UI Design icon.svg";
       text-align: center;
       background-color: var(--color-white);
 
-      padding: var(--space-s);
-      border-radius: 2rem;
+      padding: var(--space-m);
+      /* calculate the border radius:
+     Reference: https://www.30secondsofcode.org/css/s/nested-border-radius/
+     */
+      border-radius: calc(var(--border-radius) + var(--space-s));
       transition: var(--transition-initial);
 
       &:hover {

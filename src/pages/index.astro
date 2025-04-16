@@ -13,12 +13,12 @@ import Footer from "../layouts/footer.astro";
 import Image from "astro/components/Image.astro";
 import CaseStudiesImageSVA from "/src/images/casestudies/sva_mockup.png";
 import CaseStudiesImageSNV from "/src/images/casestudies/snv_mockup.png";
-import CaseStudiesImageSGA from "/src/images/casestudies/sga_mockup.png";
+import CaseStudiesImageSGA from "/src/images/casestudies/sgp_mockup.png";
 import CaseStudiesImageSGGP from "/src/images/casestudies/sggp_mockup.png";
 import CaseStudiesImageJoker from "/src/images/casestudies/joker_mockup.png";
 import CaseStudiesImageGarax from "/src/images/casestudies/garax_mockup.png";
 
-const pageTitle = "Toni Schläppi – Design Engineer";
+const pageTitle = "Toni Schläppi – UX Designer";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -149,8 +149,9 @@ const pageTitle = "Toni Schläppi – Design Engineer";
   </Casestudies>
 
   <Infobox />
+
   <List />
-  <Masonry />
+
   <BigCta />
 
   <Footer />
@@ -162,5 +163,6 @@ const pageTitle = "Toni Schläppi – Design Engineer";
     object-position: top right;
     width: 100%;
     max-width: 40rem;
+    /* cursor: url(../images/cursor.svg), auto; */
   }
 </style>
