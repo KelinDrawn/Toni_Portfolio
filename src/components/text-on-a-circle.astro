@@ -21,6 +21,7 @@
  * The end / Math.sin(innerAngle) should provide the radius
 */
 
+
 .spinning-ring {
 	min-height: 250px;
 	height: calc(2 * var(--buffer));
@@ -28,10 +29,11 @@
 	display: grid;
 	place-items: center;
 	position: absolute;
-	left: 25%;
-    bottom: 25%;
+	right: 20%;
+    bottom: 20%;
     user-select: none;
     pointer-events: none;
+    max-width: fit-content;
 }
 
 @media (max-width: 67rem) {
