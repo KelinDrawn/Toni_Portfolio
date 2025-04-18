@@ -9,16 +9,18 @@ const { pageTitle } = Astro.props;
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Toni Schläppi" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content="Portfolio and project case studies of a UX/UI designer from Switzerland who offers user research, wireframing, prototyping and usability testing.">
-    <link rel="canonical" href="https://www.toni-ux.dev" />
+    <meta name="description" content="Portfolio of a UX designer from Switzerland who specializes in user research, wireframing, prototyping, usability testing and front-end engineering.">
+    <link rel="canonical" href="https://toni-ux.dev" />
     <script
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="62615e5d-f9fa-41db-932e-6ecb7a9ac802"></script>
     <title>{pageTitle}</title>
   </head>
-  <body class="stack-2xl">
+  <body>
     <slot />
+
   </body>
 </html>

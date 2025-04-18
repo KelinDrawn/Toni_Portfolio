@@ -12,9 +12,9 @@ import Stars from "../components/stars.astro";
 <section class="site-wrapper stack-m">
   <Availability />
   <Stars />
-  <h2 class="title-5">Hello, I'm Toni</h2>
+  <h2 class="title-5">Hello, I am Toni</h2>
   <h3 class="title-2">
-      UX Designer with 8+ years of expertise creating, developing, and optimizing websites and web applications.
+      I am a UX designer with more than 8 years of experience in designing and developing websites and web applications.
   </h3>
   <div class="title-picture-group">
     <h1 class="title-7">
@@ -25,7 +25,8 @@ import Stars from "../components/stars.astro";
   </div>
 
   <HandwritingAndArrow><h2 class="handwritten">Projects</h2></HandwritingAndArrow>
-  <nav>
+  <nav aria-labelledby="contact-links-heading">
+    <h2 id="contact-links-heading" class="sr-only">Personal contact links</h2>
     <WhatsappButton />
     <ContactLinks />
   </nav>
