@@ -1,4 +1,4 @@
-root: {
+:root {
   --shadow-color: 286deg 36% 60%;
   --shadow-elevation-low:
     0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
