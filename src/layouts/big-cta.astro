@@ -1,0 +1,90 @@
+<section class="site-wrapper stack-2xl">
+  <div>
+    <!-- <h2 class="deco-title-diagonal">
+      Visual Design, Prototyping,<br /> Usability Tests, Research,<br /> Interviews,
+      HTML&CSS,
+    </h2> -->
+    <!-- <div class="decoration-blob-1"></div>
+    <div class="decoration-blob-2"></div> -->
+  </div>
+  <div class="subtitles-group stack-m">
+    <h3 class="title-6">Let’s Create Something Amazing Together!</h3>
+    <!-- <h4 class="title-4">I’m here to help and happy to chat.</h4> -->
+    <h4 class="title-1">
+      <a href="#contact-me">Let's Discuss Your Project &#128172;</a>
+    </h4>
+  </div>
+</section>
+
+<style>
+  .subtitles-group {
+    width: fit-content;
+    max-width: 35rem;
+    margin-inline: auto;
+  }
+
+  section {
+    background: linear-gradient(
+      180deg,
+      light-dark(
+          color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+          color-mix(in oklch, var(--color-rednight) 100%, var(--color-black))
+        )
+        0%,
+      light-dark(
+          color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
+          color-mix(in oklch, var(--color-reddusk) 100%, var(--color-white))
+        )
+        70%
+    );
+
+    padding: var(--space-l);
+    background: --box-gradient;
+
+    border: var(--border-transparent);
+    border-width: 0rem 0.01rem 0.01rem 0.01rem;
+    border-radius: 0rem 0rem clamp(1vw, 12vw, 17vw) clamp(1vw, 12vw, 17vw);
+  }
+
+  .button {
+    width: fit-content;
+  }
+
+  /* .decoration-blob-1 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 50%;
+    left: 50%;
+    top: 10%;
+    transform: translate(-50%, -50%);
+
+    background: radial-gradient(
+      50.77% 43.96% at 50% 46.31%,
+      #cefadf 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    opacity: 0.5;
+  }
+
+  .decoration-blob-2 {
+    position: absolute;
+    z-index: -1;
+    width: 50%;
+    height: 40%;
+    left: 30%;
+    top: 0;
+
+    background: radial-gradient(
+      50.77% 43.96% at 50% 46.31%,
+      #f4face 0%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(1.5deg);
+    opacity: 0.5;
+  } */
+
+  .subtitles-group h3 {
+    font-size: var(--step-5);
+  }
+</style>

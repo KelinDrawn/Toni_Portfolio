@@ -1,0 +1,51 @@
+---
+import "/src/styles/reset.css";
+import "/src/styles/global_styles.css";
+const { pageTitle } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Toni Schläppi" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="Portfolio of a UX designer from Switzerland who specializes in user research, wireframing, prototyping, usability testing and front-end engineering."
+    />
+    <link rel="canonical" href="https://toni-ux.dev" />
+
+    <script>
+      (function () {
+        const THEME_KEY = "theme";
+        const html = document.documentElement;
+        const theme = localStorage.getItem(THEME_KEY) || "system";
+
+        function applyTheme(theme) {
+          html.setAttribute("data-theme", theme);
+          if (theme === "light") {
+            html.style.setProperty("color-scheme", "light");
+          } else if (theme === "dark") {
+            html.style.setProperty("color-scheme", "dark");
+          } else {
+            html.style.setProperty("color-scheme", "light dark");
+          }
+        }
+
+        applyTheme(theme);
+      })();
+    </script>
+
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="62615e5d-f9fa-41db-932e-6ecb7a9ac802"></script>
+    <title>{pageTitle}</title>
+  </head>
+</html>
+<body>
+  <slot />
+</body>

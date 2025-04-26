@@ -1,0 +1,43 @@
+---
+import Agrola from "/src/images/works/agrola.png";
+import BauernZeitung from "/src/images/works/bauernzeitung.png";
+import { Picture } from "astro:assets";
+---
+
+<section class="second-wrapper stack-l">
+  <h2 class="title-6">Complementary Project Showcase
+  <h3 class="title-3">
+    Feel free to get in touch if you'd like to see more of my work. I'd love to
+    show you my full portfolio!
+  </h3>
+  <div class="flexbox-grid">
+    <div class="item">
+      <Picture src={Agrola} alt="sample of the final UI design for Agrola" />
+    </div>
+    <div class="item">
+      <Picture
+        src={BauernZeitung}
+        alt="sample of the final UI design for Bauernzeitung"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .flexbox-grid {
+    --min: 30ch;
+    --gap: 1rem;
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+  }
+
+  .flexbox-grid > * {
+    flex: 1 1 var(--min);
+  }
+
+  /* h3 {
+    color: color-mix(in oklch, var(--color-black), transparent 40%);
+  } */
+</style>
