@@ -1,12 +1,17 @@
 :root {
-  --color-white: oklch(100% 0 0);
-  --color-black: oklch(8% 0 0);
+  --color-white: light-dark(oklch(100% 0 0), var(--color-rednight));
+  --color-black: light-dark(oklch(8% 0 0), oklch(90% 0 0));
 
+  --color-faintgrey: color-mix(in oklch, transparent, var(--color-black) 20%);
+  --color-lightgrey: color-mix(in oklch, transparent, var(--color-black) 40%);
   --color-grey: color-mix(in oklch, transparent, var(--color-black) 55%);
-  --color-grey-40: color-mix(in oklch, transparent, var(--color-black) 40%);
+  --color-darkgrey: color-mix(in oklch, transparent, var(--color-black) 80%);
 
   --color-brand-sva: oklch(94.7% 0.058 158.15);
   --color-brand-snv: oklch(54.7% 0.058 58.15);
 
-  --contrast: color-mix(in lab, currentColor 15%, var(--color-black));
+  --contrast: color-mix(in oklab, currentColor 15%, var(--color-black));
+
+  --color-reddusk: oklch(23.9% 0.027 44.3);
+  --color-rednight: oklch(20% 0.019 50);
 }

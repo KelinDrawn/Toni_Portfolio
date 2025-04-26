@@ -3,20 +3,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 import Navigation from "../layouts/navigation.astro";
 import Intro from "../layouts/intro.astro";
-import Casestudies from "../layouts/casestudies.astro";
+import CaseStudiesContainer from "../layouts/caseStudiesContainer.astro";
 import Infobox from "../layouts/infobox.astro";
 import List from "../layouts/list.astro";
 import Masonry from "../layouts/masonry.astro";
 import BigCta from "../layouts/big-cta.astro";
 import Footer from "../layouts/footer.astro";
-
-import Image from "astro/components/Image.astro";
-import CaseStudiesImageSVA from "/src/images/casestudies/sva_mockup.png";
-import CaseStudiesImageSNV from "/src/images/casestudies/snv_mockup.png";
-import CaseStudiesImageSGA from "/src/images/casestudies/sgp_mockup.png";
-import CaseStudiesImageSGGP from "/src/images/casestudies/sggp_mockup.png";
-import CaseStudiesImageJoker from "/src/images/casestudies/joker_mockup.png";
-import CaseStudiesImageGarax from "/src/images/casestudies/garax_mockup.png";
 
 const pageTitle = "Toni Schläppi – UX Designer";
 ---
@@ -25,150 +17,16 @@ const pageTitle = "Toni Schläppi – UX Designer";
   <Navigation />
 
   <main class="stack-2xl">
+    <Intro />
 
-  <Intro />
+    <CaseStudiesContainer />
 
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageSGGP}
-      alt="sample of the final UI design for Association Website of the Swiss Society for Health Policy"
-    />
-    <slot slot="CaseStudiesTitle">
-    Association Website for Swiss Health Policy
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-    The association can publicize its services and activities, attract new members, and publish and sell the publication series.
-    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-    Visual design, style guide, prototyping
-    </slot>
-    <slot slot="CaseStudiesClientContent">
-    Swiss Society for Health Policy (SGGP)
-    </slot>
-  </Casestudies>
+    <Infobox />
 
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageJoker}
-      alt="sample of the final UI design for the Website of Joker Personal AG"
-    />
-    <slot slot="CaseStudiesTitle">
-    Website for Personnel Service Provider
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-    A contemporary website with comprehensive support for job seekers, such as industry information and a medical emergency pool.    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-    Visual design, style guide, prototyping, usability tests
-    </slot>
-    <slot slot="CaseStudiesClientContent">
-    Joker Personal AG
-    </slot>
-  </Casestudies>
+    <List />
 
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageSNV}
-      alt="sample of the final UI design for Swiss Notaries Association (SNV)"
-    />
-    <slot slot="CaseStudiesTitle">
-      Association website for notaries and lawyers
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-      Notaries can record their activities centrally so that their services can
-      be found and the public can be made aware of the association’s services.
-      Several new memberships after the relaunch and fewer support requests for
-      customers.
-    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-      Research, visual design, style guide, prototyping, benchmarking
-    </slot>
-    <slot slot="CaseStudiesClientContent">
-      Swiss Notaries Association (SNV)
-    </slot>
-  </Casestudies>
-
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageSVA}
-      alt="sample of the final UI design for Swiss Association of Medical Practice Professionals (SVA)"
-    />
-    <slot slot="CaseStudiesTitle">
-      Association website for students and healthcare professionals
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-      Increasing website signups by medical students for professional training
-      by 25%, reducing inquiries for the client by 40%.
-    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-      Research, visual design, style guide, prototyping, usability testing,
-      benchmarking
-    </slot>
-    <slot slot="CaseStudiesClientContent">
-      Swiss Association of Medical Practice Professionals – SVA
-    </slot>
-  </Casestudies>
-
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageSGA}
-      alt="sample of the final UI design for Swiss Gold Plan"
-    />
-    <slot slot="CaseStudiesTitle">
-      Private online customer portal for investing in physical gold
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-      Enables private individuals to purchase shares in physical gold online. 25
-      new registrations in the first month. Significant reduction in manual
-      order acceptance.
-    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-      Visual design, style guide, prototyping, usability testing
-    </slot>
-    <slot slot="CaseStudiesClientContent"> swissgoldplan SA </slot>
-  </Casestudies>
-
-  <Casestudies>
-    <Image
-      slot="CSImage"
-      src={CaseStudiesImageGarax}
-      alt="sample of the final UI design for Garax"
-    />
-    <slot slot="CaseStudiesTitle">
-    Customer Relationship Management System for Car Dealerships
-    </slot>
-    <slot slot="CaseStudiesOutcomeContent">
-    A CRM system with which car dealership employees can manage customer data and appointments as well as send and track invoices.
-    </slot>
-    <slot slot="CaseStudiesMyRoleContent">
-    Service Safari, UI design and a clickable prototype
-    </slot>
-    <slot slot="CaseStudiesClientContent"> Garax AG </slot>
-  </Casestudies>
-
-  <Infobox />
-
-  <List />
-
-  <BigCta />
-
+    <BigCta />
   </main>
 
   <Footer />
-
 </BaseLayout>
-
-
-<style>
-  [slot="CSImage"] {
-    object-fit: contain;
-    object-position: top right;
-    width: 100%;
-    max-width: 40rem;
-    /* cursor: url(../images/cursor.svg), auto; */
-  }
-</style>

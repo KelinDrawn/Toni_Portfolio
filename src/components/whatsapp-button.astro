@@ -1,7 +1,32 @@
 ---
-import Picture from "astro/components/Picture.astro";
-import DecorationBlobXs from "./decoration-blob-xs.astro";
-import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLarge.svg";
+import DecorationBlobXs from "../components/Decoration-blob-xs.astro";
+import { getImage } from "astro:assets";
+
+const caseStudyImages = {
+  WA: {
+    light: import("/src/images/whatsapp/WhatsAppButtonGreenLarge.svg"),
+    dark: import("/src/images/whatsapp/WhatsAppButtonWhiteLarge.svg"),
+    alt: "sample of the final UI design for Association Website of the Swiss Society for Health Policy",
+  },
+};
+
+const processedImages = {};
+
+for (const [key, images] of Object.entries(caseStudyImages)) {
+  processedImages[key] = {
+    light: await getImage({
+      src: images.light,
+      format: "webp",
+      width: 1448,
+    }),
+    dark: await getImage({
+      src: images.dark,
+      format: "webp",
+      width: 1448,
+    }),
+    alt: images.alt,
+  };
+}
 ---
 
 <div class="button-with-blob">
@@ -10,11 +35,16 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
     <a
       aria-label="Chat with Toni on WhatsApp"
       href="https://wa.me/41789452424"
-      target="_blank">
-      <Picture
-        src={WhatsAppButtonGreenLarge}
-        alt="Chat with Toni on WhatsApp"
-      />
+      target="_blank"
+    >
+      <picture class="whatsapp-button">
+        <source
+          srcset={processedImages.WA.dark.src}
+          media="(prefers-color-scheme: dark)"
+          data-media-dark
+        />
+        <img src={processedImages.WA.light.src} alt={processedImages.WA.alt} />
+      </picture>
     </a>
   </div>
 </div>
@@ -31,7 +61,7 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
   }
 
   .whatsapp-link::after {
-    background-color: #25D366;
+    background-color: light-dark(#25d366, #ffffff);
     content: "";
     position: absolute;
     top: 0;
@@ -48,7 +78,10 @@ import WhatsAppButtonGreenLarge from "/src/images/whatsapp/WhatsAppButtonGreenLa
   }
 
   .whatsapp-link a {
-      --outline-offset: 1.1em;
+    --outline-offset: 1.1em;
   }
 
+  .whatsapp-button img {
+    filter: var(--theme-filter);
+  }
 </style>

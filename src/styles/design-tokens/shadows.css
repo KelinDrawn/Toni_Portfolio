@@ -13,4 +13,18 @@ root: {
     10.6px 11.7px 21.9px -0.4px hsl(var(--shadow-color) / 0.4),
     19.7px 21.8px 40.8px -0.6px hsl(var(--shadow-color) / 0.53),
     36.1px 39.8px 74.6px -0.7px hsl(var(--shadow-color) / 0.66);
+
+  --box-gradient: linear-gradient(
+    150deg,
+    light-dark(
+        color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
+        color-mix(in oklch, var(--color-rednight) 60%, var(--color-white))
+      )
+      0%,
+    light-dark(
+        color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+        color-mix(in oklch, var(--color-rednight) 47%, var(--color-white))
+      )
+      70%
+  );
 }
