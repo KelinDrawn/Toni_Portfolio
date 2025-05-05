@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="126" height="125" fill="none" viewBox="0 0 126 125">
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M46.599 109.498v-78.4h29.1c14.9 0 26.9-12.1 26.9-27v-2.7H2.399v116h102.899c0-10.1-8.1-18.2-18.2-18.2h-40.4"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M74.598 93.4c-8.8 0-16-7.2-16-16v-6.9h31.9v6.9c0 8.8-7.1 16-15.9 16Z"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M90.5 70.398h10.401v.4c0 6.1-5 11.1-11.1 11.1m-1.601-53.8v18.6H62v-15.6m26.3 8.3h10.6m19.798 5.001-19.8-1.9v-6.3l19.8-1.9c3-.3 5.5 2.1 5.5 5 0 3-2.5 5.4-5.5 5.1ZM34.6 21.6C34.6 27.3 30 32 24.3 32 18.6 32 14 27.4 14 21.6c0-5.7 4.6-10.4 10.3-10.4 5.7 0 10.3 4.7 10.3 10.4ZM24.3 11.3v10.3M1.2 123.898h46.5m6.3 0h6.9m8.4 0h34.001M9.2 87.297v30.2m78.898-7.899h15.4m.6-73.598v6.7M37 56h9.6M37 68.2h9.6M37 80.5h9.6"/>
+  <circle cx="31.5" cy="56" r="1" fill="#000"/>
+  <circle cx="31.5" cy="68.199" r="1" fill="#000"/>
+  <circle cx="31.5" cy="80.5" r="1" fill="#000"/>
+  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" stroke-width="2" d="M9.2 70.398v10.1m48.5 18.5v-5.6h33.8v5.6m-13.8-52.4v7.8c0 1.4-1.2 2.6-2.6 2.6-1.4 0-2.6-1.2-2.6-2.6v-7.8"/>
+</svg>

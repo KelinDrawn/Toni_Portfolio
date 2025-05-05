@@ -13,9 +13,9 @@ import Stars from "../components/stars.astro";
   <Availability />
   <Stars />
   <h2 class="title-5">Hello, I am Toni</h2>
-  <h3 class="title-2">
-    I am a UX designer with more than 8 years of experience in designing and
-    developing websites and web applications.
+  <h3 class="title-1">
+    I am a UX designer with 8+ years of experience designing and developing
+    websites and web applications
   </h3>
   <div class="title-picture-group">
     <h1 class="title-7">
@@ -25,9 +25,8 @@ import Stars from "../components/stars.astro";
     <TextOnACircle />
   </div>
 
-  <HandwritingAndArrow
-    ><h2 class="handwritten">Projects</h2></HandwritingAndArrow
-  >
+  <HandwritingAndArrow />
+
   <nav class="title-contact-group" aria-labelledby="contact-links-heading">
     <h2 id="contact-links-heading" class="sr-only">Personal contact links</h2>
     <WhatsappButton />
@@ -36,35 +35,26 @@ import Stars from "../components/stars.astro";
 </section>
 
 <style>
-  .handwritten {
-    font-family: var(--decoration-typeface-handwritten);
-    font-size: calc(var(--step-6) * 2);
-    color: var(--color-black);
-    font-weight: 100;
-    line-height: 0.5;
-    max-width: min-content;
-  }
-
   section {
     text-align: center;
-    padding: var(--space-l);
+    padding: var(--space-m);
 
     background: linear-gradient(
       160deg,
       light-dark(
-          color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
-          color-mix(in oklch, var(--color-reddusk) 95%, var(--color-black))
+          color-mix(in srgb, var(--color-white) 99%, var(--color-black)),
+          color-mix(in srgb, var(--color-reddusk) 97%, var(--color-black))
         )
         0%,
       light-dark(
-          color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
-          color-mix(in oklch, var(--color-rednight) 100%, var(--color-white))
+          color-mix(in srgb, var(--color-white) 100%, var(--color-black)),
+          color-mix(in srgb, var(--color-rednight) 100%, var(--color-white))
         )
         50%
     );
 
     border: var(--border-transparent);
-    border-width: 0.01rem 0.01rem 0px 0.01rem;
+    border-bottom: 0px;
     border-radius: clamp(1vw, 12vw, 17vw) clamp(1vw, 12vw, 17vw) 0rem 0rem;
     z-index: 1;
   }
@@ -76,17 +66,29 @@ import Stars from "../components/stars.astro";
 
   .title-picture-group h1 {
     position: relative;
+    margin-bottom: 0;
     /* keep H1 title on top of picture */
   }
 
   .title-picture-group .toni {
-    margin-top: -1.5rem;
+    position: relative;
+
+    /* Remove descenders from H1 so the picture is snug with the title */
+    line-height: 1;
+    font-size: var(--step-6);
+    font-family: inherit;
+
+    --heading-line-height: 0.5;
+    --font-primary-capital-letter: 0.15;
+    margin-top: calc(
+      (var(--font-primary-capital-letter) - var(--heading-line-height)) * 0.5em
+    );
+
     border-radius: 100%;
-    max-width: 12rem;
+    max-width: 10rem;
     user-select: none;
     pointer-events: none;
     /* Filter: grayscale creates a new stacking context. This is needed to make sure the picture is once again behind the H1 during dark mode  */
-    position: relative;
     z-index: -1;
   }
 
@@ -112,9 +114,9 @@ import Stars from "../components/stars.astro";
       }
 */
 
-  @media (max-width: 45rem) {
+  @media (min-width: 80rem) {
     .title-picture-group h1 {
-      font-size: var(--step-6);
+      font-size: calc(var(--step-6) * 1.2);
     }
   }
 </style>

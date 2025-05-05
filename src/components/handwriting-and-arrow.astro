@@ -1,5 +1,6 @@
 <div class="decoration-text-arrow">
   <div>
+    <h2 class="handwritten">Projects</h2>
     <slot />
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -18,13 +19,22 @@
 </div>
 
 <style>
+  .handwritten {
+    font-family: var(--decoration-typeface-handwritten);
+    font-size: calc(var(--step-6) * 1.1);
+    color: var(--color-black);
+    font-weight: 100;
+    line-height: 0;
+    max-width: min-content;
+  }
+
   .decoration-text-arrow {
     position: absolute;
 
     /* bottom: clamp(1vb, 12vb, 17vb); */
     bottom: 0;
     /* left: clamp(1vi, 12vi, 17vi); */
-    left: 10%;
+    left: 25%;
 
     rotate: -20deg;
     text-align: right;
@@ -33,10 +43,10 @@
 
     & svg {
       position: relative;
-      right: 4em;
-      top: 1em;
+      right: 3rem;
+      top: 2rem;
       rotate: 25deg;
-      width: clamp(2rem, 20%, 6rem);
+      width: clamp(1rem, 15%, 6rem);
     }
   }
 

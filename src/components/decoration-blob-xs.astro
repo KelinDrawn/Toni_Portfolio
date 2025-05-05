@@ -3,19 +3,19 @@
 <style>
   .decoration-blob {
     position: absolute;
-    width: max(20vw, 18rem);
-    height: max(12vw, 14rem);
+    width: clamp(16rem, 13vw, 25rem);
+    height: clamp(10.6rem, 8.6vw, 16.5rem);
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
 
     background: radial-gradient(
       circle at 50% 50%,
-      light-dark(oklch(96% 0.042 159), oklch(34% 0 0)) 0%,
+      light-dark(oklch(96% 0.042 159), oklch(32% 0 0)) 0%,
       light-dark(oklch(100% 0 0 / 0), var(--color-rednight)) 100%
     );
 
-    filter: blur(20px);
+    filter: blur(16px);
     border-radius: 100%;
     z-index: -1;
   }

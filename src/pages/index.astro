@@ -10,16 +10,19 @@ import Masonry from "../layouts/masonry.astro";
 import BigCta from "../layouts/big-cta.astro";
 import Footer from "../layouts/footer.astro";
 
+import AboutToni from "../layouts/Bento.astro";
+
 const pageTitle = "Toni Schläppi – UX Designer";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <main class="stack-2xl">
+  <main class="stack-3xl">
     <Intro />
     <CaseStudiesContainer />
     <Infobox />
+    <!-- <AboutToni /> -->
     <List />
     <BigCta />
   </main>

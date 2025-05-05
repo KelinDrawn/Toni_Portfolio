@@ -14,7 +14,7 @@
 
   /* ––––––––––––––––––––––––––––––––– borders ––––––––––––––––––––––––––––––––– */
 
-  --border-transparent: 0.01rem solid
+  --border-transparent: 1px solid
     light-dark(
       color-mix(in oklch, var(--color-black), transparent 90%),
       oklch(1 0 0 / 0.3)
@@ -117,6 +117,20 @@ button {
 }
 
 /* ––––––––––––––––––––––––––––––––– stacks ––––––––––––––––––––––––––––––––– */
+
+.stack-3xl {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  & > * {
+    margin-block: 0;
+  }
+
+  & > * + * {
+    margin-block: calc(var(--space-2xl, 3rem));
+  }
+}
 
 .stack-2xl {
   display: flex;

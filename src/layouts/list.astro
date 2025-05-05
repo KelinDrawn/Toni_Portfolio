@@ -24,6 +24,10 @@
 </section>
 
 <style>
+  section {
+    padding: var(--space-l);
+  }
+
   li {
     position: relative;
   }
@@ -35,11 +39,11 @@
     right: 0;
     bottom: -1ex;
     height: 1px;
-    background-color: color-mix(in oklch, var(--color-black), transparent 70%);
+    background-color: color-mix(in oklch, var(--color-black), transparent 80%);
   }
 
   ul {
-    --min: 30ch;
+    --min: 35ch;
     --gap: 1rem;
 
     display: grid;

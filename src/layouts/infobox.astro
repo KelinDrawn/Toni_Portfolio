@@ -7,6 +7,8 @@ import FrontendEngineering from "/src/images/icons/Frontend engineering icon.svg
 import DesignSystems from "/src/images/icons/Design systems icon.svg";
 import UsabilityTesting from "/src/images/icons/Usability testing icon.svg";
 import UIDesign from "/src/images/icons/UI Design icon.svg";
+
+import CardGridCellAnimatedBorder from "../components/card-grid-cell-animated-border.astro";
 ---
 
 <section class="second-wrapper stack-m">
@@ -14,6 +16,7 @@ import UIDesign from "/src/images/icons/UI Design icon.svg";
   <h3 class="title-6">Core Expertise & Services</h3>
 
   <div class="card-grid">
+    <!-- <CardGridCellAnimatedBorder /> -->
     <section class="card-grid-cell stack-xs">
       <UXFieldStudies />
       <h4 class="title-1">UX field studies</h4>
@@ -65,7 +68,7 @@ import UIDesign from "/src/images/icons/UI Design icon.svg";
         70%
     );
 
-    padding: var(--space-xl);
+    padding: var(--space-2xl);
     border: var(--border-transparent);
     border-radius: var(--border-radius-big);
   }
@@ -92,7 +95,7 @@ import UIDesign from "/src/images/icons/UI Design icon.svg";
     }
 
     & {
-      grid-template-columns: repeat(auto-fill, minmax(min(10rem, 30%), 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(min(11.5rem, 30%), 1fr));
       grid-auto-rows: 1fr;
     }
 

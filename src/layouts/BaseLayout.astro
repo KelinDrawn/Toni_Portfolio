@@ -2,6 +2,8 @@
 import "/src/styles/reset.css";
 import "/src/styles/global_styles.css";
 const { pageTitle } = Astro.props;
+
+const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
 ---
 
 <html lang="en">
@@ -14,8 +16,46 @@ const { pageTitle } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Portfolio of a UX designer from Switzerland who specializes in user research, wireframing, prototyping, usability testing and front-end engineering."
+      content="Swiss UX Design Portfolio of Toni Schläppi who specializes in user research, wireframing, prototyping and front-end engineering."
     />
+
+    <!-- Basic Meta Tags -->
+    <meta
+      name="theme-color"
+      content="#141414"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#E6E6E6"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="UX Portfolio of Toni Schläppi" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="UX Portfolio of Toni Schläppi"
+    />
+
+    <!-- Android Meta Tag -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Format Detection -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Article Meta Tags -->
+    <meta name="article:author" content="Toni Schläppi" />
+    <meta name="article:published_time" content="2024-11-30T17:14:00+02:00" />
+    <meta name="article:modified_time" content={buildDate} />
+
+    <!-- Microsoft Application Config -->
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
     <link rel="canonical" href="https://toni-ux.dev" />
 
     <script>
