@@ -1,5 +1,10 @@
+---
+import Star from "/src/images/fragments/star.svg";
+---
+
 <section class="spinning-ring" aria-hidden="true">
   <p class="ring"></p>
+  <Star class="star" />
 </section>
 
 <style>
@@ -22,12 +27,12 @@
 */
 
   .spinning-ring {
+    position: absolute;
     min-height: 250px;
     height: calc(2 * var(--buffer));
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    position: absolute;
     right: 20%;
     bottom: 20%;
     user-select: none;
@@ -47,7 +52,7 @@
     font-family: monospace;
     text-transform: uppercase;
     font-weight: 100;
-    color: var(--color-black);
+    color: var(--color-grey);
     font-size: calc(var(--font-size, 1) * 1rem);
     position: relative;
   }
@@ -71,6 +76,19 @@
     transform: translate(-50%, -50%)
       rotate(calc(var(--inner-angle) * var(--char-index)))
       translateY(var(--radius));
+  }
+
+  .star {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(0.75rem, 2vw, 2rem);
+    aspect-ratio: 1;
+    fill: light-dark(
+      color-mix(in oklch, var(--color-white) 92%, var(--color-black)),
+      color-mix(in oklch, var(--color-black) 25%, var(--color-white))
+    );
   }
 </style>
 

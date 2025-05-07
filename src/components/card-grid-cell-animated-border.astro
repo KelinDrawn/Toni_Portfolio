@@ -1,0 +1,91 @@
+---
+import Benchmarking from "/src/images/icons/Benchmarking icon.svg";
+import UXFieldStudies from "/src/images/icons/UX Field Studies icon.svg";
+import UserResearch from "/src/images/icons/User Research icon.svg";
+import Prototyping from "/src/images/icons/Prototyping icon.svg";
+import FrontendEngineering from "/src/images/icons/Frontend engineering icon.svg";
+import DesignSystems from "/src/images/icons/Design systems icon.svg";
+import UsabilityTesting from "/src/images/icons/Usability testing icon.svg";
+import UIDesign from "/src/images/icons/UI Design icon.svg";
+---
+
+<section class="container">
+  <div class="trail"></div>
+  <div class="card-grid-cell cover stack-xs">
+    <UXFieldStudies />
+    <h4 class="title-1">UX field studies</h4>
+  </div>
+</section>
+
+<style>
+  .container {
+    /* border: var(--border-transparent); */
+    overflow: clip;
+    position: relative;
+    border-radius: calc(var(--border-radius) + var(--space-s));
+  }
+
+  .cover {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    inset: 1px;
+    border-radius: calc(var(--border-radius) + var(--space-s));
+    background: linear-gradient(
+      150deg,
+      light-dark(
+          color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+          color-mix(in oklch, var(--color-reddusk) 95%, var(--color-black))
+        )
+        0%,
+      light-dark(
+          color-mix(in oklch, var(--color-white) 97%, var(--color-black)),
+          color-mix(in oklch, var(--color-rednight) 100%, var(--color-white))
+        )
+        70%
+    );
+  }
+
+  .container:hover .trail {
+    position: absolute;
+    width: 12rem;
+    height: 12rem;
+    border-radius: calc(var(--border-radius) + var(--space-s));
+
+    background: radial-gradient(
+      100% 100% at right,
+      var(--color-faintgrey),
+      transparent 50%
+    );
+    offset-path: border-box;
+    offset-anchor: 100% 50%;
+    animation: trail 12s infinite linear;
+  }
+
+  @keyframes trail {
+    to {
+      offset-distance: 100%;
+    }
+  }
+
+  .card-grid-cell {
+    display: flex;
+    flex-direction: column;
+    /* TODO: Row on small screens? */
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: var(--space-m);
+    /* calculate the border radius:
+   Reference: https://www.30secondsofcode.org/css/s/nested-border-radius/
+   */
+    border-radius: calc(var(--border-radius) + var(--space-s));
+    transition: var(--transition-initial);
+  }
+
+  svg {
+    width: clamp(3rem, 50%, 4rem);
+    user-select: none;
+  }
+</style>
