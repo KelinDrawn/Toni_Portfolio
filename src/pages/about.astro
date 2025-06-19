@@ -1,0 +1,41 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import AboutToni from "../layouts/Bento.astro";
+
+import Navigation from "../layouts/navigation.astro";
+import Footer from "../layouts/footer.astro";
+
+const pageTitle = "About Toni Schläppi – UX Designer";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+  <main class="stack-3xl">
+    <div class="site-wrapper stack-m">
+      <h1 class="title-7">About me</h1>
+      <div class="text-wrapper stack-m">
+        <h2 class="title-2">
+          I have been designing digital user interfaces as a UX designer for
+          more than 8 years and have worked in the service, automotive, private
+          banking, and healthcare industries. In my time off, I love to explore
+          new places.
+        </h2>
+        <h3 class="title-1">
+          <a href="/#contact-me">Contact Toni</a>&nbsp; &#128172;
+        </h3>
+      </div>
+    </div>
+    <AboutToni class:list={"second-wrapper"} />
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  main {
+    margin-block-start: var(--space-xl);
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+</style>

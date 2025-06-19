@@ -1,4 +1,4 @@
-<section class="second-wrapper">
+<section>
   <slot name="CSImage" class="img-slot" />
   <div class="stack-m">
     <h2 class="title-3">
@@ -7,19 +7,19 @@
 
     <div>
       <h3 class="title-1">Result</h3>
-      <p class="title-1">
+      <p>
         <slot name="CaseStudiesOutcomeContent" />
       </p>
     </div>
     <div>
       <h3 class="title-1">My contributions</h3>
-      <p class="title-1">
+      <p>
         <slot name="CaseStudiesMyRoleContent" />
       </p>
     </div>
     <div>
       <h3 class="title-1">Customer</h3>
-      <p class="title-1">
+      <p>
         <slot name="CaseStudiesClientContent" />
       </p>
     </div>
@@ -47,7 +47,7 @@
     min-inline-size: 60%;
   }
 
-  section:nth-child(2n) {
+  section:nth-child(2n + 1) {
     flex-direction: row-reverse;
   }
 </style>

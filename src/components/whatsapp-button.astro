@@ -58,6 +58,7 @@ for (const [key, images] of Object.entries(caseStudyImages)) {
     position: relative;
     isolation: isolate;
     transition: var(--transition-initial);
+    line-height: 0;
   }
 
   .whatsapp-link::after {
@@ -79,6 +80,9 @@ for (const [key, images] of Object.entries(caseStudyImages)) {
 
   .whatsapp-link a {
     --outline-offset: 1.1em;
+    width: 100%;
+    height: 100%;
+    display: block;
   }
 
   .whatsapp-button img {

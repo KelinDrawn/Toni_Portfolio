@@ -1,18 +1,28 @@
 :root {
-  --shadow-color: 286deg 36% 60%;
+  --shadow-color: 80% 0 0;
   --shadow-elevation-low:
-    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
-    1.6px 1.7px 3.2px -0.7px hsl(var(--shadow-color) / 0.45);
+    0.4px 0.5px 0.9px
+      light-dark(oklch(var(--shadow-color) / 0.13), oklch(0% 0 0 / 0.13)),
+    1.6px 1.7px 3.2px -0.7px
+      light-dark(oklch(var(--shadow-color) / 0.45), oklch(0% 0 0 / 0.45));
   --shadow-elevation-medium:
-    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.13),
-    2.5px 2.8px 5.2px -0.4px hsl(var(--shadow-color) / 0.32),
-    7.8px 8.6px 16.1px -0.7px hsl(var(--shadow-color) / 0.51);
+    0.4px 0.5px 0.9px
+      light-dark(oklch(var(--shadow-color) / 0.13), oklch(0% 0 0 / 0.13)),
+    2.5px 2.8px 5.2px -0.4px
+      light-dark(oklch(var(--shadow-color) / 0.32), oklch(0% 0 0 / 0.32)),
+    7.8px 8.6px 16.1px -0.7px
+      light-dark(oklch(var(--shadow-color) / 0.51), oklch(0% 0 0 / 0.51));
   --shadow-elevation-high:
-    0.4px 0.5px 0.9px hsl(var(--shadow-color) / 0.14),
-    5.2px 5.8px 10.8px -0.2px hsl(var(--shadow-color) / 0.27),
-    10.6px 11.7px 21.9px -0.4px hsl(var(--shadow-color) / 0.4),
-    19.7px 21.8px 40.8px -0.6px hsl(var(--shadow-color) / 0.53),
-    36.1px 39.8px 74.6px -0.7px hsl(var(--shadow-color) / 0.66);
+    0.4px 0.5px 0.9px
+      light-dark(oklch(var(--shadow-color) / 0.14), oklch(0% 0 0 / 0.14)),
+    5.2px 5.8px 10.8px -0.2px
+      light-dark(oklch(var(--shadow-color) / 0.27), oklch(0% 0 0 / 0.27)),
+    10.6px 11.7px 21.9px -0.4px
+      light-dark(oklch(var(--shadow-color) / 0.4), oklch(0% 0 0 / 0.4)),
+    19.7px 21.8px 40.8px -0.6px
+      light-dark(oklch(var(--shadow-color) / 0.53), oklch(0% 0 0 / 0.53)),
+    36.1px 39.8px 74.6px -0.7px
+      light-dark(oklch(var(--shadow-color) / 0.66), oklch(0% 0 0 / 0.66));
 
   --box-gradient: linear-gradient(
     150deg,

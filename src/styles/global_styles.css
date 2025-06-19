@@ -2,11 +2,14 @@
 @import "design-tokens/text-leading.css";
 @import "design-tokens/text-sizes.css";
 @import "design-tokens/text-weights.css";
-@import "design-tokens/viewports.css";
+@import "design-tokens/wrappers.css";
 @import "design-tokens/shadows.css";
 @import "design-tokens/spacing.css";
 
 :root {
+  navigation: auto;
+  -webkit-tap-highlight-color: transparent;
+
   /* ––––––––––––––––––––––––––––––––– corner radius ––––––––––––––––––––––––––––––––– */
 
   --border-radius: 0.5rem;
@@ -19,6 +22,8 @@
       color-mix(in oklch, var(--color-black), transparent 90%),
       oklch(1 0 0 / 0.3)
     );
+
+  --border-black: 1px solid var(--color-black);
 
   /* ––––––––––––––––––––––––––––––––– rotation ––––––––––––––––––––––––––––––––– */
 
@@ -89,33 +94,6 @@ button {
   }
 }
 
-/* ––––––––––––––––––––––––––––––––– wrappers ––––––––––––––––––––––––––––––––– */
-
-.site-wrapper {
-  max-width: min(100% - var(--space-xl), var(--site-wrapper-size));
-  margin-inline: auto;
-}
-
-.second-wrapper {
-  max-width: min(
-    100% - var(--space-xl),
-    var(--site-wrapper-size) - 3 * var(--space-2xl)
-  );
-  margin-inline: auto;
-}
-
-.text-wrapper {
-  max-width: var(--text-wrapper-size);
-  margin-inline: auto;
-}
-
-.text-wrapper-80percent {
-  box-sizing: content-box;
-  max-width: var(--text-wrapper-size);
-  max-inline-size: 80%;
-  margin-inline: auto;
-}
-
 /* ––––––––––––––––––––––––––––––––– stacks ––––––––––––––––––––––––––––––––– */
 
 .stack-3xl {
@@ -128,7 +106,7 @@ button {
   }
 
   & > * + * {
-    margin-block: calc(var(--space-2xl, 3rem));
+    margin-block-start: var(--space-2xl, 3rem);
   }
 }
 
@@ -142,7 +120,7 @@ button {
   }
 
   & > * + * {
-    margin-block: calc(var(--space-xl, 3rem));
+    margin-block-start: var(--space-xl, 3rem);
   }
 }
 
@@ -185,34 +163,6 @@ button {
 
   & > * + * {
     margin-block-start: var(--space-xs, 0.5rem);
-  }
-}
-
-.stack-s-re {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-}
-
-.stack * {
-  margin-block: 0;
-}
-
-.stack * + * {
-  margin-block-start: var(--space-s, 0.5rem);
-}
-
-.stack-xxs {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  & > * {
-    margin-block: 0;
-  }
-
-  & > * + * {
-    margin-block-start: calc(var(--space-xs, 0.3rem) / 1);
   }
 }
 

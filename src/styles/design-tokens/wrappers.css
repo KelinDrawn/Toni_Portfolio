@@ -1,0 +1,27 @@
+:root {
+  --site-wrapper-size: 85rem;
+  --inner-wrapper-size: 70rem;
+  --text-wrapper-size: 60ch;
+}
+
+.site-wrapper {
+  max-width: min(100% - var(--space-xl), var(--site-wrapper-size));
+  margin-inline: auto;
+}
+
+.second-wrapper {
+  max-width: min(100%, var(--inner-wrapper-size));
+  margin-inline: auto;
+}
+
+.text-wrapper {
+  max-width: var(--text-wrapper-size);
+  margin-inline: auto;
+}
+
+.text-wrapper-80percent {
+  box-sizing: content-box;
+  max-width: var(--text-wrapper-size);
+  max-inline-size: 80%;
+  margin-inline: auto;
+}

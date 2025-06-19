@@ -1,4 +1,8 @@
-<section class="second-wrapper stack-l">
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={["stack-l", className]}>
   <h2 class="title-6">Previous Client Partnerships</h2>
   <div>
     <ul>

@@ -1,0 +1,109 @@
+---
+import Picture from "astro/components/Picture.astro";
+import DiplomCompleteCSS from "/src/images/about/Complete CSS Certificate Toni Schlaeppi.png";
+---
+
+<button class="title-1" popovertarget="popover-complete-css">
+  <span>Complete CSS</span>
+</button>
+
+<div id="popover-complete-css" popover>
+  <Picture class="" src={DiplomCompleteCSS} alt="Toni Schläppi" width={800} />
+</div>
+
+<style>
+  button[popovertarget="popover-complete-css"] {
+    background-color: transparent;
+    padding: 0;
+    border-radius: unset;
+    border: none;
+    text-decoration: underline 1px solid var(--color-black);
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-thickness: 1px;
+    -webkit-text-decoration-style: solid;
+    -webkit-text-decoration-color: var(--color-black);
+
+    text-underline-offset: 0.2em;
+    anchor-name: --popover-anchor-complete-css;
+    display: inline;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    & > span,
+    &::before {
+      background-color: var(--color-highlight);
+    }
+
+    &:hover {
+      color: var(--color-black);
+      cursor: pointer;
+    }
+  }
+
+  img {
+    /* Safari bug: Small white border visible */
+    vertical-align: top;
+  }
+
+  #popover-complete-css[popover] {
+    position: absolute;
+    inset: auto;
+
+    width: clamp(22rem, 50%, 40rem);
+
+    position-try-fallbacks: --cs-flip-inline;
+    position-anchor: --popover-anchor-complete-css;
+    position-area: right span-bottom;
+    /* border-radius: calc(var(--border-radius) + var(--space-s)); */
+    border: var(--border-transparent);
+    box-shadow: var(--shadow-elevation-medium);
+    background: light-dark(var(--color-white), var(--color-reddusk));
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
+  }
+
+  @position-try --cs-flip-inline {
+    inset: auto;
+    position-area: left span-bottom;
+    top: anchor(--popover-anchor-complete-css bottom);
+    right: anchor(--popover-anchor-complete-css right);
+  }
+
+  [popover] {
+    &,
+    &::backdrop {
+      transition:
+        display 0.5s,
+        overlay 0.5s,
+        opacity 0.5s,
+        transform 0.5s;
+
+      /* Exit Stage To */
+      opacity: 0;
+    }
+
+    /* On Stage */
+    &:popover-open {
+      opacity: 1;
+
+      &::backdrop {
+        opacity: 0.5;
+      }
+    }
+
+    /* Enter Stage From */
+    @starting-style {
+      &:popover-open,
+      &:popover-open::backdrop {
+        opacity: 0;
+      }
+
+      &:popover-open {
+        transform: translateY(-1rem);
+      }
+    }
+  }
+</style>

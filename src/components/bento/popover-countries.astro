@@ -1,0 +1,138 @@
+<button id="trigger" class="title-2" popovertarget="my-tooltip">
+  <span>15 different countries</span>
+</button>
+
+<div id="my-tooltip" popover anchor="trigger">
+  <div class="countries-container stack-m">
+    <h5 class="title-2">Asia</h5>
+    <ul class="cluster">
+      <li><p>Oman</p></li>
+      <li><p>Sri Lanka</p></li>
+    </ul>
+
+    <h5 class="title-2">Europe</h5>
+    <ul class="cluster">
+      <li><p>Andorra</p></li>
+      <li><p>Austria</p></li>
+      <li><p>France</p></li>
+      <li><p>Germany</p></li>
+      <li><p>Italy</p></li>
+      <li><p>Latvia</p></li>
+      <li><p>Liechtenstein</p></li>
+      <li><p>Poland</p></li>
+      <li><p>Romania</p></li>
+      <li><p>Spain</p></li>
+      <li><p>United Kingdom</p></li>
+    </ul>
+
+    <h5 class="title-2">North America</h5>
+    <ul class="cluster">
+      <li><p>Canada</p></li>
+      <li><p>USA</p></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  button {
+    background-color: transparent;
+    padding: 0;
+    border-radius: unset;
+    border: none;
+    text-decoration: underline 1px solid var(--color-black);
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-thickness: 1px;
+    -webkit-text-decoration-style: solid;
+    -webkit-text-decoration-color: var(--color-black);
+
+    text-underline-offset: 0.2em;
+    anchor-name: --my-anchor-positioning;
+    display: inline;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    & > span,
+    &::before {
+      background-color: var(--color-highlight);
+    }
+
+    &:hover {
+      color: var(--color-black);
+      cursor: pointer;
+    }
+  }
+
+  #my-tooltip[popover] {
+    position: absolute;
+    inset: auto;
+    margin: 0;
+    width: clamp(12rem, 50%, 25rem);
+    position-try-fallbacks: --countries-flip-inline;
+    position-anchor: --my-anchor-positioning;
+    /* top: anchor(--my-anchor-positioning bottom);
+    left: anchor(--my-anchor-positioning right); */
+    position-area: bottom span-right;
+    text-align: left;
+    padding: var(--space-m) var(--space-l);
+    border-radius: calc(var(--border-radius) + var(--space-s));
+    border: var(--border-transparent);
+    box-shadow: var(--shadow-elevation-medium);
+    background: light-dark(var(--color-white), var(--color-reddusk));
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
+  }
+
+  @position-try --countries-flip-inline {
+    inset: auto;
+
+    top: anchor(--my-anchor-positioning top);
+    right: anchor(--my-anchor-positioning left);
+  }
+
+  .cluster {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0 var(--space-xs, 1rem);
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  [popover] {
+    &,
+    &::backdrop {
+      transition:
+        display 0.5s,
+        overlay 0.5s,
+        opacity 0.5s,
+        transform 0.5s;
+
+      /* Exit Stage To */
+      opacity: 0;
+    }
+
+    /* On Stage */
+    &:popover-open {
+      opacity: 1;
+
+      &::backdrop {
+        opacity: 0.5;
+      }
+    }
+
+    /* Enter Stage From */
+    @starting-style {
+      &:popover-open,
+      &:popover-open::backdrop {
+        opacity: 0;
+      }
+
+      &:popover-open {
+        transform: translateY(-1rem);
+      }
+    }
+  }
+</style>

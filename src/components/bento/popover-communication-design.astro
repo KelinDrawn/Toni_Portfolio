@@ -1,0 +1,111 @@
+---
+import Picture from "astro/components/Picture.astro";
+import DiplomCD from "/src/images/about/TS Diplom dipl Gestalter HF 2017.jpg";
+---
+
+<button id="popover-cd" class="title-2" popovertarget="my-popover-cd">
+  <span>Communication Design</span>
+</button>
+
+<div id="my-popover-cd" popover anchor="popover-cd">
+  <Picture class="" src={DiplomCD} alt="Toni Schläppi" width={400} />
+</div>
+
+<style>
+  button {
+    background-color: transparent;
+    padding: 0;
+    border-radius: unset;
+    border: none;
+    text-decoration: underline 1px solid var(--color-black);
+    -webkit-text-decoration-line: underline;
+    -webkit-text-decoration-thickness: 1px;
+    -webkit-text-decoration-style: solid;
+    -webkit-text-decoration-color: var(--color-black);
+
+    text-underline-offset: 0.2em;
+    anchor-name: --popover-communication-design;
+    display: inline;
+
+    box-decoration-break: clone;
+    -webkit-box-decoration-break: clone;
+
+    & > span,
+    &::before {
+      background-color: var(--color-highlight);
+    }
+
+    &:hover {
+      color: var(--color-black);
+      cursor: pointer;
+    }
+  }
+
+  img {
+    /* Safari bug: Small white border visible */
+    vertical-align: top;
+  }
+
+  #my-popover-cd[popover] {
+    position: absolute;
+    inset: auto;
+    margin: 0;
+    padding: 0;
+
+    width: clamp(18rem, 50%, 25rem);
+
+    position-try-fallbacks: --cd-flip-inline;
+    position-anchor: --popover-communication-design;
+    position-area: right span-bottom;
+    border-radius: calc(var(--border-radius) + var(--space-s));
+    border: var(--border-transparent);
+    box-shadow: var(--shadow-elevation-medium);
+    background: light-dark(var(--color-white), var(--color-reddusk));
+
+    &:hover {
+      border-color: var(--color-grey);
+    }
+  }
+
+  @position-try --cd-flip-inline {
+    inset: auto;
+    position-area: left span-bottom;
+    top: anchor(--popover-anchor-complete-css bottom);
+    right: anchor(--popover-anchor-complete-css right);
+  }
+
+  [popover] {
+    &,
+    &::backdrop {
+      transition:
+        display 0.5s,
+        overlay 0.5s,
+        opacity 0.5s,
+        transform 0.5s;
+
+      /* Exit Stage To */
+      opacity: 0;
+    }
+
+    /* On Stage */
+    &:popover-open {
+      opacity: 1;
+
+      &::backdrop {
+        opacity: 0.5;
+      }
+    }
+
+    /* Enter Stage From */
+    @starting-style {
+      &:popover-open,
+      &:popover-open::backdrop {
+        opacity: 0;
+      }
+
+      &:popover-open {
+        transform: translateY(-1rem);
+      }
+    }
+  }
+</style>

@@ -2,6 +2,8 @@
 import Casestudies from "../layouts/caseStudiesTemplate.astro";
 import { getImage } from "astro:assets";
 
+const { class: className } = Astro.props;
+
 const caseStudyImages = {
   SGGP: {
     light: import("/src/images/casestudies/sggp_mockup.png"),
@@ -55,157 +57,163 @@ for (const [key, images] of Object.entries(caseStudyImages)) {
 }
 ---
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.SGGP.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img src={processedImages.SGGP.light.src} alt={processedImages.SGGP.alt} />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    Digital Hub for Swiss Healthcare Policy Discourse
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    The redesigned SGGP website serves as Switzerland’s healthcare policy hub,
-    showcasing the association’s services and publications. Its modern interface
-    has boosted member engagement and highlighted the organization’s thought
-    leadership.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Visual design, style guide, prototyping
-  </slot>
-  <slot slot="CaseStudiesClientContent">
-    Swiss Society for Health Policy (SGGP)
-  </slot>
-</Casestudies>
+<div class:list={[className, "stack-2xl"]}>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.SGGP.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img
+        src={processedImages.SGGP.light.src}
+        alt={processedImages.SGGP.alt}
+      />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      Digital Hub for Swiss Healthcare Policy Discourse
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      The redesigned SGGP website serves as Switzerland’s healthcare policy hub,
+      showcasing the association’s services and publications. Its modern
+      interface has boosted member engagement and highlighted the organization’s
+      thought leadership.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Visual design, style guide, prototyping
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Society for Health Policy (SGGP)
+    </slot>
+  </Casestudies>
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.SNV.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img src={processedImages.SNV.light.src} alt={processedImages.SNV.alt} />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    Centralized Professional Registry for Swiss Notarial Services
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    This digital platform centralizes notary activities, making services more
-    discoverable. The redesign attracted new members and reduced support
-    requests, streamlining association operations.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Research, visual design, style guide, prototyping, benchmarking
-  </slot>
-  <slot slot="CaseStudiesClientContent">
-    Swiss Notaries Association (SNV)
-  </slot>
-</Casestudies>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.SNV.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img src={processedImages.SNV.light.src} alt={processedImages.SNV.alt} />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      Centralized Professional Registry for Swiss Notarial Services
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      This digital platform centralizes notary activities, making services more
+      discoverable. The redesign attracted new members and reduced support
+      requests, streamlining association operations.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Research, visual design, style guide, prototyping, benchmarking
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Notaries Association (SNV)
+    </slot>
+  </Casestudies>
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.SVA.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img src={processedImages.SVA.light.src} alt={processedImages.SVA.alt} />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    National Training Portal for Medical Practice Professionals
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    The revamped SVA website has become essential for Swiss medical education,
-    increasing student signups by 25%. Its user-centered design reduced client
-    inquiries by 40%, demonstrating improved efficiency.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Research, visual design, style guide, prototyping, usability testing,
-    benchmarking
-  </slot>
-  <slot slot="CaseStudiesClientContent">
-    Swiss Association of Medical Practice Professionals (SVA)
-  </slot>
-</Casestudies>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.SVA.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img src={processedImages.SVA.light.src} alt={processedImages.SVA.alt} />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      National Training Portal for Medical Practice Professionals
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      The revamped SVA website has become essential for Swiss medical education,
+      increasing student signups by 25%. Its user-centered design reduced client
+      inquiries by 40%, demonstrating improved efficiency.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Research, visual design, style guide, prototyping, usability testing,
+      benchmarking
+    </slot>
+    <slot slot="CaseStudiesClientContent">
+      Swiss Association of Medical Practice Professionals (SVA)
+    </slot>
+  </Casestudies>
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.SGA.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img src={processedImages.SGA.light.src} alt={processedImages.SGA.alt} />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    Secure Digital Gateway for Physical Gold Investment
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    This private portal enables streamlined online purchases of physical gold
-    shares. It gained 22 new registrations in its first month and reduced manual
-    processing, enhancing customer experience and operational efficiency.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Visual design, style guide, prototyping, usability testing
-  </slot>
-  <slot slot="CaseStudiesClientContent"> swissgoldplan SA </slot>
-</Casestudies>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.SGA.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img src={processedImages.SGA.light.src} alt={processedImages.SGA.alt} />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      Secure Digital Gateway for Physical Gold Investment
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      This private portal enables streamlined online purchases of physical gold
+      shares. It gained 22 new registrations in its first month and reduced
+      manual processing, enhancing customer experience and operational
+      efficiency.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Visual design, style guide, prototyping, usability testing
+    </slot>
+    <slot slot="CaseStudiesClientContent"> swissgoldplan SA </slot>
+  </Casestudies>
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.Joker.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img
-      src={processedImages.Joker.light.src}
-      alt={processedImages.Joker.alt}
-    />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    Comprehensive Career Resource Center for Industry Professionals
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    This website supports job seekers with specialized resources including
-    industry information and a medical emergency staffing pool. Its user-centric
-    design improves recruitment and candidate experience.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Visual design, style guide, prototyping, usability tests
-  </slot>
-  <slot slot="CaseStudiesClientContent"> Joker Personal AG </slot>
-</Casestudies>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.Joker.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img
+        src={processedImages.Joker.light.src}
+        alt={processedImages.Joker.alt}
+      />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      Comprehensive Career Resource Center for Industry Professionals
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      This website supports job seekers with specialized resources including
+      industry information and a medical emergency staffing pool. Its
+      user-centric design improves recruitment and candidate experience.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Visual design, style guide, prototyping, usability tests
+    </slot>
+    <slot slot="CaseStudiesClientContent"> Joker Personal AG </slot>
+  </Casestudies>
 
-<Casestudies>
-  <picture slot="CSImage">
-    <source
-      srcset={processedImages.Garax.dark.src}
-      media="(prefers-color-scheme: dark)"
-      data-media-dark
-    />
-    <img
-      src={processedImages.Garax.light.src}
-      alt={processedImages.Garax.alt}
-    />
-  </picture>
-  <slot slot="CaseStudiesTitle">
-    Automotive Dealership Customer Experience Management System
-  </slot>
-  <slot slot="CaseStudiesOutcomeContent">
-    This CRM system allows car dealership staff to manage customer data,
-    appointments, invoicing, and payments in one platform. Its intuitive
-    interface streamlines operations and enhances customer service.
-  </slot>
-  <slot slot="CaseStudiesMyRoleContent">
-    Service Safari, UI design and a clickable prototype
-  </slot>
-  <slot slot="CaseStudiesClientContent"> Garax AG </slot>
-</Casestudies>
+  <Casestudies>
+    <picture slot="CSImage">
+      <source
+        srcset={processedImages.Garax.dark.src}
+        media="(prefers-color-scheme: dark)"
+        data-media-dark
+      />
+      <img
+        src={processedImages.Garax.light.src}
+        alt={processedImages.Garax.alt}
+      />
+    </picture>
+    <slot slot="CaseStudiesTitle">
+      Automotive Dealership Customer Experience Management System
+    </slot>
+    <slot slot="CaseStudiesOutcomeContent">
+      This CRM system allows car dealership staff to manage customer data,
+      appointments, invoicing, and payments in one platform. Its intuitive
+      interface streamlines operations and enhances customer service.
+    </slot>
+    <slot slot="CaseStudiesMyRoleContent">
+      Service Safari, UI design and a clickable prototype
+    </slot>
+    <slot slot="CaseStudiesClientContent"> Garax AG </slot>
+  </Casestudies>
+</div>
 
 <style>
   picture {

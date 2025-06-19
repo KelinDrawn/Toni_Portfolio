@@ -16,27 +16,30 @@ const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
     <meta name="generator" content={Astro.generator} />
     <meta
       name="description"
-      content="Swiss UX Design Portfolio of Toni Schläppi who specializes in user research, wireframing, prototyping and front-end engineering."
+      content="UX Design Portfolio of Toni Schläppi who specializes in user research, wireframing, interface design, prototyping and front-end engineering."
     />
 
     <!-- Basic Meta Tags -->
-    <meta
+    <!-- <meta
       name="theme-color"
-      content="#141414"
+      content="#ffffff"
       media="(prefers-color-scheme: light)"
     />
     <meta
       name="theme-color"
-      content="#E6E6E6"
+      content="#160F0B"
       media="(prefers-color-scheme: dark)"
-    />
+    /> -->
     <meta name="color-scheme" content="light dark" />
     <meta name="application-name" content="UX Portfolio of Toni Schläppi" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
 
     <!-- Apple Meta Tags -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
     <meta
       name="apple-mobile-web-app-title"
       content="UX Portfolio of Toni Schläppi"
@@ -83,6 +86,13 @@ const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
       defer
       src="https://cloud.umami.is/script.js"
       data-website-id="62615e5d-f9fa-41db-932e-6ecb7a9ac802"></script>
+
+    <script type="module">
+      if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+      }
+    </script>
+
     <title>{pageTitle}</title>
   </head>
 </html>

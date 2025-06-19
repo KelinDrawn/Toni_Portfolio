@@ -7,9 +7,11 @@ import Availability from "../components/availability.astro";
 import HandwritingAndArrow from "../components/handwriting-and-arrow.astro";
 import ContactLinks from "../components/contact-links.astro";
 import Stars from "../components/stars.astro";
+
+const { class: className } = Astro.props;
 ---
 
-<section class="site-wrapper stack-m">
+<section class:list={["stack-m", className]}>
   <Availability />
   <Stars />
   <h2 class="title-4">Hello, I am Toni</h2>
@@ -116,7 +118,7 @@ import Stars from "../components/stars.astro";
 
   @media (min-width: 80rem) {
     .title-picture-group h1 {
-      font-size: calc(var(--step-6) * 1.2);
+      font-size: calc(var(--step-6) * 1.4);
     }
   }
 </style>

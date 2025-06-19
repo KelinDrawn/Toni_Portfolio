@@ -6,25 +6,25 @@ import Intro from "../layouts/intro.astro";
 import CaseStudiesContainer from "../layouts/caseStudiesContainer.astro";
 import Infobox from "../layouts/infobox.astro";
 import List from "../layouts/list.astro";
-import Masonry from "../layouts/masonry.astro";
+// import Masonry from "../layouts/masonry.astro";
 import BigCta from "../layouts/big-cta.astro";
 import Footer from "../layouts/footer.astro";
 
-import AboutToni from "../layouts/Bento.astro";
+// import AboutToni from "../layouts/Bento.astro";
 
-const pageTitle = "Toni Schläppi – UX Designer";
+const pageTitle = "UX Portfolio of Toni Schläppi";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
   <main class="stack-3xl">
-    <Intro />
-    <CaseStudiesContainer />
-    <Infobox />
+    <Intro class:list={["site-wrapper"]} />
+    <CaseStudiesContainer class:list={["second-wrapper"]} />
+    <Infobox class:list={["second-wrapper"]} />
     <!-- <AboutToni /> -->
-    <List />
-    <BigCta />
+    <List class:list={["second-wrapper"]} />
+    <BigCta class:list={["site-wrapper"]} />
   </main>
 
   <Footer />

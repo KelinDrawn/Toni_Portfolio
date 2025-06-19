@@ -2,26 +2,27 @@
 import ThemeSwitcher from "../components/theme-switcher.astro";
 ---
 
-<header role="banner">
+<header>
   <nav class="main-navigation">
     <div class="logo-toni">
-      <h2 class="title-2">Toni Schläppi</h2>
-      <h3 class="title-1">UX Designer</h3>
+      <a href="/">
+        <h2 class="title-2">Toni Schläppi</h2>
+        <h3 class="title-1">UX Designer</h3>
+      </a>
     </div>
     <ul>
-      <!-- <li>
-        <a href="">
-          <h4 class="title-1">CV</h4>
-        </a>
-      </li> -->
       <li>
         <h4 class="title-1"><ThemeSwitcher /></h4>
-        <li>
-          <h4 class="title-1">
-            <a href="#contact-me" class="contact">Contact Toni</a>&nbsp;
-            &#128172;
-          </h4>
-        </li>
+      </li>
+      <li>
+        <a href="/about">
+          <h4 class="title-1">About</h4>
+        </a>
+      </li>
+      <li>
+        <a href="/#contact-me" class="contact">
+          <h4 class="title-1">Contact</h4>
+        </a>
       </li>
     </ul>
   </nav>
@@ -44,6 +45,10 @@ import ThemeSwitcher from "../components/theme-switcher.astro";
         flex: 1;
         min-width: fit-content;
       }
+    }
+
+    .logo-toni a {
+      text-decoration: none;
     }
   </style>
 </header>

@@ -1,0 +1,248 @@
+---
+import Picture from "astro/components/Picture.astro";
+
+import Toni from "/src/images/toni.jpg";
+
+import Studies from "/src/images/icons/studies icon.svg";
+import Flower from "/src/images/icons/flower icon.svg";
+import Coffeemachine from "/src/images/icons/Coffeemachine icon.svg";
+import Globe from "/src/images/icons/Globe icon.svg";
+import Calendar from "/src/images/icons/Calendar icon.svg";
+import Tools from "/src/images/icons/Tools icon.svg";
+import Conversation from "/src/images/icons/Conversation icon.svg";
+import Mac from "/src/images/icons/Mac icon.svg";
+import Diploma from "/src/images/icons/Diploma icon.svg";
+import ElectricVehicle from "/src/images/icons/Electric vehicle icon.svg";
+import Books from "/src/images/icons/Books icon.svg";
+
+import ExternalLink from "/src/images/icons/External link icon.svg";
+
+import PopoverCountries from "../components/bento/popover-countries.astro";
+import PopoverCD from "../components/bento/popover-communication-design.astro";
+import SelectSports from "../components/bento/select-sports.astro";
+import PopoverCompleteCSS from "../components/bento/popover-complete-css.astro";
+import PopoverCSSforJS from "../components/bento/popover-css-for-js.astro";
+
+const { class: className } = Astro.props;
+---
+
+<section class:list={[className, "stack-m main"]}>
+  <h2 class="title-1-lines">Toni Schläppi</h2>
+  <!-- <h3 class="title-6">This is me</h3> -->
+
+  <div class="card-grid">
+    <section class="card-grid-cell stack-xs">
+      <Studies />
+      <h4 class="title-1">I studied</h4>
+      <PopoverCD />
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Diploma />
+      <h4 class="title-1">Finished courses</h4>
+      <div class="stack-xs">
+        <div><PopoverCSSforJS /></div>
+        <div><PopoverCompleteCSS /></div>
+      </div>
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Coffeemachine />
+      <h4 class="title-1">I love brewing coffee, my current favourite</h4>
+      <h5 class="title-1">
+        <a
+          href="https://shop.kaffeemacher.ch/collections/fruchtig-modern/products/hamasho"
+          target="_blank">Hamasho</a
+        ><ExternalLink class="ExternalLink" />
+      </h5>
+    </section>
+    <section class="card-grid-cell stack-xs time-spent-in-industry">
+      <Calendar />
+      <h5 class="title-1">8+ years of industry experience</h5>
+    </section>
+
+    <section class="card-grid-cell stack-xs span-2">
+      <SelectSports />
+    </section>
+
+    <section class="card-grid-cell stack-xs">
+      <ElectricVehicle />
+      <h4 class="title-1">
+        My car has driven <span class="title-1">52279km.</span> It’s battery health
+        is at <span class="title-1">93%</span>
+      </h4>
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Mac />
+      <h4 class="title-1">My plattform of choice is MacOS</h4>
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Conversation />
+      <h4 class="title-1">I speak Swissgerman, English and some French</h4>
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Globe />
+      <h4 class="title-1">I have traveled to</h4>
+      <PopoverCountries />
+    </section>
+    <section class="card-grid-cell stack-xs toni-profile-picture">
+      <Picture class="toni" src={Toni} alt="Toni Schläppi" width={200} />
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Tools />
+      <h4 class="title-1">Toolbelt</h4>
+      <h4 class="title-0">
+        Figma, Zed, HTML&CSS, JS, SVG, Astro.js, Motion.js, Polypane
+      </h4>
+    </section>
+    <section class="card-grid-cell stack-xs">
+      <Books />
+      <h4 class="title-1">Now reading</h4>
+      <h5 class="title-2">
+        <a href="https://www.scotthyoung.com/blog/getbetter/" target="_blank"
+          >Get better at anything</a
+        ><ExternalLink class="ExternalLink" />
+      </h5>
+
+      <h6 class="title-0">by Scott H. Young</h6>
+    </section>
+    <section class="card-grid-cell stack-xs span-max quote">
+      <Flower />
+      <h4 class="title-1 span-max">
+        «Be humbler about what you know, more confident about what is possible,
+        and less afraid of things that do not matter.»
+      </h4>
+      <h5 class="title-0">by Tim Urban</h5>
+    </section>
+  </div>
+</section>
+
+<style>
+  section.main {
+    background: var(--section-linear-gradient);
+
+    padding: var(--space-2xl);
+    outline: var(--border-transparent);
+    border-radius: var(--border-radius-big);
+  }
+
+  h3 {
+    text-align: center;
+    margin-block-end: var(--space-l);
+  }
+
+  .card-grid {
+    display: grid;
+    grid-gap: var(--space-m);
+
+    /* make the cards square with a pseudo element */
+    &::before {
+      content: "";
+      aspect-ratio: 1;
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+
+    & > *:first-child {
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+
+    & {
+      grid-template-columns: repeat(auto-fill, minmax(min(13rem, 35%), 1fr));
+      grid-auto-rows: 1fr;
+    }
+
+    & .card-grid-cell {
+      display: flex;
+      flex-direction: column;
+      /* TODO: Row on small screens? */
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      /* outline: revert; */
+
+      padding: var(--space-m);
+      /* calculate the border radius:
+       Reference: https://www.30secondsofcode.org/css/s/nested-border-radius/
+       */
+      border-radius: calc(var(--border-radius) + var(--space-s));
+      transition: background var(--transition-initial);
+
+      background: light-dark(
+        oklch(from var(--color-white) l c h / 0.8),
+        oklch(from var(--color-reddusk) l c h / 0.8)
+      );
+
+      @media (hover: hover) {
+        &:hover {
+          transition: background var(--transition-hover);
+          background-color: light-dark(
+            #fff,
+            oklch(from var(--color-black) l c h / 0.09)
+          );
+          outline: 1px solid
+            light-dark(var(--color-lightgrey), var(--color-lightgrey));
+        }
+      }
+    }
+
+    & svg {
+      width: clamp(3rem, 50%, 4rem);
+      user-select: none;
+    }
+  }
+
+  .span-2 {
+    grid-column: span 2;
+
+    /* @media (min-width: 80rem) {
+      & {
+        grid-column: span 3;
+      }
+    } */
+  }
+
+  .span-max {
+    grid-column: span 3;
+
+    @media (max-width: 50rem) {
+      & {
+        grid-column: span 2;
+      }
+    }
+  }
+
+  /* Card specific adjustments  */
+
+  a {
+    background-color: var(--color-highlight);
+  }
+
+  .toni-profile-picture img {
+    border-radius: 100%;
+    filter: var(--theme-filter);
+    max-width: 80%;
+  }
+
+  @media (max-width: 25rem) {
+    section.toni-profile-picture {
+      display: none !important;
+    }
+  }
+
+  .time-spent-in-industry > *:first-child {
+    font-family: var(--text-typeface);
+    font-size: calc(var(--step-6) * 2);
+    font-weight: 100;
+    line-height: 1;
+  }
+
+  .quote > * {
+    max-width: var(--text-wrapper-size);
+  }
+
+  .ExternalLink {
+    max-width: 1rem;
+    margin-inline-start: 0.5ch;
+    text-decoration-skip-ink: none;
+  }
+</style>

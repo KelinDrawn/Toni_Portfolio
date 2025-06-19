@@ -49,7 +49,6 @@ html {
   interpolate-size: allow-keywords;
 }
 
-
 /*
     Improve media defaults
   */
@@ -60,7 +59,6 @@ canvas,
 svg {
   max-width: 100%;
   height: auto;
-  vertical-align: middle;
   font-style: italic;
   background-repeat: no-repeat;
   background-size: cover;
@@ -90,7 +88,7 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* 
+/*
 Balance text wrapping on headings
  */
 h1,
@@ -114,7 +112,7 @@ h6 {
  Baseline for default links
   */
 a:not([class]) {
-  /* 
+  /*
   Relatively sized thickness and offset
    */
   text-decoration-thickness: max(0.08em, 1px);
@@ -123,6 +121,7 @@ a:not([class]) {
 
 :focus-visible {
   --outline-size: max(2px, 0.15em);
-  outline: var(--outline-width, var(--outline-size)) var(--outline-style, solid) var(--outline-color, currentColor);
+  outline: var(--outline-width, var(--outline-size)) var(--outline-style, solid)
+    var(--outline-color, currentColor);
   outline-offset: var(--outline-offset, var(--outline-size));
 }

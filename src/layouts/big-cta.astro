@@ -1,4 +1,8 @@
-<section class="site-wrapper stack-2xl">
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={["stack-m", className]}>
   <div>
     <!-- <h2 class="deco-title-diagonal">
       Visual Design, Prototyping,<br /> Usability Tests, Research,<br /> Interviews,
@@ -8,11 +12,24 @@
     <div class="decoration-blob-2"></div> -->
   </div>
   <div class="subtitles-group stack-m">
-    <h3 class="title-6">Can I help you with your project? Contact me now.</h3>
-    <!-- <h4 class="title-4">I’m here to help and happy to chat.</h4> -->
-    <h4 class="title-1">
-      <a href="#contact-me">Let's discuss your project &#128172;</a>
-    </h4>
+    <h3 class="title-6">
+      Crafting, Coding, and Validating User-Centric Digital Experiences
+    </h3>
+    <div>
+      <ul>
+        <li>
+          <a href="/about">
+            <h4 class="title-1">About</h4>
+          </a>
+        </li>
+        <li>
+          <h4 class="title-1">
+            <a href="/#contact-me" class="contact">Contact Toni</a>&nbsp;
+            &#128172;
+          </h4>
+        </li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -21,6 +38,17 @@
     width: fit-content;
     max-width: 35rem;
     margin-inline: auto;
+    text-align: center;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-s, 1rem);
+    align-items: last baseline;
+    justify-content: center;
+    flex: 1;
+    min-width: fit-content;
   }
 
   section {
@@ -39,7 +67,7 @@
     );
 
     padding: var(--space-l);
-    margin-top: calc(var(--space-2xl) * 2);
+    margin-top: calc(var(--space-2xl) * 3);
     background: --box-gradient;
 
     border: var(--border-transparent);
@@ -84,8 +112,4 @@
     transform: rotate(1.5deg);
     opacity: 0.5;
   } */
-
-  .subtitles-group h3 {
-    font-size: var(--step-5);
-  }
 </style>

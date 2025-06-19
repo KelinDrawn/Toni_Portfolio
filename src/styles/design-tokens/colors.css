@@ -1,17 +1,51 @@
 :root {
   --color-white: light-dark(oklch(100% 0 0), var(--color-rednight));
   --color-black: light-dark(oklch(8% 0 0), oklch(90% 0 0));
+  --color-highlight: light-dark(oklch(96% 0.04 159.1), oklch(43% 0.19 20.2));
 
-  --color-faintgrey: color-mix(in oklch, transparent, var(--color-black) 20%);
-  --color-lightgrey: color-mix(in oklch, transparent, var(--color-black) 40%);
-  --color-grey: color-mix(in oklch, transparent, var(--color-black) 55%);
-  --color-darkgrey: color-mix(in oklch, transparent, var(--color-black) 80%);
+  --color-bggrey: color-mix(
+    in oklch,
+    var(--color-white),
+    var(--color-black) 6%
+  );
+  --color-faintgrey: color-mix(
+    in oklch,
+    var(--color-white),
+    var(--color-black) 20%
+  );
+  --color-grey: color-mix(in oklch, var(--color-white), var(--color-black) 55%);
+  --color-lightgrey: color-mix(
+    in oklch,
+    var(--color-white),
+    var(--color-black) 40%
+  );
+  --color-darkgrey: color-mix(
+    in oklch,
+    var(--color-white),
+    var(--color-black) 80%
+  );
 
   --color-brand-sva: oklch(94.7% 0.058 158.15);
   --color-brand-snv: oklch(54.7% 0.058 58.15);
 
   --contrast: color-mix(in oklab, currentColor 15%, var(--color-black));
 
-  --color-reddusk: oklch(23.9% 0.027 44.3);
-  --color-rednight: oklch(20% 0.019 50);
+  --color-reddusk: oklch(32% 0.01 90);
+  --color-rednight: oklch(25% 0.01 70);
+
+  --color-reddusk-muted: oklch(27.9% 0.02 70);
+
+  --section-linear-gradient: linear-gradient(
+    150deg,
+    light-dark(
+        color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+        color-mix(in oklch, var(--color-reddusk) 98%, var(--color-black))
+      )
+      0%,
+    light-dark(
+        color-mix(in oklch, var(--color-white) 97%, var(--color-black)),
+        color-mix(in oklch, var(--color-rednight) 100%, var(--color-white))
+      )
+      70%
+  );
 }

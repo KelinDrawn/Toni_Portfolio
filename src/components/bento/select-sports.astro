@@ -1,0 +1,171 @@
+---
+import Bodyweight from "/src/images/icons/Weightlifting icon.svg";
+import Bicycle from "/src/images/icons/Bicycle icon.svg";
+import Snowboard from "/src/images/icons/Snowboard icon.svg";
+---
+
+<div class="sporting-activities">
+  <div class="sport-icons">
+    <div class="sport-icon bodyweight-content">
+      <Bodyweight />
+    </div>
+    <div class="sport-icon snowboarding-content">
+      <Snowboard />
+    </div>
+    <div class="sport-icon bicycling-content">
+      <Bicycle />
+    </div>
+  </div>
+  <div>
+    <h4 class="title-1">My favorite sporting activities</h4>
+    <div class="sport-titles">
+      <h5 class="title-2 bodyweight-content">Bodyweight training</h5>
+      <h5 class="title-2 snowboarding-content">Snowboarding</h5>
+      <h5 class="title-2 bicycling-content">Bicycling</h5>
+    </div>
+  </div>
+  <fieldset class="radio-fieldset">
+    <legend class="visually-hidden">Select a sport type</legend>
+    <div class="radio-inputs">
+      <label class="radio">
+        <input
+          type="radio"
+          id="bodyweight-radio"
+          name="sport-type"
+          value="bodyweight"
+          checked
+        />
+        <span class="name title-0">At home</span>
+      </label>
+
+      <label class="radio">
+        <input
+          type="radio"
+          id="snowboarding-radio"
+          name="sport-type"
+          value="snowboarding"
+        />
+        <span class="name title-0">Winter</span>
+      </label>
+
+      <label class="radio">
+        <input
+          type="radio"
+          id="bicycling-radio"
+          name="sport-type"
+          value="bicycling"
+        />
+        <span class="name title-0">Summer</span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+
+<style>
+  .sporting-activities {
+    position: relative;
+  }
+
+  .sporting-activities svg {
+    width: clamp(3rem, 50%, 4rem);
+    min-height: 4.5rem;
+  }
+
+  .sporting-activities .sport-selector {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+    align-items: center;
+    width: 100%;
+  }
+
+  .quote > :nth-child(2) {
+    max-width: 50ch;
+  }
+  /* visually hidden but still accessible */
+  .sporting-activities input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+
+  /* Hide all content by default */
+  .sporting-activities .bodyweight-content,
+  .sporting-activities .snowboarding-content,
+  .sporting-activities .bicycling-content {
+    display: none;
+  }
+
+  /* Show content based on selected radio */
+  .sporting-activities:has(#bodyweight-radio:checked) .bodyweight-content,
+  .sporting-activities:has(#snowboarding-radio:checked) .snowboarding-content,
+  .sporting-activities:has(#bicycling-radio:checked) .bicycling-content {
+    display: block;
+  }
+
+  /* Style for radio labels */
+  .sporting-activities .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: var(--border-radius);
+
+    border: var(--border-black);
+
+    padding: var(--space-xs);
+    max-width: 100%;
+    margin-top: var(--space-s);
+  }
+
+  .sporting-activities .radio {
+    flex: 1 1 auto;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .sporting-activities .radio .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: var(--border-radius);
+    padding: var(--space-xs);
+    color: var(--color-black);
+    transition: all var(--transition-hover) ease-in-out;
+  }
+
+  /* Style for selected radio label */
+  .sporting-activities input[type="radio"]:checked + .name {
+    background-color: var(--color-highlight);
+  }
+
+  /* Focus styles for keyboard navigation */
+  .sporting-activities input[type="radio"]:focus-visible + .name {
+    --outline-size: max(2px, 0.15em);
+    outline: var(--outline-width, var(--outline-size))
+      var(--outline-style, solid) var(--outline-color, currentColor);
+    outline-offset: var(--outline-offset, var(--outline-size));
+  }
+
+  /* Fieldset styles */
+  .sporting-activities .radio-fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+  }
+
+  /* Visually hidden but keep it accessible to screen readers */
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+</style>
