@@ -8,7 +8,7 @@ import DiplomCD from "/src/images/about/TS-Diplom-dipl-Gestalter-HF.jpeg";
 </button>
 
 <div id="my-popover-cd" popover anchor="popover-cd">
-  <Picture class="" src={DiplomCD} alt="Toni Schläppi" width={400} />
+  <Picture class="" src={DiplomCD} alt="Toni Schläppi" width={500} />
 </div>
 
 <style>
@@ -51,12 +51,15 @@ import DiplomCD from "/src/images/about/TS-Diplom-dipl-Gestalter-HF.jpeg";
     inset: auto;
     margin: 0;
     padding: 0;
+    /* margin-inline: 2rem; */
+    width: clamp(14rem, 50%, 30rem);
 
-    width: clamp(18rem, 50%, 25rem);
-
-    position-try-fallbacks: --cd-flip-inline;
+    position-try-fallbacks: --popover-cd-flip-inline;
     position-anchor: --popover-communication-design;
-    position-area: right span-bottom;
+
+    top: anchor(--popover-communication-design bottom);
+    left: anchor(--popover-communication-design right);
+
     border-radius: calc(var(--border-radius) + var(--space-s));
     border: var(--border-transparent);
     box-shadow: var(--shadow-elevation-medium);
@@ -67,11 +70,13 @@ import DiplomCD from "/src/images/about/TS-Diplom-dipl-Gestalter-HF.jpeg";
     }
   }
 
-  @position-try --cd-flip-inline {
+  @position-try --popover-cd-flip-inline {
     inset: auto;
-    position-area: left span-bottom;
-    top: anchor(--popover-anchor-complete-css bottom);
-    right: anchor(--popover-anchor-complete-css right);
+
+    top: anchor(--popover-communication-design bottom);
+    right: anchor(--popover-communication-design right);
+
+    position-try-fallbacks: flip-block, flip-inline, flip-start;
   }
 
   [popover] {

@@ -67,12 +67,14 @@
     position: absolute;
     inset: auto;
     margin: 0;
+    margin-inline: 2rem;
     width: clamp(12rem, 50%, 25rem);
-    position-try-fallbacks: --countries-flip-inline;
+    position-try-fallbacks: --popover-countries-flip-inline;
     position-anchor: --my-anchor-positioning;
-    /* top: anchor(--my-anchor-positioning bottom);
-    left: anchor(--my-anchor-positioning right); */
-    position-area: bottom span-right;
+
+    top: anchor(--my-anchor-positioning bottom);
+    left: anchor(--my-anchor-positioning right);
+
     text-align: left;
     padding: var(--space-m) var(--space-l);
     border-radius: calc(var(--border-radius) + var(--space-s));
@@ -85,11 +87,13 @@
     }
   }
 
-  @position-try --countries-flip-inline {
+  @position-try --popover-countries-flip-inline {
     inset: auto;
 
-    top: anchor(--my-anchor-positioning top);
-    right: anchor(--my-anchor-positioning left);
+    top: anchor(--my-anchor-positioning bottom);
+    right: anchor(--my-anchor-positioning right);
+
+    position-try-fallbacks: flip-block, flip-inline, flip-start;
   }
 
   .cluster {

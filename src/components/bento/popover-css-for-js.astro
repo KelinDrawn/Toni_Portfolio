@@ -49,13 +49,15 @@ import DiplomCSSforJS from "/src/images/about/CSS-for-Javascript-Developers-Cert
   #popover-css-for-js[popover] {
     position: absolute;
     inset: auto;
+    /* margin-inline: 2rem; */
+    width: clamp(20rem, 50%, 40rem);
 
-    width: clamp(20rem, 40%, 40rem);
-
-    position-try-fallbacks: --cs-flip-inline;
+    position-try-fallbacks: --popover-css-for-js-flip-inline;
     position-anchor: --popover-anchor-css-for-js;
-    position-area: right span-bottom;
-    /* border-radius: calc(var(--border-radius) + var(--space-s)); */
+
+    top: anchor(--popover-anchor-css-for-js bottom);
+    left: anchor(--popover-anchor-css-for-js right);
+
     border: var(--border-transparent);
     box-shadow: var(--shadow-elevation-medium);
     background: light-dark(var(--color-white), var(--color-reddusk));
@@ -65,11 +67,13 @@ import DiplomCSSforJS from "/src/images/about/CSS-for-Javascript-Developers-Cert
     }
   }
 
-  @position-try --cs-flip-inline {
+  @position-try --popover-css-for-js-flip-inline {
     inset: auto;
-    position-area: left span-bottom;
+
     top: anchor(--popover-anchor-css-for-js bottom);
     right: anchor(--popover-anchor-css-for-js right);
+
+    position-try-fallbacks: flip-block, flip-inline, flip-start;
   }
 
   [popover] {

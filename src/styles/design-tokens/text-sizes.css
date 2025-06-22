@@ -130,6 +130,7 @@
     overflow: hidden;
     text-align: center;
     margin-block-end: var(--space-l);
+    white-space: nowrap;
     text-transform: uppercase;
     letter-spacing: var(--letter-spacing-p);
 
