@@ -7,7 +7,6 @@
 @import "design-tokens/spacing.css";
 
 :root {
-  navigation: auto;
   -webkit-tap-highlight-color: transparent;
 
   /* ––––––––––––––––––––––––––––––––– corner radius ––––––––––––––––––––––––––––––––– */

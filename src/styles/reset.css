@@ -117,6 +117,8 @@ a:not([class]) {
    */
   text-decoration-thickness: max(0.08em, 1px);
   text-underline-offset: 0.15em;
+  text-decoration-skip-ink: auto;
+  color: currentColor;
 }
 
 :focus-visible {
@@ -124,4 +126,8 @@ a:not([class]) {
   outline: var(--outline-width, var(--outline-size)) var(--outline-style, solid)
     var(--outline-color, currentColor);
   outline-offset: var(--outline-offset, var(--outline-size));
+}
+
+textarea:not([rows]) {
+  min-height: 10em;
 }
