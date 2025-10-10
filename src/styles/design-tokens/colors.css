@@ -30,8 +30,8 @@
 
   --contrast: color-mix(in oklab, currentColor 15%, var(--color-black));
 
-  --color-reddusk: oklch(32% 0.01 90);
-  --color-rednight: oklch(25% 0.01 70);
+  --color-reddusk: oklch(32% 0.005 90);
+  --color-rednight: oklch(25% 0.005 70);
 
   --color-reddusk-muted: oklch(27.9% 0.02 70);
 
@@ -39,12 +39,12 @@
     150deg,
     light-dark(
         color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
-        color-mix(in oklch, var(--color-reddusk) 98%, var(--color-black))
+        transparent
       )
       0%,
     light-dark(
         color-mix(in oklch, var(--color-white) 97%, var(--color-black)),
-        color-mix(in oklch, var(--color-rednight) 100%, var(--color-white))
+        transparent
       )
       70%
   );

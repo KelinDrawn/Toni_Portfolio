@@ -98,7 +98,7 @@ const { class: className } = Astro.props;
 
       background: light-dark(
         oklch(from var(--color-white) l c h / 0.8),
-        oklch(from var(--color-reddusk) l c h / 0.8)
+        oklch(from var(--color-black) l c h / 0.05)
       );
 
       padding: var(--space-m);
@@ -113,7 +113,7 @@ const { class: className } = Astro.props;
           transition: background var(--transition-hover);
           background-color: light-dark(
             #fff,
-            oklch(from var(--color-black) l c h / 0.09)
+            oklch(from var(--color-black) l c h / 0.07)
           );
           outline: 1px solid
             light-dark(var(--color-lightgrey), var(--color-lightgrey));

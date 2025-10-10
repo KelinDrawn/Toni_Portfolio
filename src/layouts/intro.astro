@@ -12,12 +12,11 @@ const { class: className } = Astro.props;
 ---
 
 <section class:list={["stack-m", className]}>
-  <Availability />
+  <!-- <Availability /> -->
   <Stars />
-  <h2 class="title-4">Hello, I am Toni</h2>
+  <h2 class="title-4">Hi, I am Toni</h2>
   <h3 class="title-1">
-    I am a UX designer with 8+ years of experience designing and developing
-    websites and web applications
+    UX designer designing and developing for the Web for 8+ years
   </h3>
   <div class="title-picture-group">
     <h1 class="title-7">
@@ -44,13 +43,13 @@ const { class: className } = Astro.props;
     background: linear-gradient(
       160deg,
       light-dark(
-          color-mix(in srgb, var(--color-white) 99%, var(--color-black)),
-          color-mix(in srgb, var(--color-reddusk) 97%, var(--color-black))
+          color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
+          color-mix(in oklch, var(--color-white) 95%, var(--color-black))
         )
         0%,
       light-dark(
-          color-mix(in srgb, var(--color-white) 100%, var(--color-black)),
-          color-mix(in srgb, var(--color-rednight) 100%, var(--color-white))
+          color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+          color-mix(in oklch, var(--color-white) 100%, var(--color-black))
         )
         50%
     );

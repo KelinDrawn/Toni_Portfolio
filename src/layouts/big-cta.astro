@@ -52,20 +52,6 @@ const { class: className } = Astro.props;
   }
 
   section {
-    background: linear-gradient(
-      180deg,
-      light-dark(
-          color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
-          color-mix(in oklch, var(--color-rednight) 100%, var(--color-black))
-        )
-        0%,
-      light-dark(
-          color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
-          color-mix(in oklch, var(--color-reddusk) 100%, var(--color-white))
-        )
-        70%
-    );
-
     padding: var(--space-l);
     margin-top: calc(var(--space-2xl) * 3);
     background: --box-gradient;
