@@ -1,0 +1,101 @@
+---
+import "/src/styles/reset.css";
+import "/src/styles/global_styles.css";
+const { pageTitle } = Astro.props;
+
+const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
+---
+
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Toni Schläppi" />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content="UX Design Portfolio of Toni Schläppi who specializes in user research, wireframing, interface design, prototyping and front-end engineering."
+    />
+
+    <!-- Basic Meta Tags -->
+    <!-- <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#160F0B"
+      media="(prefers-color-scheme: dark)"
+    /> -->
+    <meta name="color-scheme" content="light dark" />
+    <meta name="application-name" content="UX Portfolio of Toni Schläppi" />
+    <meta name="referrer" content="no-referrer-when-downgrade" />
+
+    <!-- Apple Meta Tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="UX Portfolio of Toni Schläppi"
+    />
+
+    <!-- Android Meta Tag -->
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Format Detection -->
+    <meta name="format-detection" content="telephone=no" />
+
+    <!-- Article Meta Tags -->
+    <meta name="article:author" content="Toni Schläppi" />
+    <meta name="article:published_time" content="2024-11-30T17:14:00+02:00" />
+    <meta name="article:modified_time" content={buildDate} />
+
+    <!-- Microsoft Application Config -->
+    <meta name="msapplication-config" content="/browserconfig.xml" />
+
+    <link rel="canonical" href="https://toni-ux.dev" />
+
+    <script>
+      (function () {
+        const THEME_KEY = "theme";
+        const html = document.documentElement;
+        const theme = localStorage.getItem(THEME_KEY) || "system";
+
+        function applyTheme(theme) {
+          html.setAttribute("data-theme", theme);
+          if (theme === "light") {
+            html.style.setProperty("color-scheme", "light");
+          } else if (theme === "dark") {
+            html.style.setProperty("color-scheme", "dark");
+          } else {
+            html.style.setProperty("color-scheme", "light dark");
+          }
+        }
+
+        applyTheme(theme);
+      })();
+    </script>
+
+    <script
+      defer
+      src="https://cloud.umami.is/script.js"
+      data-website-id="62615e5d-f9fa-41db-932e-6ecb7a9ac802"></script>
+
+    <script type="module">
+      if (!("anchorName" in document.documentElement.style)) {
+        import("https://unpkg.com/@oddbird/css-anchor-positioning");
+      }
+    </script>
+
+    <title>{pageTitle}</title>
+  </head>
+</html>
+<body>
+  <slot />
+</body>
