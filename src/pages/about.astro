@@ -1,6 +1,6 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import AboutToni from "../layouts/Bento.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
+import AboutToni from "../layouts/bento.astro";
 
 import Navigation from "../layouts/navigation.astro";
 import Footer from "../layouts/footer.astro";
@@ -12,7 +12,7 @@ const pageTitle = "About Toni Schläppi – UX Designer";
   <Navigation />
   <main class="stack-3xl">
     <div class="site-wrapper stack-m">
-      <h1 class="title-7">About me</h1>
+      <h1 class="title-6">About me</h1>
       <div class="text-wrapper stack-m">
         <h2 class="title-2">
           I have been designing digital user interfaces as a UX designer for
@@ -29,13 +29,3 @@ const pageTitle = "About Toni Schläppi – UX Designer";
   </main>
   <Footer />
 </BaseLayout>
-
-<style>
-  main {
-    margin-block-start: var(--space-xl);
-  }
-
-  p {
-    text-wrap: pretty;
-  }
-</style>

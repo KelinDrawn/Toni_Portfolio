@@ -115,9 +115,9 @@ const { class: className } = Astro.props;
       }
 */
 
-  @media (min-width: 80rem) {
+  @media (max-width: 80rem) {
     .title-picture-group h1 {
-      font-size: calc(var(--step-6) * 1.4);
+      font-size: var(--step-6);
     }
   }
 </style>

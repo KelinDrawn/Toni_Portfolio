@@ -1,0 +1,72 @@
+---
+import { comparisons } from "@/data/cs-swisscharge.data.js";
+
+const tocItems = [
+  { href: "#intro", label: "Introduction" },
+  ...comparisons.map((comparison, index) => ({
+    href: `#comparison-${index}`,
+    label: comparison.title,
+  })),
+  { href: "#outro", label: "Conclusion" },
+];
+---
+
+<nav class="toc">
+  <h6 class="title-1">Table of Contents</h6>
+  <ul>
+    {
+      tocItems.map((item) => (
+        <li>
+          <a href={item.href}>{item.label}</a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
+
+<style>
+  .toc {
+    position: fixed;
+    top: var(--space-xl, 2rem);
+    right: var(--space-xl, 2rem);
+    background: var(--color-bg, white);
+    padding: var(--space-m, 1rem);
+    border-radius: var(--radius-m, 8px);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 250px;
+    z-index: 100;
+  }
+
+  .toc h6 {
+    margin-bottom: var(--space-s, 0.5rem);
+  }
+
+  .toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .toc li {
+    margin-bottom: var(--space-xs, 0.25rem);
+  }
+
+  .toc a {
+    text-decoration: none;
+    color: var(--color-text, currentColor);
+    display: block;
+    padding: var(--space-xs, 0.25rem) 0;
+    transition: color 0.2s;
+  }
+
+  .toc a:hover {
+    color: var(--color-primary, blue);
+  }
+
+  /* Hide on smaller screens */
+  @media (max-width: 1200px) {
+    .toc {
+      display: none;
+    }
+  }
+</style>

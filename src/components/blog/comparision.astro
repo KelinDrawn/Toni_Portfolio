@@ -1,0 +1,229 @@
+---
+import SegmentedControl from "../../components/blog/segmentedControl.astro";
+import Picture from "astro/components/Picture.astro";
+import IconWarning from "@/images/iconsSmall/iconWarning.svg";
+import IconCheck from "@/images/iconsSmall/iconCheck.svg";
+
+const {
+  id,
+  subtitle,
+  title,
+  beforeImage,
+  afterImage,
+  beforeObservations,
+  afterObservations,
+} = Astro.props;
+---
+
+<section class="stack-3xl comparison-section" data-comparison-id={id}>
+  <div class="stack-xs">
+    <!-- <h4 class="title-2">{subtitle}</h4> -->
+    <h4 class="title-6">{title}</h4>
+  </div>
+
+  <!-- Original Design Container -->
+  <div class={`content-container original-content`} data-content="original">
+    <div class="with-sidebar">
+      <Picture
+        class="mockup-picture"
+        src={beforeImage.src}
+        alt={beforeImage.alt}
+      />
+
+      <div class="stack-s">
+        <ul class="grid">
+          {
+            beforeObservations &&
+              beforeObservations.map((observation) => (
+                <li>
+                    <div class="stack-xs">
+                    <!-- <IconWarning /> -->
+                    <h5 class="title-3">{observation.title}</h5>
+                    <h6 class="title-1">{observation.text}</h6>
+                    </div>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Redesign Container -->
+  <div class={`content-container redesign-content`} data-content="redesign">
+    <div class="with-sidebar">
+      <Picture
+        class="mockup-picture"
+        src={afterImage.src}
+        alt={afterImage.alt}
+      />
+
+      <div class="stack-s">
+        <ul class="grid">
+          {
+            afterObservations &&
+              afterObservations.map((observation) => (
+                <li>
+                        <div class="stack-xs">
+                        <!-- <IconCheck /> -->
+                        <h5 class="title-3">{observation.title}</h5>
+                        <h6 class="title-1">{observation.text}</h6>
+                        </div>
+                </li>
+              ))
+          }
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Side by Side Container -->
+  <div class={`content-container sidebyside-content`} data-content="sidebyside">
+    <div class="side-by-side-images grid">
+        <div class="stack-xs">
+        <h5 class="before-after title-0">Original</h5>
+        <Picture
+          class="mockup-picture"
+          src={beforeImage.src}
+          alt={beforeImage.alt}
+        />
+      </div>
+      <div class="stack-xs">
+        <h5 class="before-after title-0">Redesign</h5>
+        <Picture
+          class="mockup-picture"
+          src={afterImage.src}
+          alt={afterImage.alt}
+        />
+      </div>
+    </div>
+  </div>
+  <div class="switcher section-header">
+    <!-- <h5 class="title-1">{title}</h5> -->
+
+    <SegmentedControl comparisonId={id} />
+  </div>
+</section>
+
+<style>
+  .comparison-section {
+    position: relative;
+  }
+
+  /* Hide all content containers by default except original */
+  .content-container {
+    display: none;
+  }
+
+  /* Show original by default */
+  .content-container.original-content {
+    display: block;
+  }
+
+  /* Control visibility based on radio selection */
+  .comparison-section:has(input[value="original"]:checked) .original-content {
+    display: block;
+  }
+
+  .comparison-section:has(input[value="original"]:checked) .redesign-content,
+  .comparison-section:has(input[value="original"]:checked) .sidebyside-content {
+    display: none;
+  }
+
+  .comparison-section:has(input[value="redesign"]:checked) .redesign-content {
+    display: block;
+  }
+
+  .comparison-section:has(input[value="redesign"]:checked) .original-content,
+  .comparison-section:has(input[value="redesign"]:checked) .sidebyside-content {
+    display: none;
+  }
+
+  .comparison-section:has(input[value="sidebyside"]:checked)
+    .sidebyside-content {
+    display: block;
+  }
+
+  .comparison-section:has(input[value="sidebyside"]:checked) .original-content,
+  .comparison-section:has(input[value="sidebyside"]:checked) .redesign-content {
+    display: none;
+  }
+
+  .switcher {
+    align-items: center;
+    justify-content: center;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+
+  li {
+    padding-inline: 0;
+    margin-inline: 0;
+  }
+
+  .before-after.title-0 {
+    /* workaround for Safari */
+    display: inline-block;
+
+    max-width: fit-content;
+
+
+  }
+
+  svg {
+    fill: var(--color-black);
+    width: 24px;
+  }
+
+  .mockup-picture {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 16rem;
+  }
+
+  Picture {
+    display: flex;
+    align-self: center;
+  }
+
+  .section-header {
+    position: sticky;
+    bottom: var(--space-xs);
+    /*left: 0;*/
+  }
+
+  .grid {
+    /* adjust utility */
+    --min-size: 24ch;
+
+    @media (max-width: 40rem) {
+      --min-size: 16ch;
+    }
+  }
+
+  .side-by-side-images.grid {
+    grid-gap: var(--space-xl);
+
+    Picture {
+        height: 100%;
+    }
+
+    @media (max-width: 50rem) {
+      grid-auto-flow: column;
+      grid-auto-columns: 50%;
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      scroll-snap-type: x mandatory;
+    }
+  }
+
+  .side-by-side-images.grid > * {
+    @media (max-width: 50rem) {
+      scroll-snap-align: center;
+    }
+  }
+</style>

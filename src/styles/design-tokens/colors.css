@@ -1,7 +1,8 @@
 :root {
   --color-white: light-dark(oklch(100% 0 0), var(--color-rednight));
   --color-black: light-dark(oklch(8% 0 0), oklch(90% 0 0));
-  --color-highlight: light-dark(oklch(96% 0.04 159.1), oklch(43% 0.19 20.2));
+  /*--color-highlight: light-dark(oklch(96% 0.04 159.1), oklch(43% 0.19 30.2));*/
+  --color-highlight: light-dark(oklch(94% 0 0), oklch(50% 0.15 20));
 
   --color-bggrey: color-mix(
     in oklch,
@@ -31,7 +32,7 @@
   --contrast: color-mix(in oklab, currentColor 15%, var(--color-black));
 
   --color-reddusk: oklch(32% 0.005 90);
-  --color-rednight: oklch(25% 0.005 70);
+  --color-rednight: oklch(20% 0.009 70);
 
   --color-reddusk-muted: oklch(27.9% 0.02 70);
 

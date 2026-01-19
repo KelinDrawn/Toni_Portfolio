@@ -1,0 +1,79 @@
+---
+import Picture from "astro/components/Picture.astro";
+
+import Studies from "/src/images/icons/Studies-icon.svg";
+import Flower from "/src/images/icons/Flower-icon.svg";
+import Prototyping from "/src/images/icons/Prototyping-icon.svg";
+import UserResearch from "/src/images/icons/UX-Field-Studies-icon.svg";
+import UIDesign from "/src/images/icons/Mac-icon.svg";
+
+const icons = [
+  { Component: Flower, name: "Heuristic Evaluation" },
+  { Component: Prototyping, name: "Prototyping" },
+  { Component: UIDesign, name: "User Interface Design" },
+  { Component: Studies, name: "Market Research" },
+  { Component: UserResearch, name: "User Research" },
+];
+---
+
+<aside class="stack-xs">
+  <h3 class="title-1">Project Scope</h3>
+  <section>
+    <ul class="cluster">
+      {
+        icons.map(({ Component, name }) => (
+          <li>
+            <Component />
+            <p class="title-0">{name}</p>
+          </li>
+        ))
+      }
+    </ul>
+  </section>
+</aside>
+
+<style>
+  svg {
+    max-width: 3rem;
+    /* clamp this */
+  }
+
+  .cluster {
+    gap: var(--space-xs) var(--space-xs);
+  }
+
+  ul {
+    align-items: stretch;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    align-items: stretch;
+  }
+
+  li {
+    display: flex;
+    /*flex-direction: column;*/
+    align-items: center;
+    gap: var(--space-xs);
+    padding: var(--space-xs);
+    /*outline: 1px solid salmon;*/
+
+    flex: 0rem 0 1;
+    min-width: fit-content;
+
+    background-color: light-dark(
+      color-mix(in oklch, var(--color-white), var(--color-black) 2%),
+      color-mix(in oklch, var(--color-white), var(--color-black) 8%)
+    );
+
+    border: 1px solid
+      light-dark(
+        color-mix(in oklch, var(--color-white), var(--color-black) 6%),
+        color-mix(in oklch, var(--color-white), var(--color-black) 18%)
+      );
+    border-radius: var(--border-radius);
+
+    p {
+      /*text-align: center;*/
+    }
+  }
+</style>

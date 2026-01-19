@@ -1,0 +1,795 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Navigation from "../layouts/navigation.astro";
+
+const pageTitle = "Style Guide";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+  <main class="stack-3xl site-wrapper" style="padding-block: var(--space-2xl);">
+    <!-- Header -->
+    <section class="stack-l">
+      <h1 class="title-7" style="text-align: center;">
+        Design System Style Guide
+      </h1>
+      <p style="text-align: center; max-width: 60ch; margin-inline: auto;">
+        A comprehensive overview of all design tokens, typography, spacing, and
+        layout utilities used throughout the project.
+      </p>
+    </section>
+
+    <!-- Colors Section -->
+    <section class="stack-l">
+      <h2 class="title-6">Color Palette</h2>
+
+      <div class="stack-m">
+        <h3 class="title-3">Base Colors</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-white);"
+            >
+            </div>
+            <p class="title-0">--color-white</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-black);"
+            >
+            </div>
+            <p class="title-0">--color-black</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-highlight);"
+            >
+            </div>
+            <p class="title-0">--color-highlight</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Grey Scale</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-bggrey);"
+            >
+            </div>
+            <p class="title-0">--color-bggrey</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-faintgrey);"
+            >
+            </div>
+            <p class="title-0">--color-faintgrey</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-lightgrey);"
+            >
+            </div>
+            <p class="title-0">--color-lightgrey</p>
+          </div>
+          <div class="color-swatch">
+            <div class="color-box" style="background-color: var(--color-grey);">
+            </div>
+            <p class="title-0">--color-grey</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-darkgrey);"
+            >
+            </div>
+            <p class="title-0">--color-darkgrey</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Brand Colors</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-brand-sva);"
+            >
+            </div>
+            <p class="title-0">--color-brand-sva</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-brand-snv);"
+            >
+            </div>
+            <p class="title-0">--color-brand-snv</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Red Tones</h3>
+        <div class="color-grid">
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-reddusk);"
+            >
+            </div>
+            <p class="title-0">--color-reddusk</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-rednight);"
+            >
+            </div>
+            <p class="title-0">--color-rednight</p>
+          </div>
+          <div class="color-swatch">
+            <div
+              class="color-box"
+              style="background-color: var(--color-reddusk-muted);"
+            >
+            </div>
+            <p class="title-0">--color-reddusk-muted</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section class="stack-l">
+      <h2 class="title-6">Typography</h2>
+
+      <div class="stack-m">
+        <h3 class="title-3">Type Scale</h3>
+        <div class="type-scale-grid">
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-0</p>
+            <p style="font-size: var(--step-0);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-1</p>
+            <p style="font-size: var(--step-1);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-2</p>
+            <p style="font-size: var(--step-2);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-3</p>
+            <p style="font-size: var(--step-3);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-4</p>
+            <p style="font-size: var(--step-4);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-5</p>
+            <p style="font-size: var(--step-5);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">--step-6</p>
+            <p style="font-size: var(--step-6);">
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Title Classes</h3>
+        <div class="stack-l">
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-7</p>
+            <h1 class="title-7">This is Title 7 - Display Heading</h1>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-6</p>
+            <h2 class="title-6">This is Title 6 - Main Section Heading</h2>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-5</p>
+            <h3 class="title-5">This is Title 5 - Subsection Heading</h3>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-4</p>
+            <h4 class="title-4">This is Title 4 - Smaller Heading</h4>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-3</p>
+            <h5 class="title-3">This is Title 3 - Minor Heading</h5>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-2</p>
+            <h6 class="title-2">This is Title 2 - Small Heading</h6>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-1</p>
+            <p class="title-1">This is Title 1 - Minimal Heading</p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">.title-0</p>
+            <p class="title-0">This is Title 0 - Base Size Heading</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Decorative Titles</h3>
+        <div class="stack-l">
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .deco-title-diagonal
+            </p>
+            <p class="deco-title-diagonal" style="--rotation: -2.75deg;">
+              Elegant Diagonal Title
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .deco-title-diagonal-bold
+            </p>
+            <p class="deco-title-diagonal-bold" style="--rotation: -2.75deg;">
+              Bold Diagonal Title
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .title-1-lines
+            </p>
+            <h3 class="title-1-lines">Title With Lines</h3>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Paragraph Styles</h3>
+        <div class="stack-m text-wrapper">
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              Default Paragraph
+            </p>
+            <p>
+              This is a default paragraph with the standard styling applied. It
+              uses the Parafina-RegularS font family with appropriate line
+              height and letter spacing for optimal readability. Lorem ipsum
+              dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              Paragraph with .bold class
+            </p>
+            <p class="bold">
+              This paragraph uses the bold class for emphasis. The font weight
+              is increased to 500, making it stand out from regular text while
+              maintaining readability and consistency with the overall design
+              system.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Font Families</h3>
+        <div class="stack-m">
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              --text-typeface (Parafina-RegularS)
+            </p>
+            <p
+              style="font-family: var(--text-typeface); font-size: var(--step-3);"
+            >
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              --display-typeface (QueensThin)
+            </p>
+            <p
+              style="font-family: var(--display-typeface); font-size: var(--step-3);"
+            >
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              --decoration-typeface (LaLuxesSerif)
+            </p>
+            <p
+              style="font-family: var(--decoration-typeface); font-size: var(--step-3);"
+            >
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+          <div class="type-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              --decoration-typeface-handwritten (LaLuxesScript)
+            </p>
+            <p
+              style="font-family: var(--decoration-typeface-handwritten); font-size: var(--step-3);"
+            >
+              The quick brown fox jumps over the lazy dog
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Spacing Section -->
+    <section class="stack-l">
+      <h2 class="title-6">Spacing Scale</h2>
+
+      <div class="stack-m">
+        <h3 class="title-3">Spacing Tokens</h3>
+        <div class="spacing-grid">
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-xs);"></div>
+            <div>
+              <p class="title-0">--space-xs</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(0.6875rem, 0.65rem + 0.1875vw, 0.875rem)
+              </p>
+            </div>
+          </div>
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-s);"></div>
+            <div>
+              <p class="title-0">--space-s</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(0.9375rem, 0.8875rem + 0.25vw, 1.1875rem)
+              </p>
+            </div>
+          </div>
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-m);"></div>
+            <div>
+              <p class="title-0">--space-m</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(1.4375rem, 1.3625rem + 0.375vw, 1.8125rem)
+              </p>
+            </div>
+          </div>
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-l);"></div>
+            <div>
+              <p class="title-0">--space-l</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(1.875rem, 1.775rem + 0.5vw, 2.375rem)
+              </p>
+            </div>
+          </div>
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-xl);"></div>
+            <div>
+              <p class="title-0">--space-xl</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(2.8125rem, 2.6625rem + 0.75vw, 3.5625rem)
+              </p>
+            </div>
+          </div>
+          <div class="spacing-example">
+            <div class="spacing-visual" style="width: var(--space-2xl);"></div>
+            <div>
+              <p class="title-0">--space-2xl</p>
+              <p style="font-size: var(--step-0); color: var(--color-grey);">
+                clamp(3.75rem, 3.55rem + 1vw, 4.75rem)
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Stack Utilities</h3>
+        <div class="stack-m">
+          <div class="stack-example">
+            <p class="title-0" style="color: var(--color-grey);">.stack-xs</p>
+            <div
+              class="stack-xs"
+              style="border: 1px solid var(--color-faintgrey); padding: var(--space-m);"
+            >
+              <div class="demo-box">Item 1</div>
+              <div class="demo-box">Item 2</div>
+              <div class="demo-box">Item 3</div>
+            </div>
+          </div>
+          <div class="stack-example">
+            <p class="title-0" style="color: var(--color-grey);">.stack-m</p>
+            <div
+              class="stack-m"
+              style="border: 1px solid var(--color-faintgrey); padding: var(--space-m);"
+            >
+              <div class="demo-box">Item 1</div>
+              <div class="demo-box">Item 2</div>
+              <div class="demo-box">Item 3</div>
+            </div>
+          </div>
+          <div class="stack-example">
+            <p class="title-0" style="color: var(--color-grey);">.stack-l</p>
+            <div
+              class="stack-l"
+              style="border: 1px solid var(--color-faintgrey); padding: var(--space-m);"
+            >
+              <div class="demo-box">Item 1</div>
+              <div class="demo-box">Item 2</div>
+              <div class="demo-box">Item 3</div>
+            </div>
+          </div>
+          <div class="stack-example">
+            <p class="title-0" style="color: var(--color-grey);">.stack-2xl</p>
+            <div
+              class="stack-2xl"
+              style="border: 1px solid var(--color-faintgrey); padding: var(--space-m);"
+            >
+              <div class="demo-box">Item 1</div>
+              <div class="demo-box">Item 2</div>
+              <div class="demo-box">Item 3</div>
+            </div>
+          </div>
+          <div class="stack-example">
+            <p class="title-0" style="color: var(--color-grey);">.stack-3xl</p>
+            <div
+              class="stack-3xl"
+              style="border: 1px solid var(--color-faintgrey); padding: var(--space-m);"
+            >
+              <div class="demo-box">Item 1</div>
+              <div class="demo-box">Item 2</div>
+              <div class="demo-box">Item 3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wrappers Section -->
+    <section class="stack-l">
+      <h2 class="title-6">Layout Wrappers</h2>
+
+      <div class="stack-m">
+        <h3 class="title-3">Wrapper Classes</h3>
+        <div class="stack-l">
+          <div class="wrapper-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .site-wrapper
+            </p>
+            <p
+              style="font-size: var(--step-0); color: var(--color-grey); margin-block-end: var(--space-s);"
+            >
+              max-width: min(100% - var(--space-xl), 85rem)
+            </p>
+            <div class="wrapper-demo site-wrapper">
+              <div class="demo-box-wrapper">
+                Site Wrapper - Max width 85rem with responsive side padding
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .second-wrapper
+            </p>
+            <p
+              style="font-size: var(--step-0); color: var(--color-grey); margin-block-end: var(--space-s);"
+            >
+              max-width: min(100%, 70rem)
+            </p>
+            <div class="wrapper-demo second-wrapper">
+              <div class="demo-box-wrapper">
+                Second Wrapper - Max width 70rem
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .text-wrapper
+            </p>
+            <p
+              style="font-size: var(--step-0); color: var(--color-grey); margin-block-end: var(--space-s);"
+            >
+              max-width: 60ch
+            </p>
+            <div class="wrapper-demo text-wrapper">
+              <div class="demo-box-wrapper">
+                Text Wrapper - Max width 60 characters for optimal readability
+              </div>
+            </div>
+          </div>
+
+          <div class="wrapper-example">
+            <p class="title-0" style="color: var(--color-grey);">
+              .text-wrapper-80percent
+            </p>
+            <p
+              style="font-size: var(--step-0); color: var(--color-grey); margin-block-end: var(--space-s);"
+            >
+              max-width: 60ch, max-inline-size: 80%
+            </p>
+            <div class="wrapper-demo text-wrapper-80percent">
+              <div class="demo-box-wrapper">
+                Text Wrapper 80% - Constrained to 80% width and 60ch
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Design Tokens -->
+    <section class="stack-l">
+      <h2 class="title-6">Additional Design Tokens</h2>
+
+      <div class="stack-m">
+        <h3 class="title-3">Border Radius</h3>
+        <div class="token-grid">
+          <div class="token-example">
+            <div
+              class="radius-demo"
+              style="border-radius: var(--border-radius);"
+            >
+            </div>
+            <p class="title-0">--border-radius</p>
+            <p style="font-size: var(--step-0); color: var(--color-grey);">
+              0.5rem
+            </p>
+          </div>
+          <div class="token-example">
+            <div
+              class="radius-demo"
+              style="border-radius: var(--border-radius-big);"
+            >
+            </div>
+            <p class="title-0">--border-radius-big</p>
+            <p style="font-size: var(--step-0); color: var(--color-grey);">
+              3rem
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Borders</h3>
+        <div class="token-grid">
+          <div class="token-example">
+            <div
+              class="border-demo"
+              style="border: var(--border-transparent); padding: var(--space-m);"
+            >
+              <p class="title-0">--border-transparent</p>
+            </div>
+          </div>
+          <div class="token-example">
+            <div
+              class="border-demo"
+              style="border: var(--border-black); padding: var(--space-m);"
+            >
+              <p class="title-0">--border-black</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Shadows</h3>
+        <div class="token-grid">
+          <div class="token-example">
+            <div
+              class="shadow-demo"
+              style="box-shadow: var(--shadow-elevation-low);"
+            >
+              <p class="title-0">--shadow-elevation-low</p>
+            </div>
+          </div>
+          <div class="token-example">
+            <div
+              class="shadow-demo"
+              style="box-shadow: var(--shadow-elevation-medium);"
+            >
+              <p class="title-0">--shadow-elevation-medium</p>
+            </div>
+          </div>
+          <div class="token-example">
+            <div
+              class="shadow-demo"
+              style="box-shadow: var(--shadow-elevation-high);"
+            >
+              <p class="title-0">--shadow-elevation-high</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Transitions</h3>
+        <div class="token-grid">
+          <div class="token-example">
+            <p class="title-0">--transition-initial</p>
+            <p style="font-size: var(--step-0); color: var(--color-grey);">
+              140ms
+            </p>
+          </div>
+          <div class="token-example">
+            <p class="title-0">--transition-hover</p>
+            <p style="font-size: var(--step-0); color: var(--color-grey);">
+              250ms
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-m">
+        <h3 class="title-3">Button Example</h3>
+        <button>Sample Button</button>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  /* Color Grid */
+  .color-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: var(--space-m);
+  }
+
+  .color-swatch {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .color-box {
+    height: 100px;
+    border-radius: var(--border-radius);
+    border: var(--border-transparent);
+    box-shadow: var(--shadow-elevation-low);
+  }
+
+  /* Typography Examples */
+  .type-scale-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .type-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    padding-block-end: var(--space-m);
+    border-block-end: var(--border-transparent);
+  }
+
+  .type-example:last-child {
+    border-block-end: none;
+  }
+
+  /* Spacing Grid */
+  .spacing-grid {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+  }
+
+  .spacing-example {
+    display: flex;
+    align-items: center;
+    gap: var(--space-m);
+  }
+
+  .spacing-visual {
+    height: 40px;
+    background: linear-gradient(
+      90deg,
+      var(--color-black) 0%,
+      var(--color-grey) 100%
+    );
+    border-radius: var(--border-radius);
+    flex-shrink: 0;
+  }
+
+  /* Stack Examples */
+  .stack-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .demo-box {
+    background-color: var(--color-highlight);
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: var(--step-0);
+  }
+
+  /* Wrapper Examples */
+  .wrapper-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-s);
+  }
+
+  .wrapper-demo {
+    background-color: var(--color-bggrey);
+    border-radius: var(--border-radius);
+  }
+
+  .demo-box-wrapper {
+    background-color: var(--color-highlight);
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: var(--step-0);
+  }
+
+  /* Token Grid */
+  .token-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: var(--space-m);
+  }
+
+  .token-example {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .radius-demo {
+    height: 100px;
+    background-color: var(--color-highlight);
+    border: var(--border-transparent);
+  }
+
+  .border-demo {
+    background-color: var(--color-bggrey);
+    border-radius: var(--border-radius);
+  }
+
+  .shadow-demo {
+    background-color: var(--color-white);
+    padding: var(--space-m);
+    border-radius: var(--border-radius);
+    text-align: center;
+  }
+
+  /* Section styling */
+  section {
+    padding-block: var(--space-xl);
+    border-block-end: var(--border-transparent);
+  }
+
+  section:last-child {
+    border-block-end: none;
+  }
+</style>

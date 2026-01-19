@@ -18,10 +18,3 @@
   max-width: var(--text-wrapper-size);
   margin-inline: auto;
 }
-
-.text-wrapper-80percent {
-  box-sizing: content-box;
-  max-width: var(--text-wrapper-size);
-  max-inline-size: 80%;
-  margin-inline: auto;
-}

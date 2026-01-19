@@ -1,0 +1,26 @@
+---
+const { contributions } = Astro.props;
+---
+
+<div>
+  <ul class="cluster">
+    {
+      contributions &&
+        contributions.map((item) => (
+          <li>
+            <p>{item}</p>
+          </li>
+        ))
+    }
+  </ul>
+</div>
+
+<style>
+  .cluster {
+    --space: var(--space-s);
+  }
+
+  li {
+    padding: 0.1ex 0.8ex;
+  }
+</style>

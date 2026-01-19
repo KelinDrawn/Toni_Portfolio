@@ -1,0 +1,44 @@
+---
+const { topics } = Astro.props;
+---
+
+<div class="stack-xs">
+  <h3 class="title-2">Project Scope</h3>
+  <div>
+    <ul class="cluster">
+      {
+        topics &&
+          topics.map((topic) => (
+            <li>
+              <p class="title-0">{topic}</p>
+            </li>
+          ))
+      }
+    </ul>
+  </div>
+</div>
+
+<style>
+  .cluster {
+    gap: var(--space-xs) var(--space-s);
+  }
+
+  li {
+    /* workaround for Safari */
+    display: inline-block;
+
+    /*border: var(--border-transparent);*/
+    background-color: light-dark(
+      color-mix(in oklch, var(--color-white), var(--color-black) 2%),
+      color-mix(in oklch, var(--color-white), var(--color-black) 8%)
+    );
+
+    border: 1px solid
+      light-dark(
+        color-mix(in oklch, var(--color-white), var(--color-black) 6%),
+        color-mix(in oklch, var(--color-white), var(--color-black) 18%)
+      );
+    border-radius: var(--border-radius);
+    padding: 0.1ex 1ex;
+  }
+</style>

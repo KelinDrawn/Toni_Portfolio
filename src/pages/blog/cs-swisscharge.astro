@@ -1,0 +1,177 @@
+---
+// external layout
+import BaseLayout from "@/layouts/baseLayout.astro";
+import Navigation from "@/layouts/navigation.astro";
+import BigCta from "@/layouts/big-cta.astro";
+import Footer from "@/layouts/footer.astro";
+import Toc from "@/components/blog/toc.astro";
+
+// components
+import Comparision from "@/components/blog/comparision.astro";
+import PopoverWithProps from "@/components/blog/popoverPicture.astro";
+import TagsComponent from "@/components/blog/tags.astro";
+import ProjectScope from "@/components/blog/projectScope.astro";
+import Date from "../../components/blog/date.astro";
+
+// content
+import { pageTitle, Topics, comparisons } from "@/data/cs-swisscharge.data.js";
+
+// popover images
+import IconHand from "@/images/iconsSmall/iconHand.svg";
+import AppStoreReview from "@/images/blog/swisscharge/AppStoreReview.png";
+import AppStoreIcon from "@/images/blog/swisscharge/AppStoreIconOriginal.png";
+import SwisschargeApp2025 from "@/images/blog/swisscharge/SwisschargeApp2025.png";
+import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy.png";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+
+  <main class="stack-4xl site-wrapper">
+    <section id="intro" class="text-wrapper stack-3xl">
+      <!-- <Date /> -->
+
+      <div class="stack-xs">
+        <h1 class="title-2">
+          {pageTitle}
+        </h1>
+
+        <h2 class="title-7">
+          UX Review and UI Redesign of the Swisscharge App
+        </h2>
+      </div>
+
+      <div class="stack-l">
+        <h3 class="title-2">
+          The Swisscharge app enables electric car drivers in Switzerland to
+          locate charging stations and charge their electric cars. In fall 2025,
+          a new version was released in the Apple App Store, which <PopoverWithProps
+            popovertarget="PopoverAppStoreReview"
+            popoverPicture={AppStoreReview}
+            popoverPictureAlt={"A screenshot of a review of the Swisscharge app in the iOS App Store. Complaints include a poorer user experience, lost charging statistics, the help section, and the color palette and contrast."}
+          >
+            was received very critically<span class="flag"><IconHand /></span>
+          </PopoverWithProps>
+          In this case study, I highlight the problems with the redesign and present
+          my approach to solving them.
+        </h3>
+      </div>
+      <ProjectScope topics={Topics} />
+
+      <div class="stack-l">
+        <p class="title-1">
+          Unfortunately, the first impression is somewhat marred by the fact
+          that the text below the<PopoverWithProps
+            popovertarget="PopoverAppStoreIcon"
+            popoverPicture={AppStoreIcon}
+            popoverPictureAlt={"The icon as it appears on the iPhone with the text cut off: SwisschargeeM…"}
+          >
+            App icon<span class="flag"><IconHand /></span>
+          </PopoverWithProps> is much too long and is cut off awkwardly (at least
+          on my device). Furthermore, the Swisscharge logo is pixelated when the
+          app is launched.
+        </p>
+
+        <p class="title-1">
+          Once inside the app, it quickly becomes clear that this is not a minor
+          UI update, but a massive upgrade that probably relies on completely
+          different technologies in the background.
+        </p>
+
+        <p class="title-1">
+          A comparison of the two versions:<br />
+          <PopoverWithProps
+            popovertarget="PopoverAppLegacyVersion"
+            popoverPicture={SwisschargeAppLegacy}
+            popoverPictureAlt={"A screenshot of the Swisscharge App as it appeared before the big fall 2025 update"}
+          >
+            The previous version<span class="flag"><IconHand /></span>
+          </PopoverWithProps>sowie <PopoverWithProps
+            popovertarget="PopoverApp2025Version"
+            popoverPicture={SwisschargeApp2025}
+            popoverPictureAlt={"A screenshot of the current Swisscharge App, after the big fall 2025 update"}
+          >
+            The new version<span class="flag"><IconHand /></span>
+          </PopoverWithProps>
+        </p>
+
+        <p class="title-1">
+          Often, such a radical redesign prevents a smooth user experience. The
+          App Store is filled (tip: sort by new reviews) with reviews from users
+          who can no longer successfully charge their cars with the new app,
+          take longer to find the desired charging station, or have lost all
+          their favorites and past charging processes.
+        </p>
+        <p class="title-1">
+          I have summarized most of the app's features in a section and will now
+          guide you through the redesign, my critique and my solution.
+        </p>
+      </div>
+    </section>
+
+    {
+      comparisons.map((comparison, index) => (
+        <Comparision
+          id={`comparison-${index}`}
+          subtitle={comparison.subtitle}
+          title={comparison.title}
+          beforeImage={comparison.beforeImage}
+          afterImage={comparison.afterImage}
+          beforeObservations={comparison.beforeObservations}
+          afterObservations={comparison.afterObservations}
+        />
+      ))
+    }
+
+    <section class="text-wrapper stack-3xl">
+      <h2 class="title-7">Conclusion</h2>
+
+      <div class="stack-l">
+        <p class="title-1">
+          Of course, my redesign is not final and there is still room for
+          improvement. I would also like to test the prototypes and measure the
+          following scenarios: Customer stands in front of the charging station,
+          opens the app, and wants to start charging. Measure the time from
+          selecting the pin on the map to the start of charging. Customer wants
+          to navigate to a charging station saved as a favorite. Measure the
+          time from selecting favorites to navigation starting in an external
+          map app Customer wants to know how much they spent last month. Measure
+          the time from arriving at the user profile to data being correctly
+          filtered and displayed.
+        </p>
+      </div>
+
+      <div class="stack-l">
+        <h4 class="title-2">What works well in the redesign</h4>
+        <p class="title-1">
+          Despite all these points of criticism, the new version also offers new
+          features such as Autocharge. The ability to start charging immediately
+          after plugging in the charging cable without having to take out the
+          charging card is a great thing. Even more so if you don't have a
+          charging card (yet) and there is no cell phone reception in the
+          underground garage on the 3rd basement level.
+        </p>
+      </div>
+      <TagsComponent topics={Topics} />
+      <p class="title-0">
+        If you have any questions or feedback regarding this case study, please
+        contact me.
+      </p>
+    </section>
+  </main>
+</BaseLayout>
+<BigCta class:list={["site-wrapper"]} />
+<Footer />
+
+<style>
+  .flag svg {
+    max-width: 1.6ex;
+    /*transform: translateY(-0.5ex);*/
+  }
+
+  /* TODO: experiment */
+  * {
+    word-spacing: 0.04em;
+    /*letter-spacing: 0.01em;*/
+  }
+</style>

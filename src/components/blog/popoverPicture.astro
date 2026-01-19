@@ -1,0 +1,152 @@
+---
+import { Picture } from "astro:assets";
+
+const { popovertarget, popoverPicture, popoverPictureAlt } = Astro.props;
+const anchorName = `--${popovertarget}`;
+---
+
+<button
+  popovertarget={popovertarget}
+  class="popover-button"
+  style={`anchor-name: --${popovertarget};`}
+>
+  <slot />
+</button>
+
+<span
+  id={popovertarget}
+  popover="auto"
+  style={`position-anchor: ${anchorName};`}
+>
+  <Picture src={popoverPicture} alt={popoverPictureAlt} loading="eager" />
+</span>
+
+<style>
+  [popover]
+ /* TRANSITION STYLES */ {
+    &,
+    &::backdrop {
+      transition:
+        display 0s ease-out allow-discrete,
+        overlay 0.25s ease-out allow-discrete,
+        opacity 0.25s ease-out,
+        transform 0.25s ease-out;
+
+      /* Exit Stage To */
+      opacity: 0;
+    }
+
+    /* On Stage */
+    &:popover-open {
+      opacity: 1;
+
+      &::backdrop {
+        opacity: 0.5;
+      }
+    }
+
+    /* Enter Stage From */
+    @starting-style {
+      &:popover-open,
+      &:popover-open::backdrop {
+        opacity: 0;
+      }
+
+      &:popover-open {
+        transform: translateY(1ex);
+      }
+    }
+
+    padding: 0;
+    margin: unset;
+
+    position: absolute;
+    top: auto;
+
+    left: calc(anchor(left) + 1lh);
+    bottom: calc(anchor(bottom) + 1lh);
+
+    position-try: flip-block, flip-inline;
+
+    /*position-try-fallbacks: --bottom-left, --top-right;
+
+    @position-try --bottom-left {
+      left: anchor(right);
+      bottom: anchor(bottom);
+    }
+
+    @position-try --top-right {
+      left: anchor(top);
+      bottom: anchor(right);
+    }*/
+
+    /*position-visibility: always;*/
+
+    pointer-events: none;
+    user-select: none;
+    border: none;
+    border-radius: var(--border-radius);
+
+    outline: 2px solid var(--color-bggrey);
+
+    & img {
+      display: block;
+      padding: 0;
+      margin: 0;
+
+      min-width: 8rem;
+      max-height: 32rem;
+      width: 100%;
+
+      /*inline-size: max-content;
+      max-inline-size: 100%;*/
+    }
+  }
+
+  button.popover-button {
+    user-select: text;
+    padding: unset;
+    border: unset;
+    border-radius: unset;
+
+    text-decoration: underline;
+    display: inline-block;
+    cursor: pointer;
+
+    & span {
+      display: inline-block;
+      text-decoration: none;
+    }
+
+    &:focus-visible {
+      --outline-size: max(2px, 0.15em);
+      outline: var(--outline-width, var(--outline-size))
+        var(--outline-style, solid) var(--outline-color, currentColor);
+      outline-offset: var(--outline-offset, var(--outline-size));
+    }
+  }
+</style>
+
+<script>
+  // enable activation of popovers on mouseover on click devices
+  const supportsHover = window.matchMedia("(hover: hover)").matches;
+
+  if (supportsHover) {
+    const buttons = document.querySelectorAll(".popover-button");
+
+    buttons.forEach((button) => {
+      const popoverId = button.getAttribute("popovertarget");
+      const popover = document.getElementById(popoverId);
+
+      if (popover) {
+        button.addEventListener("mouseover", () => {
+          popover.showPopover();
+        });
+
+        button.addEventListener("mouseout", () => {
+          popover.hidePopover();
+        });
+      }
+    });
+  }
+</script>

@@ -1,0 +1,10 @@
+.grid {
+  display: grid;
+  grid-gap: var(--space-xl);
+  --min-size: 50ch;
+
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--min-size), 100%), 1fr)
+  );
+}

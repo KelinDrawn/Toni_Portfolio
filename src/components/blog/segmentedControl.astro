@@ -1,0 +1,123 @@
+---
+const { comparisonId } = Astro.props;
+---
+
+<div class="segmented-control">
+  <fieldset class="radio-fieldset">
+    <legend class="visually-hidden">Select a design view</legend>
+    <div class="radio-inputs">
+      <label class="radio">
+        <input
+          type="radio"
+          id={`original-${comparisonId}`}
+          name={`design-view-${comparisonId}`}
+          value="original"
+          checked
+        />
+        <span class="name title-1">Current Design</span>
+      </label>
+
+      <label class="radio">
+        <input
+          type="radio"
+          id={`redesign-${comparisonId}`}
+          name={`design-view-${comparisonId}`}
+          value="redesign"
+        />
+        <span class="name title-1">My Redesign</span>
+      </label>
+
+      <label class="radio">
+        <input
+          type="radio"
+          id={`sidebyside-${comparisonId}`}
+          name={`design-view-${comparisonId}`}
+          value="sidebyside"
+        />
+        <span class="name title-1">Compare Both</span>
+      </label>
+    </div>
+  </fieldset>
+</div>
+
+<style>
+  .segmented-control {
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-big);
+
+    max-width: 30rem;
+  }
+
+  /* visually hidden but still accessible */
+  .segmented-control input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+  }
+
+  /* Style for radio labels */
+  .segmented-control .radio-inputs {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.3em;
+    background-color: color-mix(in oklch, var(--color-white) 70%, transparent);
+    backdrop-filter: blur(4px);
+    border: 1px solid var(--color-black);
+    border-radius: calc(var(--border-radius-big) + var(--space-xs));
+  }
+
+  .segmented-control .radio {
+    flex: 1 1 auto;
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+  }
+
+  .segmented-control .radio .name {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: var(--border-radius-big);
+
+    /* control the size */
+    padding: 1ex 1ex;
+    color: var(--color-black);
+    transition: all var(--transition-hover) ease-in-out;
+  }
+
+  /* Style for selected radio label */
+  .segmented-control input[type="radio"]:checked + .name {
+    background-color: var(--color-highlight);
+  }
+
+  /* Focus styles for keyboard navigation */
+  .segmented-control input[type="radio"]:focus-visible + .name {
+    --outline-size: max(2px, 0.15em);
+    outline: var(--outline-width, var(--outline-size))
+      var(--outline-style, solid) var(--outline-color, currentColor);
+    outline-offset: var(--outline-offset, var(--outline-size));
+  }
+
+  /* Fieldset styles */
+  .segmented-control .radio-fieldset {
+    border: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Visually hidden but keep it accessible to screen readers */
+  .visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+</style>
