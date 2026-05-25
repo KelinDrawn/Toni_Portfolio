@@ -33,14 +33,14 @@ import Star from "/src/images/fragments/star.svg";
     aspect-ratio: 1;
     display: grid;
     place-items: center;
-    right: 20%;
-    bottom: 20%;
+    right: 15%;
+    bottom: 15%;
     user-select: none;
     pointer-events: none;
     max-width: fit-content;
   }
 
-  @media (max-width: 67rem) {
+  @media (max-width: 65rem) {
     .spinning-ring {
       display: none;
     }
@@ -93,7 +93,7 @@ import Star from "/src/images/fragments/star.svg";
 </style>
 
 <script>
-  // Configuration options
+  // options
   const options = {
     spacing: 1.2,
     size: 0.8,
@@ -111,17 +111,17 @@ import Star from "/src/images/fragments/star.svg";
     heading.innerHTML = "";
     heading.style.setProperty("--char-count", chars.length);
 
-    // Create spans for each character
+    // Generate spans for each character
     for (let c = 0; c < chars.length; c++) {
       heading.innerHTML += `<span aria-hidden="true" class="char" style="--char-index: ${c};">${chars[c]}</span>`;
     }
     heading.innerHTML += `<span class="sr-only">${options.text}</span>`;
 
-    // Set the styles
+    // Font styles
     heading.style.setProperty("--font-size", options.size);
     heading.style.setProperty("--character-width", options.spacing);
 
-    // Set the radius based on browser support for CSS trig functions
+    // Radius based on browser support for CSS trig functions
     heading.style.setProperty(
       "--radius",
       canTrig
@@ -131,7 +131,7 @@ import Star from "/src/images/fragments/star.svg";
           )}) * -1ch)`,
     );
 
-    // Set buffer for container
+    // buffer for container
     if (chars.length > 3) {
       document.documentElement.style.setProperty(
         "--buffer",
@@ -146,6 +146,6 @@ import Star from "/src/images/fragments/star.svg";
     }
   };
 
-  // Initialize the circular text
+  // Render
   createCircularText();
 </script>

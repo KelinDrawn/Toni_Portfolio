@@ -34,8 +34,7 @@ const icons = [
 
 <style>
   svg {
-    max-width: 3rem;
-    /* clamp this */
+    width: clamp(3rem, 50%, 4rem);
   }
 
   .cluster {
@@ -43,19 +42,18 @@ const icons = [
   }
 
   ul {
-    align-items: stretch;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(10ch, 100%), 1fr));
     align-items: stretch;
   }
 
   li {
     display: flex;
-    /*flex-direction: column;*/
+    flex-direction: column;
     align-items: center;
-    gap: var(--space-xs);
-    padding: var(--space-xs);
-    /*outline: 1px solid salmon;*/
+    justify-content: space-evenly;
+    gap: 1ex;
+    padding: 0.6rem;
 
     flex: 0rem 0 1;
     min-width: fit-content;
@@ -71,9 +69,11 @@ const icons = [
         color-mix(in oklch, var(--color-white), var(--color-black) 18%)
       );
     border-radius: var(--border-radius);
+  }
 
-    p {
-      /*text-align: center;*/
-    }
+  li p {
+    font-size: calc(var(--step-0) * 0.75);
+    line-height: 0.9;
+    text-align: center;
   }
 </style>

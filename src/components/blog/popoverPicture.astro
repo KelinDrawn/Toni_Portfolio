@@ -1,13 +1,20 @@
 ---
 import { Picture } from "astro:assets";
 
-const { popovertarget, popoverPicture, popoverPictureAlt } = Astro.props;
+const {
+  popovertarget,
+  popoverPicture,
+  popoverPictureAlt,
+  class: className,
+  title,
+} = Astro.props;
+
 const anchorName = `--${popovertarget}`;
 ---
 
 <button
   popovertarget={popovertarget}
-  class="popover-button"
+  class:list={["popover-button", className, title && `title-${title}`]}
   style={`anchor-name: --${popovertarget};`}
 >
   <slot />
@@ -34,6 +41,8 @@ const anchorName = `--${popovertarget}`;
 
       /* Exit Stage To */
       opacity: 0;
+      will-change: opacity, transform;
+      backface-visibility: hidden;
     }
 
     /* On Stage */
@@ -50,6 +59,8 @@ const anchorName = `--${popovertarget}`;
       &:popover-open,
       &:popover-open::backdrop {
         opacity: 0;
+        will-change: opacity, transform;
+        backface-visibility: hidden;
       }
 
       &:popover-open {
@@ -61,53 +72,55 @@ const anchorName = `--${popovertarget}`;
     margin: unset;
 
     position: absolute;
-    top: auto;
+    inset: auto;
+    bottom: anchor(top);
+    left: anchor(right);
 
-    left: calc(anchor(left) + 1lh);
-    bottom: calc(anchor(bottom) + 1lh);
-
-    position-try: flip-block, flip-inline;
-
-    /*position-try-fallbacks: --bottom-left, --top-right;
-
-    @position-try --bottom-left {
-      left: anchor(right);
-      bottom: anchor(bottom);
-    }
-
-    @position-try --top-right {
-      left: anchor(top);
-      bottom: anchor(right);
-    }*/
-
-    /*position-visibility: always;*/
+    /*position-visibility: no-overflow;*/
 
     pointer-events: none;
     user-select: none;
     border: none;
     border-radius: var(--border-radius);
 
-    outline: 2px solid var(--color-bggrey);
+    /*min-width: min(15vw, 10rem);*/
+    min-width: 10rem;
+    max-width: 20rem;
+    /* experiment with clamp and/or min where one value is a percentage
+    of the viewport width and the other one a fixed value like rem */
+
+    overflow: auto;
+
+    @media (min-width: 75rem) {
+      max-width: 23vw;
+    }
+
+    overflow: auto;
+
+    position-try-fallbacks:
+      flip-block,
+      flip-inline,
+      flip-block flip-inline;
 
     & img {
+      overflow: hidden;
       display: block;
       padding: 0;
       margin: 0;
-
-      min-width: 8rem;
-      max-height: 32rem;
       width: 100%;
-
-      /*inline-size: max-content;
-      max-inline-size: 100%;*/
+      object-fit: contain;
     }
   }
+
+  /* Built-in keywords flip-block and flip-inline are used instead of custom @position-try rules for better reliability and simplicity */
 
   button.popover-button {
     user-select: text;
     padding: unset;
     border: unset;
     border-radius: unset;
+
+    margin-inline: auto;
 
     text-decoration: underline;
     display: inline-block;
@@ -128,24 +141,24 @@ const anchorName = `--${popovertarget}`;
 </style>
 
 <script>
-  // enable activation of popovers on mouseover on click devices
-  const supportsHover = window.matchMedia("(hover: hover)").matches;
+  if (window.matchMedia("(hover: hover)").matches) {
+    document.addEventListener("mouseover", (e) => {
+      const button = e.target.closest(".popover-button");
+      if (button) {
+        const popover = document.getElementById(
+          button.getAttribute("popovertarget"),
+        );
+        popover?.showPopover();
+      }
+    });
 
-  if (supportsHover) {
-    const buttons = document.querySelectorAll(".popover-button");
-
-    buttons.forEach((button) => {
-      const popoverId = button.getAttribute("popovertarget");
-      const popover = document.getElementById(popoverId);
-
-      if (popover) {
-        button.addEventListener("mouseover", () => {
-          popover.showPopover();
-        });
-
-        button.addEventListener("mouseout", () => {
-          popover.hidePopover();
-        });
+    document.addEventListener("mouseout", (e) => {
+      const button = e.target.closest(".popover-button");
+      if (button) {
+        const popover = document.getElementById(
+          button.getAttribute("popovertarget"),
+        );
+        popover?.hidePopover();
       }
     });
   }

@@ -1,6 +1,7 @@
 ---
 import Picture from "astro/components/Picture.astro";
 
+/* Images */
 import Toni from "/src/images/toni.jpg";
 
 import Studies from "/src/images/icons/Studies-icon.svg";
@@ -17,31 +18,62 @@ import Books from "/src/images/icons/Books-icon.svg";
 
 import ExternalLink from "/src/images/icons/External-link-icon.svg";
 
+/* Components */
 import PopoverCountries from "../components/bento/popover-countries.astro";
-import PopoverCD from "../components/bento/popover-communication-design.astro";
 import SelectSports from "../components/bento/select-sports.astro";
-import PopoverCompleteCSS from "../components/bento/popover-complete-css.astro";
-import PopoverCSSforJS from "../components/bento/popover-css-for-js.astro";
 
-const { class: className } = Astro.props;
+import PopoverWithProps from "@/components/blog/popoverPicture.astro";
+import DiplomCSSforJS from "@/images/about/CSS-for-Javascript-Developers-Certificate-Toni-Schlaeppi.png";
+import DiplomWhimsicalAnimations from "@/images/about/Whimsical-Animations-Certificate-Toni-Schlaeppi.png";
+import DiplomCompleteCSS from "@/images/about/Complete-CSS-Certificate-Toni-Schlaeppi.png";
+import DiplomCD from "/src/images/about/TS-Diplom-dipl-Gestalter-HF.jpeg";
+
+const { class: className, title } = Astro.props;
 ---
 
 <section class:list={[className, "stack-m main"]}>
   <h2 class="title-1-lines">Toni Schläppi</h2>
-  <!-- <h3 class="title-6">This is me</h3> -->
+  <h3 class="title-6">About Toni</h3>
 
   <div class="card-grid">
     <section class="card-grid-cell stack-xs">
       <Studies />
       <h4 class="title-1">I studied</h4>
-      <PopoverCD />
+
+      <PopoverWithProps
+        title="2"
+        popovertarget="CommunicationDesign"
+        popoverPicture={DiplomCD}
+        popoverPictureAlt={"Advanced Diploma in Communication Design (HF) Specializing in Interaction Design for Toni Schläppi"}
+      >
+        Communication Design
+      </PopoverWithProps>
     </section>
     <section class="card-grid-cell stack-xs">
       <Diploma />
       <h4 class="title-1">Finished courses</h4>
       <div class="stack-xs">
-        <div><PopoverCSSforJS /></div>
-        <div><PopoverCompleteCSS /></div>
+        <PopoverWithProps
+          popovertarget="CSSforJS"
+          popoverPicture={DiplomCSSforJS}
+          popoverPictureAlt={"Certificate for Toni Schläppi upon completion of the “CSS for JavaScript Developers” course"}
+        >
+          CSS for JS Developers
+        </PopoverWithProps>
+        <PopoverWithProps
+          popovertarget="CompleteCSS"
+          popoverPicture={DiplomCompleteCSS}
+          popoverPictureAlt={"Certificate for Toni Schläppi upon completion of the “Complete CSS” course"}
+        >
+          Complete CSS
+        </PopoverWithProps>
+        <PopoverWithProps
+          popovertarget="WhimsicalAnimations"
+          popoverPicture={DiplomWhimsicalAnimations}
+          popoverPictureAlt={"Certificate for Toni Schläppi upon completion of the “Whimsical Animations” course"}
+        >
+          Whimsical Animations
+        </PopoverWithProps>
       </div>
     </section>
     <section class="card-grid-cell stack-xs">
@@ -55,7 +87,7 @@ const { class: className } = Astro.props;
     </section>
     <section class="card-grid-cell stack-xs time-spent-in-industry">
       <Calendar />
-      <h5 class="title-1">8+ years of industry experience</h5>
+      <h5 class="title-1">11+ years of industry experience</h5>
     </section>
 
     <section class="card-grid-cell stack-xs span-2">
@@ -65,8 +97,8 @@ const { class: className } = Astro.props;
     <section class="card-grid-cell stack-xs">
       <ElectricVehicle />
       <h4 class="title-1">
-        My car has driven <span class="title-1">57132km.</span> It’s battery health
-        is at <span class="title-1">93%</span>
+        My car has driven <span class="title-1">54361km.</span> It’s battery health
+        is at <span class="title-1">92%</span>
       </h4>
     </section>
     <section class="card-grid-cell stack-xs">
@@ -89,7 +121,7 @@ const { class: className } = Astro.props;
       <Tools />
       <h4 class="title-1">Toolbelt</h4>
       <h4 class="title-0">
-        Figma, Zed, HTML&CSS, JS, SVG, Astro.js, Motion.js, Polypane
+        Figma, Zed, HTML&CSS, JS, SVG, Astro, Motion, Polypane
       </h4>
     </section>
     <section class="card-grid-cell stack-xs">
@@ -168,7 +200,7 @@ const { class: className } = Astro.props;
 
       background: light-dark(
         oklch(from var(--color-white) l c h / 0.8),
-        oklch(from var(--color-black) l c h / 0.05)
+        oklch(from var(--color-black) l c h / 0.02)
       );
 
       @media (hover: hover) {
@@ -176,7 +208,7 @@ const { class: className } = Astro.props;
           transition: background var(--transition-hover);
           background-color: light-dark(
             #fff,
-            oklch(from var(--color-black) l c h / 0.07)
+            oklch(from var(--color-black) l c h / 0.025)
           );
           outline: 1px solid
             light-dark(var(--color-lightgrey), var(--color-lightgrey));
@@ -212,6 +244,7 @@ const { class: className } = Astro.props;
 
   /* Card specific adjustments  */
 
+  :global(button),
   a {
     background-color: var(--color-highlight);
   }

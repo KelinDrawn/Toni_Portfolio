@@ -28,6 +28,7 @@ const {
         class="mockup-picture"
         src={beforeImage.src}
         alt={beforeImage.alt}
+        loading="eager"
       />
 
       <div class="stack-s">
@@ -36,7 +37,7 @@ const {
             beforeObservations &&
               beforeObservations.map((observation) => (
                 <li>
-                    <div class="stack-xs">
+                    <div class="">
                     <!-- <IconWarning /> -->
                     <h5 class="title-3">{observation.title}</h5>
                     <h6 class="title-1">{observation.text}</h6>
@@ -56,6 +57,7 @@ const {
         class="mockup-picture"
         src={afterImage.src}
         alt={afterImage.alt}
+        loading="eager"
       />
 
       <div class="stack-s">
@@ -86,6 +88,7 @@ const {
           class="mockup-picture"
           src={beforeImage.src}
           alt={beforeImage.alt}
+          loading="eager"
         />
       </div>
       <div class="stack-xs">
@@ -94,6 +97,7 @@ const {
           class="mockup-picture"
           src={afterImage.src}
           alt={afterImage.alt}
+          loading="eager"
         />
       </div>
     </div>
@@ -174,6 +178,8 @@ const {
 
   }
 
+
+
   svg {
     fill: var(--color-black);
     width: 24px;
@@ -205,8 +211,14 @@ const {
     }
   }
 
+.side-by-side-images .stack-xs {
+    align-items: center;
+}
+
   .side-by-side-images.grid {
     grid-gap: var(--space-xl);
+
+
 
     Picture {
         height: 100%;

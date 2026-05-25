@@ -14,61 +14,11 @@ import ReceiptsAfter from "@/images/blog/swisscharge/ChargingHistoryRedesign.png
 import FavoritesAfter from "@/images/blog/swisscharge/FavouritesRedesign.png";
 import FilterAfter from "@/images/blog/swisscharge/MapFilterRedesign.png";
 
-export const pageTitle = "Case Study: Swisscharge iOS App";
-
-export const Topics = [
-  "Market and User Research",
-  "Heuristic Evaluation",
-  "User Interface Design",
-  "Prototyping",
-];
+export const pageTitle = "Case Study on the Swisscharge iOS App";
 
 export const comparisons = [
   {
-    title: "Map with available charging stations in the area",
-    beforeImage: {
-      src: MapNavigationBefore,
-      alt: "Original map and navigation interface showing cluttered design",
-    },
-    afterImage: {
-      src: MapNavigationAfter,
-      alt: "Redesigned map and navigation interface with improved clarity",
-    },
-    beforeObservations: [
-      {
-        title: "The symbols and their perceived effect",
-        text: "The main navigation uses filled icons for the active state. Based on this logic, the filter icon signals that one or more filters are active, which is not the case.",
-      },
-      {
-        title: "No fuzzy search",
-        text: "Fuzzy searches are not possible, so nothing is found with the search term 'Sursee'; only 'Sursee, Switzerland' works. Alternatively, you have to select manually from the list.",
-      },
-      {
-        title: "The help menu",
-        text: "The 'Help' section is offered directly on the map level. Few people will probably need help navigating the map, but context-sensitive help will likely be more appropriate later on.",
-      },
-      {
-        title: "The Scan QR menu",
-        text: "Does not deserve its own section. Comparable apps have placed this action directly on the map as a button.",
-      },
-    ],
-    afterObservations: [
-      {
-        title: "iOS26 Liquid Glass",
-        text: "The interface now follows Apple's UI guidelines and the icons are from the same set.",
-      },
-      {
-        title: "The menu structure",
-        text: "Instead of 'Help,' you now have the option to go directly to your own profile.",
-      },
-      {
-        title: "Scan QR code",
-        text: "Now located directly on the map as a shortcut.",
-      },
-    ],
-  },
-  {
-    title: "Filtering for a suitable charging station",
+    title: "Filter for a Suitable Charging Station",
     beforeImage: {
       src: FilterBefore,
       alt: "Original favorites management with limited organization options",
@@ -111,7 +61,7 @@ export const comparisons = [
     ],
   },
   {
-    title: "The details of the selected Charging Location",
+    title: "Details of the Selected Charging Location",
     beforeImage: {
       src: ChargingStationBefore,
       alt: "Original charging station detail view with inconsistent design",
@@ -183,7 +133,7 @@ export const comparisons = [
   },
   {
     subtitle: "placeholder subtitle",
-    title: "Starting a charging session",
+    title: "Start a Charging Session",
     beforeImage: {
       src: StartChargingBefore,
       alt: "Original charging session start interface with unclear process",
@@ -234,7 +184,7 @@ export const comparisons = [
     ],
   },
   {
-    title: "Receipts of past charging sessions",
+    title: "Receipts for Previous Charges",
     beforeImage: {
       src: ReceiptsBefore,
       alt: "Original receipts overview with poor organization",
@@ -285,7 +235,7 @@ export const comparisons = [
     ],
   },
   {
-    title: "View Favorites of Charging stations",
+    title: "Favorite Charging Stations",
     beforeImage: {
       src: FavoritesBefore,
       alt: "Original favorites management with limited organization options",
@@ -328,6 +278,49 @@ export const comparisons = [
       {
         title: "Clear main actions",
         text: "Navigating to the desired charging station and removing the station from the favorites list are now the clear main actions on this screen.",
+      },
+    ],
+  },
+  {
+    title: "Map with Available Charging Stations",
+    beforeImage: {
+      src: MapNavigationBefore,
+      alt: "Original map and navigation interface showing cluttered design",
+    },
+    afterImage: {
+      src: MapNavigationAfter,
+      alt: "Redesigned map and navigation interface with improved clarity",
+    },
+    beforeObservations: [
+      {
+        title: "The symbols and their perceived effect",
+        text: "The main navigation uses filled icons for the active state. Based on this logic, the filter icon signals that one or more filters are active, which is not the case.",
+      },
+      {
+        title: "No fuzzy search",
+        text: "Fuzzy searches are not possible, so nothing is found with the search term 'Sursee'; only 'Sursee, Switzerland' works. Alternatively, you have to select manually from the list.",
+      },
+      {
+        title: "The help menu",
+        text: "The 'Help' section is offered directly on the map level. Few people will probably need help navigating the map, but context-sensitive help will likely be more appropriate later on.",
+      },
+      {
+        title: "The Scan QR menu",
+        text: "Does not deserve its own section. Comparable apps have placed this action directly on the map as a button.",
+      },
+    ],
+    afterObservations: [
+      {
+        title: "iOS26 Liquid Glass",
+        text: "The interface now follows Apple's UI guidelines and the icons are from the same set.",
+      },
+      {
+        title: "The menu structure",
+        text: "Instead of 'Help,' you now have the option to go directly to your own profile.",
+      },
+      {
+        title: "Scan QR code",
+        text: "Now located directly on the map as a shortcut.",
       },
     ],
   },

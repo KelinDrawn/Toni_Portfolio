@@ -1,6 +1,6 @@
 ---
 // external layout
-import BaseLayout from "@/layouts/baseLayout2.astro";
+import BaseLayout from "@/layouts/baseLayout.astro";
 import Navigation from "@/layouts/navigation.astro";
 import BigCta from "@/layouts/big-cta.astro";
 import Footer from "@/layouts/footer.astro";
@@ -14,7 +14,7 @@ import ProjectScope from "@/components/blog/projectScope.astro";
 import Date from "../../components/blog/date.astro";
 
 // content
-import { pageTitle, Topics, comparisons } from "@/data/cs-swisscharge.data.js";
+import { pageTitle, comparisons } from "@/data/cs-swisscharge.data.js";
 
 // popover images
 import IconHand from "@/images/iconsSmall/iconHand.svg";
@@ -31,8 +31,8 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
     <section id="intro" class="text-wrapper stack-3xl">
       <!-- <Date /> -->
 
-      <div class="stack-xs">
-        <h1 class="title-2">
+      <div class="stack-m">
+        <h1 class="title-3">
           {pageTitle}
         </h1>
 
@@ -56,7 +56,7 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
           my approach to solving them.
         </h3>
       </div>
-      <ProjectScope topics={Topics} />
+      <ProjectScope />
 
       <div class="stack-l">
         <p class="title-1">
@@ -68,8 +68,8 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
           >
             App icon<span class="flag"><IconHand /></span>
           </PopoverWithProps> is much too long and is cut off awkwardly (at least
-          on my device). Furthermore, the Swisscharge logo is pixelated when the
-          app is launched.
+          on my device). Furthermore, the Swisscharge logo is pixelated when the app
+          is launched.
         </p>
 
         <p class="title-1">
@@ -123,39 +123,49 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
       ))
     }
 
-    <section class="text-wrapper stack-3xl">
-      <h2 class="title-7">Conclusion</h2>
+    <section class="text-wrapper stack-2xl">
+      <h2 class="title-6">My Conclusions</h2>
 
       <div class="stack-l">
-        <p class="title-1">
-          Of course, my redesign is not final and there is still room for
-          improvement. I would also like to test the prototypes and measure the
-          following scenarios: Customer stands in front of the charging station,
-          opens the app, and wants to start charging. Measure the time from
-          selecting the pin on the map to the start of charging. Customer wants
-          to navigate to a charging station saved as a favorite. Measure the
-          time from selecting favorites to navigation starting in an external
-          map app Customer wants to know how much they spent last month. Measure
-          the time from arriving at the user profile to data being correctly
-          filtered and displayed.
+        <p class="title-2">
+          Of course, my redesign is neither final nor complete, and there is
+          still room for improvement. I also want to test the prototypes and
+          measure the following scenarios:
+          <ul class="title-2">
+            <li>
+              The customer is standing in front of the charging station, opens
+              the app, and wants to start charging. Measure the time from
+              selecting the pin on the map until the charging process begins.
+            </li>
+            <li>
+              The customer wants to navigate to a charging station saved as a
+              favorite. Measure the time from selecting the favorite to starting
+              navigation in an external map app.
+            </li>
+            <li>
+              The customer wants to know how much they spent last month. Measure
+              the time from opening the user profile to correctly filtering and
+              displaying the data.
+            </li>
+          </ul>
         </p>
       </div>
 
-      <div class="stack-l">
-        <h4 class="title-2">What works well in the redesign</h4>
-        <p class="title-1">
+      <div class="stack-xs">
+        <h4 class="title-3">What works well in the redesign</h4>
+        <p class="title-2">
           Despite all these points of criticism, the new version also offers new
           features such as Autocharge. The ability to start charging immediately
           after plugging in the charging cable without having to take out the
-          charging card is a great thing. Even more so if you don't have a
-          charging card (yet) and there is no cell phone reception in the
-          underground garage on the 3rd basement level.
+          charging card is a great thing. Even more so if you don't yet have a
+          charging card and there is no cell phone reception in the underground
+          parking lot.
         </p>
       </div>
-      <TagsComponent topics={Topics} />
+
       <p class="title-0">
-        If you have any questions or feedback regarding this case study, please
-        contact me.
+        If you have any questions or feedback regarding this case study,
+        <a href="/#contact-me">please contact me</a>&nbsp; &#128172;
       </p>
     </section>
   </main>
@@ -166,12 +176,15 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
 <style>
   .flag svg {
     max-width: 1.6ex;
-    /*transform: translateY(-0.5ex);*/
+    transform: translateY(-0.5ex);
   }
 
-  /* TODO: experiment */
-  * {
-    word-spacing: 0.04em;
-    /*letter-spacing: 0.01em;*/
+  /*:global(.title-6) {
+    max-width: 24ch;
+  }*/
+
+  li {
+    list-style: initial;
+    margin-left: 2.25em;
   }
 </style>

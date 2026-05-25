@@ -1,10 +1,9 @@
 ---
-import BaseLayout from "../layouts/baseLayout2.astro";
+import BaseLayout from "../layouts/baseLayout.astro";
 
 import Navigation from "../layouts/navigation.astro";
 import Intro from "../layouts/intro.astro";
-import CaseStudiesContainer from "../layouts/caseStudiesContainer.astro";
-import Infobox from "../layouts/infobox.astro";
+import Skillsbox from "../layouts/skillsbox/skillsbox.astro";
 import List from "../layouts/list.astro";
 import BigCta from "../layouts/big-cta.astro";
 import Footer from "../layouts/footer.astro";
@@ -15,10 +14,10 @@ const pageTitle = "UX Portfolio of Toni Schläppi";
 <BaseLayout pageTitle={pageTitle}>
   <Navigation />
 
-  <main class="stack-3xl">
+  <main class="stack-4xl">
     <Intro class:list={["site-wrapper"]} />
-    <CaseStudiesContainer class:list={["second-wrapper"]} />
-    <Infobox class:list={["second-wrapper"]} />
+    <!-- <CaseStudiesContainer class:list={["second-wrapper"]} /> -->
+    <Skillsbox class:list={["second-wrapper"]} />
     <List class:list={["second-wrapper"]} />
     <BigCta class:list={["site-wrapper"]} />
   </main>
