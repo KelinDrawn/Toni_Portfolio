@@ -39,12 +39,12 @@
   --section-linear-gradient: linear-gradient(
     150deg,
     light-dark(
-        color-mix(in oklch, var(--color-white) 100%, var(--color-black)),
+        color-mix(in oklch, var(--color-white) 99%, var(--color-black)),
         transparent
       )
       0%,
     light-dark(
-        color-mix(in oklch, var(--color-white) 97%, var(--color-black)),
+        color-mix(in oklch, var(--color-white) 96%, var(--color-black)),
         transparent
       )
       70%

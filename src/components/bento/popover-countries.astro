@@ -45,16 +45,11 @@
     padding: unset;
     border: unset;
     border-radius: unset;
-
-    margin-inline: auto;
-
-    text-decoration: underline;
-    display: inline-block;
     cursor: pointer;
 
     & span {
-      display: inline-block;
       text-decoration: underline;
+      background-color: var(--color-highlight);
     }
 
     &:focus-visible {
@@ -102,13 +97,13 @@
   }
 
   ::backdrop {
-    backdrop-filter: contrast(75%);
+    background-color: var(--color-white);
   }
 
   /* Disable backdrop-filter on Safari (macOS and iOS) to avoid rendering glitches with popover transforms */
   @supports (background: -webkit-named-image(apple-pay-logo-white)) {
     ::backdrop {
-      backdrop-filter: none;
+      background-color: initial;
     }
   }
 

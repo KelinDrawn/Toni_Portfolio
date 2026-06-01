@@ -17,7 +17,7 @@ const anchorName = `--${popovertarget}`;
   class:list={["popover-button", className, title && `title-${title}`]}
   style={`anchor-name: --${popovertarget};`}
 >
-  <slot />
+  <span class="slot"><slot /></span>
 </button>
 
 <span
@@ -72,9 +72,6 @@ const anchorName = `--${popovertarget}`;
 
     inset: auto;
 
-    /*bottom: anchor(top);
-    left: anchor(right);*/
-
     position-area: top right;
 
     position-try-fallbacks:
@@ -98,24 +95,22 @@ const anchorName = `--${popovertarget}`;
 
       width: auto;
       height: auto;
+
       /* POPOVER SIZE ADJUSTMENT */
-      max-width: max(45vw, 20rem);
+      max-width: max(40vw, 14rem);
       max-height: 65vh;
       object-fit: contain;
     }
   }
 
   ::backdrop {
-    /*backdrop-filter: blur(4px);*/
-    /*background-color: var(--color-bggrey);*/
-    /*backdrop-filter: brightness(96%);*/
-    backdrop-filter: contrast(75%);
+    background-color: var(--color-white);
   }
 
-  /* Disable backdrop-filter on Safari (macOS and iOS) to avoid rendering glitches with popover transforms */
+  /* Disable backdrop-filter on Safari (macOS and iOS) to avoid flicker with popover transforms */
   @supports (background: -webkit-named-image(apple-pay-logo-white)) {
     ::backdrop {
-      backdrop-filter: none;
+      background-color: initial;
     }
   }
 
@@ -124,16 +119,11 @@ const anchorName = `--${popovertarget}`;
     padding: unset;
     border: unset;
     border-radius: unset;
-
-    margin-inline: auto;
-
-    text-decoration: underline;
-    display: inline-block;
     cursor: pointer;
 
     & span {
-      display: inline-block;
-      text-decoration: none;
+      text-decoration: underline;
+      background-color: var(--color-highlight);
     }
 
     &:focus-visible {

@@ -44,13 +44,14 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
       <div class="stack-l">
         <h3 class="title-2">
           The Swisscharge app enables electric car drivers in Switzerland to
-          locate charging stations and charge their electric cars. In fall 2025,
-          a new version was released in the Apple App Store, which was received <PopoverWithProps
+          locate charging stations and charge their electric cars. In the fall
+          of 2025, a new version was released on the Apple App Store, which
+          received <PopoverWithProps
             popovertarget="PopoverAppStoreReview"
             popoverPicture={AppStoreReview}
             popoverPictureAlt={"A screenshot of a review of the Swisscharge app in the iOS App Store. Complaints include a poorer user experience, lost charging statistics, the help section, and the color palette and contrast."}
           >
-            very critically<span class="flag"><IconHand /></span>
+            very mixed reviews<span class="flag"><IconHand /></span>
           </PopoverWithProps>
           In this case study, I highlight the problems with the redesign and present
           my approach to solving them.
@@ -179,9 +180,10 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
     transform: translateY(-0.5ex);
   }
 
-  /*:global(.title-6) {
-    max-width: 24ch;
-  }*/
+  /* UNDO BACKGROUND FOR FLAG ADDED IN POPOVERPICTURE.ASTRO > & SPAN */
+  .flag {
+    background-color: var(--color-white);
+  }
 
   li {
     list-style: initial;
