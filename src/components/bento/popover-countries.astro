@@ -41,30 +41,20 @@
 
 <style>
   button.popover-button {
-    background-color: transparent;
-    padding: 0;
+    user-select: text;
+    padding: unset;
+    border: unset;
     border-radius: unset;
-    border: none;
-    text-decoration: underline 1px solid var(--color-black);
-    -webkit-text-decoration-line: underline;
-    -webkit-text-decoration-thickness: 1px;
-    -webkit-text-decoration-style: solid;
-    -webkit-text-decoration-color: var(--color-black);
 
-    text-underline-offset: 0.2em;
-    display: inline;
+    margin-inline: auto;
 
-    box-decoration-break: clone;
-    -webkit-box-decoration-break: clone;
+    text-decoration: underline;
+    display: inline-block;
+    cursor: pointer;
 
-    /*& > span,
-    &::before {
-      background-color: var(--color-highlight);
-    }*/
-
-    &:hover {
-      color: var(--color-black);
-      cursor: pointer;
+    & span {
+      display: inline-block;
+      text-decoration: underline;
     }
 
     &:focus-visible {
@@ -76,17 +66,19 @@
   }
 
   #my-tooltip[popover] {
-    position: absolute;
     inset: auto;
     margin: 0;
-    margin-inline: 2rem;
-    width: clamp(12rem, 50%, 25rem);
+    /*margin-inline: 2rem;*/
 
-    top: auto;
-    left: calc(anchor(--my-tooltip left) + 1lh);
-    bottom: calc(anchor(--my-tooltip bottom) + 1lh);
+    position-area: top right;
 
-    position-try-fallbacks: flip-block, flip-inline;
+    position-try-fallbacks:
+      flip-block,
+      flip-inline,
+      flip-block flip-inline;
+
+    max-width: 25rem;
+    max-height: 65vh;
 
     text-align: left;
     padding: var(--space-m) var(--space-l);
@@ -107,6 +99,17 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: row;
+  }
+
+  ::backdrop {
+    backdrop-filter: contrast(75%);
+  }
+
+  /* Disable backdrop-filter on Safari (macOS and iOS) to avoid rendering glitches with popover transforms */
+  @supports (background: -webkit-named-image(apple-pay-logo-white)) {
+    ::backdrop {
+      backdrop-filter: none;
+    }
   }
 
   [popover] {

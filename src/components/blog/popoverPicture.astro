@@ -29,8 +29,7 @@ const anchorName = `--${popovertarget}`;
 </span>
 
 <style>
-  [popover]
- /* TRANSITION STYLES */ {
+  [popover] {
     &,
     &::backdrop {
       transition:
@@ -71,48 +70,54 @@ const anchorName = `--${popovertarget}`;
     padding: 0;
     margin: unset;
 
-    position: absolute;
     inset: auto;
-    bottom: anchor(top);
-    left: anchor(right);
 
-    /*position-visibility: no-overflow;*/
+    /*bottom: anchor(top);
+    left: anchor(right);*/
 
-    pointer-events: none;
-    user-select: none;
-    border: none;
-    border-radius: var(--border-radius);
-
-    /*min-width: min(15vw, 10rem);*/
-    min-width: 10rem;
-    max-width: 20rem;
-    /* experiment with clamp and/or min where one value is a percentage
-    of the viewport width and the other one a fixed value like rem */
-
-    overflow: auto;
-
-    @media (min-width: 75rem) {
-      max-width: 23vw;
-    }
-
-    overflow: auto;
+    position-area: top right;
 
     position-try-fallbacks:
       flip-block,
       flip-inline,
       flip-block flip-inline;
 
+    /*position-visibility: visible;*/
+
+    pointer-events: none;
+    user-select: none;
+    border: none;
+
+    width: fit-content;
+    height: fit-content;
+
     & img {
-      overflow: hidden;
       display: block;
       padding: 0;
       margin: 0;
-      width: 100%;
+
+      width: auto;
+      height: auto;
+      /* POPOVER SIZE ADJUSTMENT */
+      max-width: max(45vw, 20rem);
+      max-height: 65vh;
       object-fit: contain;
     }
   }
 
-  /* Built-in keywords flip-block and flip-inline are used instead of custom @position-try rules for better reliability and simplicity */
+  ::backdrop {
+    /*backdrop-filter: blur(4px);*/
+    /*background-color: var(--color-bggrey);*/
+    /*backdrop-filter: brightness(96%);*/
+    backdrop-filter: contrast(75%);
+  }
+
+  /* Disable backdrop-filter on Safari (macOS and iOS) to avoid rendering glitches with popover transforms */
+  @supports (background: -webkit-named-image(apple-pay-logo-white)) {
+    ::backdrop {
+      backdrop-filter: none;
+    }
+  }
 
   button.popover-button {
     user-select: text;
