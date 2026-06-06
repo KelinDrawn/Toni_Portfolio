@@ -1,5 +1,5 @@
 <div class="theme-switcher">
-  <label for="theme-select">
+  <!-- <label for="theme-select">
     <span
       class="theme-icon light-icon"
       aria-label="Currently the light theme is displayed">☀️&nbsp;</span
@@ -8,11 +8,11 @@
       class="theme-icon dark-icon"
       aria-label="Currently the dark theme is displayed">🌙&nbsp;</span
     ></label
-  >
+  > -->
   <select id="theme-select" aria-label="Choose theme appearance">
-    <option id="theme-system" value="system">System</option>
-    <option id="theme-light" value="light">Light</option>
-    <option id="theme-dark" value="dark">Dark</option>
+    <option id="theme-system" value="system">☀️ &nbsp; Dynamic</option>
+    <option id="theme-light" value="light"> ☀️ &nbsp; Light</option>
+    <option id="theme-dark" value="dark"> 🌙 &nbsp; Dark</option>
   </select>
 </div>
 
@@ -119,7 +119,14 @@
     const html = document.documentElement;
     const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
     const themeSelect = document.getElementById("theme-select");
+    const themeSystemOption = document.getElementById("theme-system");
     let theme = localStorage.getItem(THEME_KEY) || "system";
+
+    function updateSystemOptionIcon() {
+      if (themeSystemOption) {
+        themeSystemOption.textContent = `${mediaQuery.matches ? "🌙" : "☀️"} \u00A0 Dynamic`;
+      }
+    }
 
     function updateDarkModeImages(theme) {
       document.querySelectorAll("source[data-media-dark]").forEach((source) => {
@@ -151,6 +158,7 @@
 
     // Listen for system changes if "system" is selected
     function handleSystemChange() {
+      updateSystemOptionIcon();
       if ((localStorage.getItem(THEME_KEY) || "system") === "system") {
         applyTheme("system");
       }
@@ -158,6 +166,7 @@
     mediaQuery.addEventListener("change", handleSystemChange);
 
     // Initial application
+    updateSystemOptionIcon();
     applyTheme(theme);
 
     // Attach event listener to the theme switcher
