@@ -10,7 +10,7 @@
     ></label
   > -->
   <select id="theme-select" aria-label="Choose theme appearance">
-    <option id="theme-system" value="system">☀️ &nbsp; Dynamic</option>
+    <option id="theme-system" value="system">☀️ &nbsp; Auto</option>
     <option id="theme-light" value="light"> ☀️ &nbsp; Light</option>
     <option id="theme-dark" value="dark"> 🌙 &nbsp; Dark</option>
   </select>
@@ -124,7 +124,7 @@
 
     function updateSystemOptionIcon() {
       if (themeSystemOption) {
-        themeSystemOption.textContent = `${mediaQuery.matches ? "🌙" : "☀️"} \u00A0 Dynamic`;
+        themeSystemOption.textContent = `${mediaQuery.matches ? "🌙" : "☀️"} \u00A0 Auto`;
       }
     }
 

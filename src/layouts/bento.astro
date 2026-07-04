@@ -270,10 +270,7 @@ const { class: className, title } = Astro.props;
 
   .toni-profile-picture img {
     filter: var(--theme-filter);
-    object-fit: cover;
-    object-position: center;
-
-    transform: scale(1.15);
+    transform: scale(1.35);
   }
 
   .time-spent-in-industry > *:first-child {
@@ -285,5 +282,17 @@ const { class: className, title } = Astro.props;
     max-width: 1rem;
     margin-inline-start: 0.5ch;
     text-decoration-skip-ink: none;
+  }
+
+  a {
+    background-color: var(--color-highlight);
+  }
+</style>
+
+<style is:global>
+  /* TODO: Find a better solution for this workaround because the popover styles it’s parent but I don’t want that to happen for my casestudy page   */
+  button.popover-button {
+    background-color: var(--color-highlight);
+    margin-inline: auto;
   }
 </style>

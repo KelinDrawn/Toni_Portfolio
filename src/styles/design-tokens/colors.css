@@ -1,8 +1,11 @@
 :root {
   --color-white: light-dark(oklch(100% 0 0), var(--color-rednight));
   --color-black: light-dark(oklch(8% 0 0), oklch(90% 0 0));
-  /*--color-highlight: light-dark(oklch(96% 0.04 159.1), oklch(43% 0.19 30.2));*/
+
   --color-highlight: light-dark(oklch(95% 0.025 225), oklch(50% 0.15 20));
+  --color-highlight-reduced: oklch(
+    from var(--color-highlight) l calc(c * 0.6) h
+  );
 
   --color-bggrey: color-mix(
     in oklch,

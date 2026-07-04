@@ -22,12 +22,18 @@ import AppStoreReview from "@/images/blog/swisscharge/AppStoreReview.png";
 import AppStoreIcon from "@/images/blog/swisscharge/AppStoreIconOriginal.png";
 import SwisschargeApp2025 from "@/images/blog/swisscharge/SwisschargeApp2025.png";
 import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy.png";
+
+const LinksToBeIncludedInTableOfContent = [
+  { id: "main-navigation", label: "Intro" },
+  ...comparisons.map((c, i) => ({ id: `comparison-${i}`, label: c.title })),
+  { id: "conclusion", label: "Conclusions" },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-  <Navigation />
-
   <main class="stack-4xl site-wrapper">
+    <Navigation />
+    <Toc links={LinksToBeIncludedInTableOfContent} />
     <section id="intro" class="text-wrapper stack-3xl">
       <!-- <Date /> -->
 
@@ -37,7 +43,7 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
         </h1>
 
         <h2 class="title-7">
-          UX Review and UI Redesign of the Swisscharge App
+          Analyzing the User Interface of the Swisscharge App
         </h2>
       </div>
 
@@ -125,7 +131,7 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
     }
 
     <section class="text-wrapper stack-2xl">
-      <h2 class="title-6">My Conclusions</h2>
+      <h2 id="conclusion" class="title-6">My Conclusions</h2>
 
       <div class="stack-l">
         <p class="title-2">
@@ -175,6 +181,10 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
 <Footer />
 
 <style>
+  main {
+    /*position: relative;*/
+  }
+
   .flag svg {
     max-width: 1.6ex;
     transform: translateY(-0.5ex);
@@ -187,6 +197,6 @@ import SwisschargeAppLegacy from "@/images/blog/swisscharge/SwisschargeAppLegacy
 
   li {
     list-style: initial;
-    margin-left: 2.25em;
+    margin-left: var(--space-m);
   }
 </style>

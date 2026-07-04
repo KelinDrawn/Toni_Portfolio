@@ -19,17 +19,6 @@ const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
       content="UX Design Portfolio of Toni Schläppi who specializes in user research, wireframing, interface design, prototyping and front-end engineering."
     />
 
-    <!-- Basic Meta Tags -->
-    <!-- <meta
-      name="theme-color"
-      content="#ffffff"
-      media="(prefers-color-scheme: light)"
-    />
-    <meta
-      name="theme-color"
-      content="#160F0B"
-      media="(prefers-color-scheme: dark)"
-    /> -->
     <meta name="color-scheme" content="light dark" />
     <meta name="application-name" content="UX Portfolio of Toni Schläppi" />
     <meta name="referrer" content="no-referrer-when-downgrade" />
@@ -94,7 +83,16 @@ const buildDate = import.meta.env.BUILD_DATE || new Date().toISOString();
     </script>
 
     <title>{pageTitle}</title>
-    <slot name="head" />
+
+    <style>
+      @view-transition {
+        navigation: auto;
+      }
+
+      ::view-transition-group(root) {
+        animation-duration: 120ms;
+      }
+    </style>
   </head>
   <body>
     <slot />

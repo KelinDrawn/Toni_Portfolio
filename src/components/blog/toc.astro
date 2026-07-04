@@ -1,23 +1,23 @@
 ---
-import { comparisons } from "@/data/cs-swisscharge.data.js";
+interface Props {
+  links: { id: string; label: string }[];
+}
 
-const tocItems = [
-  { href: "#intro", label: "Introduction" },
-  ...comparisons.map((comparison, index) => ({
-    href: `#comparison-${index}`,
-    label: comparison.title,
-  })),
-  { href: "#outro", label: "Conclusion" },
-];
+const { links } = Astro.props;
 ---
 
-<nav class="toc">
-  <h6 class="title-1">Table of Contents</h6>
-  <ul>
+<button popovertarget="toc-popover">
+  <span class="toc-text">Table of Contents</span>
+</button>
+
+<nav id="toc-popover" aria-label="Table of contents" popover="manual">
+  <ul class="stack-xxs" id="toc-list">
     {
-      tocItems.map((item) => (
+      links.map((link) => (
         <li>
-          <a href={item.href}>{item.label}</a>
+          <a href={`#${link.id}`} class="toc-link">
+            {link.label}
+          </a>
         </li>
       ))
     }
@@ -25,48 +25,91 @@ const tocItems = [
 </nav>
 
 <style>
-  .toc {
+  button {
     position: fixed;
-    top: var(--space-xl, 2rem);
-    right: var(--space-xl, 2rem);
-    background: var(--color-bg, white);
-    padding: var(--space-m, 1rem);
-    border-radius: var(--radius-m, 8px);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    max-width: 250px;
-    z-index: 100;
-  }
-
-  .toc h6 {
-    margin-bottom: var(--space-s, 0.5rem);
-  }
-
-  .toc ul {
-    list-style: none;
+    bottom: var(--space-xs);
+    right: var(--space-xs);
+    z-index: 2;
     padding: 0;
-    margin: 0;
-  }
 
-  .toc li {
-    margin-bottom: var(--space-xs, 0.25rem);
-  }
+    color: var(--color-grey-dark);
+    background: var(--color-white);
+    border: none;
+    cursor: pointer;
 
-  .toc a {
-    text-decoration: none;
-    color: var(--color-text, currentColor);
-    display: block;
-    padding: var(--space-xs, 0.25rem) 0;
-    transition: color 0.2s;
-  }
+    transition: color 0.2s ease;
 
-  .toc a:hover {
-    color: var(--color-primary, blue);
-  }
-
-  /* Hide on smaller screens */
-  @media (max-width: 1200px) {
-    .toc {
+    @media (max-width: 50rem) {
       display: none;
     }
+
+    &:hover {
+      color: var(--color-black);
+    }
+
+    &:focus-visible {
+      --outline-size: max(2px, 0.15em);
+      outline: var(--outline-width, var(--outline-size))
+        var(--outline-style, solid) var(--outline-color, currentColor);
+      outline-offset: var(--outline-offset, var(--outline-size));
+    }
+  }
+
+  #toc-popover {
+    position-area: top right;
+    position-try-fallbacks: flip-block;
+    border: none;
+    width: calc(anchor-size(width) + var(--space-xs));
+    margin: 0 0 var(--space-xs) 0;
+    padding: 0;
+  }
+
+  .toc-text {
+    text-decoration: underline;
+  }
+
+  ul {
+    font-size: var(--step-0);
+    line-height: 1.15;
+  }
+
+  a:hover {
+    background-color: var(--color-bggrey);
+  }
+
+  a.active {
+    background-color: var(--color-highlight);
   }
 </style>
+
+<script>
+  // Observer: highlight active section
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        const id = entry.target.getAttribute("id");
+        if (entry.isIntersecting) {
+          document.querySelectorAll(".toc-link").forEach((link) => {
+            const href = link.getAttribute("href");
+            if (href === `#${id}`) {
+              link.classList.add("active");
+            } else {
+              link.classList.remove("active");
+            }
+          });
+        }
+      });
+    },
+    { root: null, rootMargin: "0% 0% -70% 0%" },
+  );
+
+  document.querySelectorAll(".toc-link").forEach((link) => {
+    const id = link.getAttribute("href")?.substring(1);
+    if (id) {
+      const target = document.getElementById(id);
+      if (target) {
+        observer.observe(target);
+      }
+    }
+  });
+</script>
