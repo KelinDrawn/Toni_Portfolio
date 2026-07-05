@@ -14,7 +14,7 @@ import ReceiptsAfter from "@/images/blog/swisscharge/ChargingHistoryRedesign.png
 import FavoritesAfter from "@/images/blog/swisscharge/FavouritesRedesign.png";
 import FilterAfter from "@/images/blog/swisscharge/MapFilterRedesign.png";
 
-export const pageTitle = "Case Study on the Swisscharge iOS App";
+export const pageTitle = "Case Study of the Swisscharge iOS App";
 
 export const comparisons = [
   {

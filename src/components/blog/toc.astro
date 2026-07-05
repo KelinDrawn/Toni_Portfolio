@@ -11,7 +11,7 @@ const { links } = Astro.props;
 </button>
 
 <nav id="toc-popover" aria-label="Table of contents" popover="manual">
-  <ul class="stack-xxs" id="toc-list">
+  <ul class="stack-xxs">
     {
       links.map((link) => (
         <li>
@@ -61,7 +61,7 @@ const { links } = Astro.props;
     border: none;
     width: calc(anchor-size(width) + var(--space-xs));
     margin: 0 0 var(--space-xs) 0;
-    padding: 0;
+    padding: 0px;
   }
 
   .toc-text {

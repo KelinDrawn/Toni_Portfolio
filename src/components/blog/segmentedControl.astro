@@ -42,10 +42,11 @@ const { comparisonId } = Astro.props;
 
 <style>
   .segmented-control {
-    background-color: var(--color-white);
-    border-radius: var(--border-radius-big);
+    /*background-color: var(--color-white);*/
+    /*border-radius: var(--border-radius-big);*/
+    border-radius: 8px;
 
-    max-width: 30rem;
+    width: fit-content;
   }
 
   /* visually hidden but still accessible */
@@ -59,6 +60,8 @@ const { comparisonId } = Astro.props;
 
   /* Style for radio labels */
   .segmented-control .radio-inputs {
+    width: fit-content;
+    margin-inline: auto;
     position: relative;
     display: flex;
     flex-wrap: wrap;
@@ -66,7 +69,9 @@ const { comparisonId } = Astro.props;
     background-color: color-mix(in oklch, var(--color-white) 70%, transparent);
     backdrop-filter: blur(4px);
     border: 1px solid var(--color-black);
-    border-radius: calc(var(--border-radius-big) + var(--space-xs));
+    /*border-radius: calc(var(--border-radius-big) + var(--space-xs));*/
+    /*border-radius: calc(8px + var(--space-xs));*/
+    border-radius: 8px;
   }
 
   .segmented-control .radio {
@@ -80,11 +85,14 @@ const { comparisonId } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 
-    border-radius: var(--border-radius-big);
+    /*border-radius: var(--border-radius-big);*/
+    /*border-radius: calc(8px + var(--space-xs));*/
+    border-radius: 4px;
 
     /* control the size */
-    padding: 1ex 1ex;
+    padding: 1ex 2ex;
     color: var(--color-black);
     transition: all var(--transition-hover) ease-in-out;
   }

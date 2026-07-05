@@ -31,9 +31,9 @@ const LinksToBeIncludedInTableOfContent = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
+  <Navigation />
+  <Toc links={LinksToBeIncludedInTableOfContent} />
   <main class="stack-4xl site-wrapper">
-    <Navigation />
-    <Toc links={LinksToBeIncludedInTableOfContent} />
     <section id="intro" class="text-wrapper stack-3xl">
       <!-- <Date /> -->
 
