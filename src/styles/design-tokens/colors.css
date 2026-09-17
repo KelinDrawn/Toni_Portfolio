@@ -29,10 +29,10 @@
     var(--color-black) 80%
   );
 
-  --color-brand-sva: oklch(94.7% 0.058 158.15);
-  --color-brand-snv: oklch(54.7% 0.058 58.15);
+  /*--color-brand-sva: oklch(94.7% 0.058 158.15);
+  --color-brand-snv: oklch(54.7% 0.058 58.15);*/
 
-  --contrast: color-mix(in oklab, currentColor 15%, var(--color-black));
+  --contrast: color-mix(in oklch, currentColor 15%, var(--color-black));
 
   --color-reddusk: oklch(32% 0.005 90);
   --color-rednight: oklch(20% 0.009 70);
